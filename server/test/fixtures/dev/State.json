@@ -1,0 +1,11 @@
+{
+  "model": "state",
+  "data": [
+    {
+      "_id": "5b5609542738180d48c397f2",
+      "initial": "SC",
+      "id": "5b5609542738180d48c397f2",
+      "name": "Santa Catarina"
+    }
+  ]
+}

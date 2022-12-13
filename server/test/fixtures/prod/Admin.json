@@ -1,0 +1,12 @@
+{
+  "model": "admin",
+  "data": [
+    {
+      "name": "ADMIN",
+      "surname": "ADMIN",
+      "email": "admin@admin.com",
+      "password": "4dm1ncv3",
+      "phoneNumber": "48999476823"
+    }
+  ]
+}

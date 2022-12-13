@@ -1,0 +1,75 @@
+{
+  "nameRequired": {
+    "title": "Nome",
+    "description": "Então djow, você precisa me informar qual o nome do pesquisador <br/> ex: Osvaldo",
+    "buttons": [
+      {
+        "label": "Ta bom",
+        "method": null
+      }
+    ],
+    "type": "nameRequired"
+  },
+  "surnameRequired": {
+    "title": "Sobrenome",
+    "description": "Oi tuto bom? vc pode me passar o sobrenome?<br/> ex: Borges Silva",
+    "buttons": [
+      {
+        "label": "hehehe, vou consertar",
+        "method": null
+      }
+    ],
+    "type": "surnameRequired"
+  },
+  "emailRequired": {
+    "title": "Email",
+    "description": "Imagina vc querendo mandar email para esse cidadão, seria bom ter aqui né?<br/> Pra isso eu preciso do email deste.",
+    "buttons": [
+      {
+        "label": "Bouaaa!",
+        "method": null
+      }
+    ],
+    "type": "emailRequired"
+  },
+  "passwordRequired": {
+    "title": "Senha",
+    "description": "Esse cara não vai conseguir entrar sem uma senha, pode me passar uma?",
+    "buttons": [
+      {
+        "label": "Claro amigo!",
+        "method": null
+      }
+    ],
+    "type": "passwordRequired"
+  },
+  "phoneNumberRequired": {
+    "title": "Numero de celular",
+    "description": "Também preciso do numero de celular do usuario, blz???",
+    "buttons": [
+      {
+        "label": "Blz então!",
+        "method": null
+      }
+    ],
+    "type": "phoneNumberRequired"
+  },
+  "duplicated": {
+    "email": {
+      "title": "Email duplicado",
+      "description": "Eu dei uma vizolhada aqui e esse email já pertence a alguém<br/> Quer reativar o estepô???",
+      "buttons": [
+        {
+          "label": "Não não!",
+          "method": null
+        },
+        {
+          "label": "Se posso, quero",
+          "method": "researcherEnable"
+        }
+      ],
+      "type": "emailDuplicated"
+    }
+  },
+  "update": {}
+}

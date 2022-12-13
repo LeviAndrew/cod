@@ -1,0 +1,45 @@
+{
+  "name": "base_browser",
+  "description": "Projeto realizado com VueJs para servir como base para projetos futuros do LABTIC",
+  "version": "1.0.0",
+  "author": "Osvaldo Miguel Junior <juniorsin2012@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "postinstall": "npm prune",
+    "lint": "node node_modules/eslint/bin/eslint.js src/*.js"
+  },
+  "dependencies": {
+    "eventemitter2": "^4.1.2",
+    "lil-uuid": "^0.1.1",
+    "material-icons": "^0.2.3",
+    "save": "^2.3.2",
+    "simple-mask-money": "^1.0.0",
+    "socket.io-client": "^2.0.3",
+    "v-money": "^0.8.1",
+    "vue": "^2.5.13",
+    "vuelidate": "^0.6.1",
+    "vuetify": "^1.1.11"
+  },
+  "devDependencies": {
+    "@mdi/font": "^2.6.95",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "material-design-icons-iconfont": "^3.0.3",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^6.0.6",
+    "vue-loader": "^12.1.0",
+    "vue-router": "^2.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}

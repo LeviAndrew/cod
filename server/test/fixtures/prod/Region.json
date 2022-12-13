@@ -1,0 +1,13 @@
+{
+  "model": "region",
+  "data": [
+    {
+      "_id" : "5b5609522738180d48c3965d",
+      "name" : "Floripa",
+      "id" : "5b5609522738180d48c3965d",
+      "removed" : false,
+      "canUsePublicSearches" : true,
+      "publicSearches" : true
+    }
+  ]
+}

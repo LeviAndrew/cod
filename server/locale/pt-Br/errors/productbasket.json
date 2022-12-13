@@ -1,0 +1,109 @@
+{
+  "regionRequired": {
+    "title": "Regionesss",
+    "description": "Não querendo ser chato, mas já sendo, eu preciso de pelo menos uma região aqui...",
+    "buttons": [
+      {
+        "label": "Verdade Hemiliooo",
+        "method": null
+      }
+    ],
+    "type": "regionRequired"
+  },
+  "products": {
+    "hasNoName": {
+      "title": "Produtinhoooo",
+      "description": "Eu tava olhando aqui e tem um produto que não está com nome, ele está na posição: ",
+      "buttons": [
+        {
+          "label": "Grosso, já arrumo.",
+          "method": null
+        }
+      ],
+      "type": "products.hasNoName"
+    },
+    "hasNoCode": {
+      "title": "Produtin",
+      "description": "Eu tava olhando aqui e tem um produto que não está com codigo, ele está na posição: ",
+      "buttons": [
+        {
+          "label": "Vou colocar aqui.",
+          "method": null
+        },
+        {
+          "label": "Se clicar aqui eu gero pra ti :D",
+          "method": "codeGenerate"
+        }
+      ],
+      "type": "products.hasNoCode"
+    },
+    "hasNoWeight": {
+      "title": "Ponderador",
+      "description": "Já achei um produto aqui sem ponderador, ele está na posição: ",
+      "buttons": [
+        {
+          "label": "Já conserto.",
+          "method": null
+        }
+      ],
+      "type": "products.hasNoWeight"
+    },
+    "hasNoProducts": {
+      "title": "Sem produtos",
+      "description": "Sabe, não dá pra eu cadastrar um cesta de produtos sem produtos..",
+      "buttons": [
+        {
+          "label": "Só tava mesmo era te testando",
+          "method": null
+        }
+      ],
+      "type": "products.hasNoProducts"
+    },
+    "repeatedCode": {
+      "title": "Código repetido",
+      "description": "Tem produto com codigo repetido o segundo está no index: ",
+      "buttons": [
+        {
+          "label": "Só tava mesmo era te testando",
+          "method": null
+        }
+      ],
+      "type": "products.repeatedCode"
+    },
+    "repeatedName": {
+      "title": "Nome repetido",
+      "description": "Tem produto com nome repetido: ",
+      "buttons": [
+        {
+          "label": "Só tava mesmo era te testando",
+          "method": null
+        }
+      ],
+      "type": "products.repeatedName"
+    }
+  },
+  "import": {
+    "existsBasket": {
+      "title": "Região com cesta",
+      "description": "Essa região não é calendario, mas ela já tem cesta...",
+      "buttons": [
+        {
+          "label": "Verdade :D",
+          "method": null
+        }
+      ],
+      "type": "import.existsBasket"
+    },
+    "seriousError": {
+      "title": "Importação de produtos com erro",
+      "description": "Oi, eu sou um sistema muito inteligente, eu tentei </br>corrigir esse erro, mas não consegui, você pode entrar em </br>contato com a equipe de desenvolvimento para resolver isso?",
+      "buttons": [
+        {
+          "label": "Claro",
+          "method": null
+        }
+      ],
+      "type": "import.existsBasket"
+    }
+  }
+}

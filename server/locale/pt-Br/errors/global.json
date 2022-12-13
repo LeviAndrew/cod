@@ -1,0 +1,26 @@
+{
+  "update": {
+    "idRequired": {
+      "title": "Id update",
+      "description": "Fala dev, tudo certo?<br/> Vc não me passou o id, como saberei a quem vou dar update???",
+      "buttons": [
+        {
+          "label": "hehe, isso acontece",
+          "method": null
+        }
+      ],
+      "type": "idRequiredeUpdate"
+    },
+    "updateRequire": {
+      "title": "Dados pra update",
+      "description": "Fala dev, tudo certo?<br/> Vc tem que mandar algo pra eu dar update, sacax?",
+      "buttons": [
+        {
+          "label": "hehe, malzae",
+          "method": null
+        }
+      ],
+      "type": "updateRequireUpdate"
+    }
+  }
+}

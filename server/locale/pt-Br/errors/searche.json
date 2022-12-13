@@ -1,0 +1,13 @@
+{
+  "hasNoSearchToNextWeek": {
+    "title": "Pesquisa",
+    "description": "Olá jovem mancebo, não existe pesquisa para iniciar uma proxima semana.",
+    "buttons": [
+      {
+        "label": "Ta bom",
+        "method": null
+      }
+    ],
+    "type": "hasNoSearchToNextWeek"
+  }
+}

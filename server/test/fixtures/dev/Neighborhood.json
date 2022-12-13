@@ -1,0 +1,17 @@
+{
+  "model": "neighborhood",
+  "data": [
+    {
+      "_id": "5b5609542738180d48c397f4",
+      "name": "Coqueiros",
+      "id": "5b5609542738180d48c397f4",
+      "removed": false
+    },
+    {
+      "_id": "5b5609552738180d48c397fd",
+      "name": "Ponte do Imaruim",
+      "id": "5b5609552738180d48c397fd",
+      "removed": false
+    }
+  ]
+}

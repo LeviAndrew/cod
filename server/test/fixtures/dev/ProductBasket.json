@@ -1,0 +1,1241 @@
+{
+  "model": "productbasket",
+  "data": [
+    {
+      "_id": "5b5609532738180d48c39791",
+      "region": "5b5609522738180d48c3965d",
+      "id": "5b5609532738180d48c39791",
+      "removed": false,
+      "basket": [
+        {
+          "product": "5b5609532738180d48c3965e",
+          "baseWeight": 21694.71468
+        },
+        {
+          "product": "5b5609532738180d48c3965f",
+          "baseWeight": 2050.789524
+        },
+        {
+          "product": "5b5609532738180d48c39660",
+          "baseWeight": 12695.56158
+        },
+        {
+          "product": "5b5609532738180d48c39661",
+          "baseWeight": 40928.03203
+        },
+        {
+          "product": "5b5609532738180d48c39662",
+          "baseWeight": 4853.073892
+        },
+        {
+          "product": "5b5609532738180d48c39663",
+          "baseWeight": 6563.76343
+        },
+        {
+          "product": "5b5609532738180d48c39664",
+          "baseWeight": 966.0971988
+        },
+        {
+          "product": "5b5609532738180d48c39665",
+          "baseWeight": 4130.703244
+        },
+        {
+          "product": "5b5609532738180d48c39666",
+          "baseWeight": 1217.391813
+        },
+        {
+          "product": "5b5609532738180d48c39667",
+          "baseWeight": 2953.021327
+        },
+        {
+          "product": "5b5609532738180d48c39668",
+          "baseWeight": 1759.367659
+        },
+        {
+          "product": "5b5609532738180d48c39669",
+          "baseWeight": 37294.88085
+        },
+        {
+          "product": "5b5609532738180d48c3966a",
+          "baseWeight": 6913.009166
+        },
+        {
+          "product": "5b5609532738180d48c3966b",
+          "baseWeight": 1324.19332
+        },
+        {
+          "product": "5b5609532738180d48c3966c",
+          "baseWeight": 3952.708765
+        },
+        {
+          "product": "5b5609532738180d48c3966d",
+          "baseWeight": 1387.860419
+        },
+        {
+          "product": "5b5609532738180d48c3966e",
+          "baseWeight": 3378.315046
+        },
+        {
+          "product": "5b5609532738180d48c3966f",
+          "baseWeight": 331.6345893
+        },
+        {
+          "product": "5b5609532738180d48c39670",
+          "baseWeight": 7408.965382
+        },
+        {
+          "product": "5b5609532738180d48c39671",
+          "baseWeight": 1704.161145
+        },
+        {
+          "product": "5b5609532738180d48c39672",
+          "baseWeight": 779.7771278
+        },
+        {
+          "product": "5b5609532738180d48c39673",
+          "baseWeight": 638.9238273
+        },
+        {
+          "product": "5b5609532738180d48c39674",
+          "baseWeight": 2977.282824
+        },
+        {
+          "product": "5b5609532738180d48c39675",
+          "baseWeight": 579.3688712
+        },
+        {
+          "product": "5b5609532738180d48c39676",
+          "baseWeight": 1004.948645
+        },
+        {
+          "product": "5b5609532738180d48c39677",
+          "baseWeight": 2558.465222
+        },
+        {
+          "product": "5b5609532738180d48c39678",
+          "baseWeight": 2503.34286
+        },
+        {
+          "product": "5b5609532738180d48c39679",
+          "baseWeight": 6230.817658
+        },
+        {
+          "product": "5b5609532738180d48c3967a",
+          "baseWeight": 3107.863503
+        },
+        {
+          "product": "5b5609532738180d48c3967b",
+          "baseWeight": 8653.187026
+        },
+        {
+          "product": "5b5609532738180d48c3967c",
+          "baseWeight": 2660.625282
+        },
+        {
+          "product": "5b5609532738180d48c3967d",
+          "baseWeight": 790.1940842
+        },
+        {
+          "product": "5b5609532738180d48c3967e",
+          "baseWeight": 4826.6383
+        },
+        {
+          "product": "5b5609532738180d48c3967f",
+          "baseWeight": 221.0131996
+        },
+        {
+          "product": "5b5609532738180d48c39680",
+          "baseWeight": 9910.984826
+        },
+        {
+          "product": "5b5609532738180d48c39681",
+          "baseWeight": 6004.199201
+        },
+        {
+          "product": "5b5609532738180d48c39682",
+          "baseWeight": 3863.160647
+        },
+        {
+          "product": "5b5609532738180d48c39683",
+          "baseWeight": 10036.65729
+        },
+        {
+          "product": "5b5609532738180d48c39684",
+          "baseWeight": 2422.259383
+        },
+        {
+          "product": "5b5609532738180d48c39685",
+          "baseWeight": 11456.14364
+        },
+        {
+          "product": "5b5609532738180d48c39686",
+          "baseWeight": 258.7930288
+        },
+        {
+          "product": "5b5609532738180d48c39687",
+          "baseWeight": 14315.28423
+        },
+        {
+          "product": "5b5609532738180d48c39688",
+          "baseWeight": 2168.503369
+        },
+        {
+          "product": "5b5609532738180d48c39689",
+          "baseWeight": 357.8106143
+        },
+        {
+          "product": "5b5609532738180d48c3968a",
+          "baseWeight": 19679.42627
+        },
+        {
+          "product": "5b5609532738180d48c3968b",
+          "baseWeight": 25025.03534
+        },
+        {
+          "product": "5b5609532738180d48c3968c",
+          "baseWeight": 11033.82893
+        },
+        {
+          "product": "5b5609532738180d48c3968d",
+          "baseWeight": 51568.68726
+        },
+        {
+          "product": "5b5609532738180d48c3968e",
+          "baseWeight": 6036.732186
+        },
+        {
+          "product": "5b5609532738180d48c3968f",
+          "baseWeight": 5202.398324
+        },
+        {
+          "product": "5b5609532738180d48c39690",
+          "baseWeight": 358.3061632
+        },
+        {
+          "product": "5b5609532738180d48c39691",
+          "baseWeight": 12660.65605
+        },
+        {
+          "product": "5b5609532738180d48c39692",
+          "baseWeight": 26925.56631
+        },
+        {
+          "product": "5b5609532738180d48c39693",
+          "baseWeight": 1833.207808
+        },
+        {
+          "product": "5b5609532738180d48c39694",
+          "baseWeight": 14266.11988
+        },
+        {
+          "product": "5b5609532738180d48c39695",
+          "baseWeight": 20686.37808
+        },
+        {
+          "product": "5b5609532738180d48c39696",
+          "baseWeight": 30439.98111
+        },
+        {
+          "product": "5b5609532738180d48c39697",
+          "baseWeight": 15319.63519
+        },
+        {
+          "product": "5b5609532738180d48c39698",
+          "baseWeight": 19370.79448
+        },
+        {
+          "product": "5b5609532738180d48c39699",
+          "baseWeight": 5967.55914
+        },
+        {
+          "product": "5b5609532738180d48c3969a",
+          "baseWeight": 9254.810586
+        },
+        {
+          "product": "5b5609532738180d48c3969b",
+          "baseWeight": 15781.26594
+        },
+        {
+          "product": "5b5609532738180d48c3969c",
+          "baseWeight": 1722.118905
+        },
+        {
+          "product": "5b5609532738180d48c3969d",
+          "baseWeight": 43398.49178
+        },
+        {
+          "product": "5b5609532738180d48c3969e",
+          "baseWeight": 4955.928129
+        },
+        {
+          "product": "5b5609532738180d48c3969f",
+          "baseWeight": 29.01069223
+        },
+        {
+          "product": "5b5609532738180d48c396a0",
+          "baseWeight": 2029.963102
+        },
+        {
+          "product": "5b5609532738180d48c396a1",
+          "baseWeight": 4577.839144
+        },
+        {
+          "product": "5b5609532738180d48c396a2",
+          "baseWeight": 15196.71073
+        },
+        {
+          "product": "5b5609532738180d48c396a3",
+          "baseWeight": 5590.523107
+        },
+        {
+          "product": "5b5609532738180d48c396a4",
+          "baseWeight": 2111.935348
+        },
+        {
+          "product": "5b5609532738180d48c396a5",
+          "baseWeight": 1728.767541
+        },
+        {
+          "product": "5b5609532738180d48c396a6",
+          "baseWeight": 4523.276262
+        },
+        {
+          "product": "5b5609532738180d48c396a7",
+          "baseWeight": 9641.080782
+        },
+        {
+          "product": "5b5609532738180d48c396a8",
+          "baseWeight": 19508.17572
+        },
+        {
+          "product": "5b5609532738180d48c396a9",
+          "baseWeight": 50208.76031
+        },
+        {
+          "product": "5b5609532738180d48c396aa",
+          "baseWeight": 67819.0932
+        },
+        {
+          "product": "5b5609532738180d48c396ab",
+          "baseWeight": 11871.82615
+        },
+        {
+          "product": "5b5609532738180d48c396ac",
+          "baseWeight": 6685.874244
+        },
+        {
+          "product": "5b5609532738180d48c396ad",
+          "baseWeight": 14432.92987
+        },
+        {
+          "product": "5b5609532738180d48c396ae",
+          "baseWeight": 16062.50624
+        },
+        {
+          "product": "5b5609532738180d48c396af",
+          "baseWeight": 2582.040202
+        },
+        {
+          "product": "5b5609532738180d48c396b0",
+          "baseWeight": 24035.95932
+        },
+        {
+          "product": "5b5609532738180d48c396b1",
+          "baseWeight": 3115.525614
+        },
+        {
+          "product": "5b5609532738180d48c396b2",
+          "baseWeight": 1351.056676
+        },
+        {
+          "product": "5b5609532738180d48c396b3",
+          "baseWeight": 3569.735454
+        },
+        {
+          "product": "5b5609532738180d48c396b4",
+          "baseWeight": 6159.135212
+        },
+        {
+          "product": "5b5609532738180d48c396b5",
+          "baseWeight": 3030.922714
+        },
+        {
+          "product": "5b5609532738180d48c396b6",
+          "baseWeight": 22070.24174
+        },
+        {
+          "product": "5b5609532738180d48c396b7",
+          "baseWeight": 4871.534908
+        },
+        {
+          "product": "5b5609532738180d48c396b8",
+          "baseWeight": 928.8757891
+        },
+        {
+          "product": "5b5609532738180d48c396b9",
+          "baseWeight": 5343.779059
+        },
+        {
+          "product": "5b5609532738180d48c396ba",
+          "baseWeight": 10983.49059
+        },
+        {
+          "product": "5b5609532738180d48c396bb",
+          "baseWeight": 3244.72496
+        },
+        {
+          "product": "5b5609532738180d48c396bc",
+          "baseWeight": 5659.630343
+        },
+        {
+          "product": "5b5609532738180d48c396bd",
+          "baseWeight": 1683.964747
+        },
+        {
+          "product": "5b5609532738180d48c396be",
+          "baseWeight": 13514.7798
+        },
+        {
+          "product": "5b5609532738180d48c396bf",
+          "baseWeight": 14107.64102
+        },
+        {
+          "product": "5b5609532738180d48c396c0",
+          "baseWeight": 5826.923317
+        },
+        {
+          "product": "5b5609532738180d48c396c1",
+          "baseWeight": 0.010860408
+        },
+        {
+          "product": "5b5609532738180d48c396c2",
+          "baseWeight": 2090.533257
+        },
+        {
+          "product": "5b5609532738180d48c396c3",
+          "baseWeight": 501.1620697
+        },
+        {
+          "product": "5b5609532738180d48c396c4",
+          "baseWeight": 2583.007211
+        },
+        {
+          "product": "5b5609532738180d48c396c5",
+          "baseWeight": 79.19790744
+        },
+        {
+          "product": "5b5609532738180d48c396c6",
+          "baseWeight": 8833.843993
+        },
+        {
+          "product": "5b5609532738180d48c396c7",
+          "baseWeight": 2068.117497
+        },
+        {
+          "product": "5b5609532738180d48c396c8",
+          "baseWeight": 20585.7602
+        },
+        {
+          "product": "5b5609532738180d48c396c9",
+          "baseWeight": 471.1155043
+        },
+        {
+          "product": "5b5609532738180d48c396ca",
+          "baseWeight": 254.0735981
+        },
+        {
+          "product": "5b5609532738180d48c396cb",
+          "baseWeight": 273.9508111
+        },
+        {
+          "product": "5b5609532738180d48c396cc",
+          "baseWeight": 681.5002183
+        },
+        {
+          "product": "5b5609532738180d48c396cd",
+          "baseWeight": 321.420322
+        },
+        {
+          "product": "5b5609532738180d48c396ce",
+          "baseWeight": 1655.886636
+        },
+        {
+          "product": "5b5609532738180d48c396cf",
+          "baseWeight": 1985.979288
+        },
+        {
+          "product": "5b5609532738180d48c396d0",
+          "baseWeight": 23603.86165
+        },
+        {
+          "product": "5b5609532738180d48c396d1",
+          "baseWeight": 89.78790297
+        },
+        {
+          "product": "5b5609532738180d48c396d2",
+          "baseWeight": 2189.630499
+        },
+        {
+          "product": "5b5609532738180d48c396d3",
+          "baseWeight": 40.98054613
+        },
+        {
+          "product": "5b5609532738180d48c396d4",
+          "baseWeight": 536.6229167
+        },
+        {
+          "product": "5b5609532738180d48c396d5",
+          "baseWeight": 211.5241476
+        },
+        {
+          "product": "5b5609532738180d48c396d6",
+          "baseWeight": 649.784294
+        },
+        {
+          "product": "5b5609532738180d48c396d7",
+          "baseWeight": 692.0267176
+        },
+        {
+          "product": "5b5609532738180d48c396d8",
+          "baseWeight": 2003.072051
+        },
+        {
+          "product": "5b5609532738180d48c396d9",
+          "baseWeight": 4681.255521
+        },
+        {
+          "product": "5b5609532738180d48c396da",
+          "baseWeight": 4104.113926
+        },
+        {
+          "product": "5b5609532738180d48c396db",
+          "baseWeight": 13843.95681
+        },
+        {
+          "product": "5b5609532738180d48c396dc",
+          "baseWeight": 807.1305012
+        },
+        {
+          "product": "5b5609532738180d48c396dd",
+          "baseWeight": 892.4902076
+        },
+        {
+          "product": "5b5609532738180d48c396de",
+          "baseWeight": 1727.737932
+        },
+        {
+          "product": "5b5609532738180d48c396df",
+          "baseWeight": 3244.375926
+        },
+        {
+          "product": "5b5609532738180d48c396e0",
+          "baseWeight": 66.9316954
+        },
+        {
+          "product": "5b5609532738180d48c396e1",
+          "baseWeight": 0.00187796
+        },
+        {
+          "product": "5b5609532738180d48c396e2",
+          "baseWeight": 0.00709572
+        },
+        {
+          "product": "5b5609532738180d48c396e3",
+          "baseWeight": 0.003153661
+        },
+        {
+          "product": "5b5609532738180d48c396e4",
+          "baseWeight": 0.002843639
+        },
+        {
+          "product": "5b5609532738180d48c396e5",
+          "baseWeight": 0.01446897
+        },
+        {
+          "product": "5b5609532738180d48c396e6",
+          "baseWeight": 1.780672811
+        },
+        {
+          "product": "5b5609532738180d48c396e7",
+          "baseWeight": 319.0537038
+        },
+        {
+          "product": "5b5609532738180d48c396e8",
+          "baseWeight": 1.172221153
+        },
+        {
+          "product": "5b5609532738180d48c396e9",
+          "baseWeight": 1.871709667
+        },
+        {
+          "product": "5b5609532738180d48c396ea",
+          "baseWeight": 1.082932316
+        },
+        {
+          "product": "5b5609532738180d48c396eb",
+          "baseWeight": 0.030226028
+        },
+        {
+          "product": "5b5609532738180d48c396ec",
+          "baseWeight": 0.256206214
+        },
+        {
+          "product": "5b5609532738180d48c396ed",
+          "baseWeight": 0.663116447
+        },
+        {
+          "product": "5b5609532738180d48c396ee",
+          "baseWeight": 41.57770349
+        },
+        {
+          "product": "5b5609532738180d48c396ef",
+          "baseWeight": 1.79819896
+        },
+        {
+          "product": "5b5609532738180d48c396f0",
+          "baseWeight": 112.4392675
+        },
+        {
+          "product": "5b5609532738180d48c396f1",
+          "baseWeight": 0.00765396
+        },
+        {
+          "product": "5b5609532738180d48c396f2",
+          "baseWeight": 18.39702252
+        },
+        {
+          "product": "5b5609532738180d48c396f3",
+          "baseWeight": 2.260573192
+        },
+        {
+          "product": "5b5609532738180d48c396f4",
+          "baseWeight": 0.920491492
+        },
+        {
+          "product": "5b5609532738180d48c396f5",
+          "baseWeight": 0.525200428
+        },
+        {
+          "product": "5b5609532738180d48c396f6",
+          "baseWeight": 0.983200913
+        },
+        {
+          "product": "5b5609532738180d48c396f7",
+          "baseWeight": 10.03625716
+        },
+        {
+          "product": "5b5609532738180d48c396f8",
+          "baseWeight": 0.003619826
+        },
+        {
+          "product": "5b5609532738180d48c396f9",
+          "baseWeight": 0.00349452
+        },
+        {
+          "product": "5b5609532738180d48c396fa",
+          "baseWeight": 0.0073
+        },
+        {
+          "product": "5b5609532738180d48c396fb",
+          "baseWeight": 0.004189242
+        },
+        {
+          "product": "5b5609532738180d48c396fc",
+          "baseWeight": 3.171535194
+        },
+        {
+          "product": "5b5609532738180d48c396fd",
+          "baseWeight": 8.23372749
+        },
+        {
+          "product": "5b5609532738180d48c396fe",
+          "baseWeight": 0.115058512
+        },
+        {
+          "product": "5b5609532738180d48c396ff",
+          "baseWeight": 72.23606097
+        },
+        {
+          "product": "5b5609532738180d48c39700",
+          "baseWeight": 0.213027276
+        },
+        {
+          "product": "5b5609532738180d48c39701",
+          "baseWeight": 1.108349288
+        },
+        {
+          "product": "5b5609532738180d48c39702",
+          "baseWeight": 0.15833545
+        },
+        {
+          "product": "5b5609532738180d48c39703",
+          "baseWeight": 3.237246736
+        },
+        {
+          "product": "5b5609532738180d48c39704",
+          "baseWeight": 21.70407736
+        },
+        {
+          "product": "5b5609532738180d48c39705",
+          "baseWeight": 0.913499145
+        },
+        {
+          "product": "5b5609532738180d48c39706",
+          "baseWeight": 39.93787305
+        },
+        {
+          "product": "5b5609532738180d48c39707",
+          "baseWeight": 22.68180347
+        },
+        {
+          "product": "5b5609532738180d48c39708",
+          "baseWeight": 0.575053573
+        },
+        {
+          "product": "5b5609532738180d48c39709",
+          "baseWeight": 26.1813334
+        },
+        {
+          "product": "5b5609532738180d48c3970a",
+          "baseWeight": 0.00481703
+        },
+        {
+          "product": "5b5609532738180d48c3970b",
+          "baseWeight": 0.004858885
+        },
+        {
+          "product": "5b5609532738180d48c3970c",
+          "baseWeight": 21.14430293
+        },
+        {
+          "product": "5b5609532738180d48c3970d",
+          "baseWeight": 0.282573263
+        },
+        {
+          "product": "5b5609532738180d48c3970e",
+          "baseWeight": 0.736589065
+        },
+        {
+          "product": "5b5609532738180d48c3970f",
+          "baseWeight": 1.551860578
+        },
+        {
+          "product": "5b5609532738180d48c39710",
+          "baseWeight": 180.1202721
+        },
+        {
+          "product": "5b5609532738180d48c39711",
+          "baseWeight": 22.25352042
+        },
+        {
+          "product": "5b5609532738180d48c39712",
+          "baseWeight": 2.008812676
+        },
+        {
+          "product": "5b5609532738180d48c39713",
+          "baseWeight": 75.31838601
+        },
+        {
+          "product": "5b5609532738180d48c39714",
+          "baseWeight": 1003.539113
+        },
+        {
+          "product": "5b5609532738180d48c39715",
+          "baseWeight": 841.7331219
+        },
+        {
+          "product": "5b5609532738180d48c39716",
+          "baseWeight": 945.7756583
+        },
+        {
+          "product": "5b5609532738180d48c39717",
+          "baseWeight": 240.9103207
+        },
+        {
+          "product": "5b5609532738180d48c39718",
+          "baseWeight": 1230.024613
+        },
+        {
+          "product": "5b5609532738180d48c39719",
+          "baseWeight": 36.31171257
+        },
+        {
+          "product": "5b5609532738180d48c3971a",
+          "baseWeight": 109.5702298
+        },
+        {
+          "product": "5b5609532738180d48c3971b",
+          "baseWeight": 17.89299405
+        },
+        {
+          "product": "5b5609532738180d48c3971c",
+          "baseWeight": 0.070597239
+        },
+        {
+          "product": "5b5609532738180d48c3971d",
+          "baseWeight": 7.533256375
+        },
+        {
+          "product": "5b5609532738180d48c3971e",
+          "baseWeight": 0.009131287
+        },
+        {
+          "product": "5b5609532738180d48c3971f",
+          "baseWeight": 23.7909043
+        },
+        {
+          "product": "5b5609532738180d48c39720",
+          "baseWeight": 82.33685267
+        },
+        {
+          "product": "5b5609532738180d48c39721",
+          "baseWeight": 0.00559266
+        },
+        {
+          "product": "5b5609532738180d48c39722",
+          "baseWeight": 1.659748224
+        },
+        {
+          "product": "5b5609532738180d48c39723",
+          "baseWeight": 277.8143973
+        },
+        {
+          "product": "5b5609532738180d48c39724",
+          "baseWeight": 2.384163123
+        },
+        {
+          "product": "5b5609532738180d48c39725",
+          "baseWeight": 16.51417833
+        },
+        {
+          "product": "5b5609532738180d48c39726",
+          "baseWeight": 10.62178279
+        },
+        {
+          "product": "5b5609532738180d48c39727",
+          "baseWeight": 0.018090217
+        },
+        {
+          "product": "5b5609532738180d48c39728",
+          "baseWeight": 4.14010092
+        },
+        {
+          "product": "5b5609532738180d48c39729",
+          "baseWeight": 592.4562634
+        },
+        {
+          "product": "5b5609532738180d48c3972a",
+          "baseWeight": 863.9435396
+        },
+        {
+          "product": "5b5609532738180d48c3972b",
+          "baseWeight": 360.9916958
+        },
+        {
+          "product": "5b5609532738180d48c3972c",
+          "baseWeight": 590.2674342
+        },
+        {
+          "product": "5b5609532738180d48c3972d",
+          "baseWeight": 140.327514
+        },
+        {
+          "product": "5b5609532738180d48c3972e",
+          "baseWeight": 702.4900113
+        },
+        {
+          "product": "5b5609532738180d48c3972f",
+          "baseWeight": 81.77858507
+        },
+        {
+          "product": "5b5609532738180d48c39730",
+          "baseWeight": 397.3033706
+        },
+        {
+          "product": "5b5609532738180d48c39731",
+          "baseWeight": 30.44338134
+        },
+        {
+          "product": "5b5609532738180d48c39732",
+          "baseWeight": 43.57416809
+        },
+        {
+          "product": "5b5609532738180d48c39733",
+          "baseWeight": 146.3097454
+        },
+        {
+          "product": "5b5609532738180d48c39734",
+          "baseWeight": 133.8929834
+        },
+        {
+          "product": "5b5609532738180d48c39735",
+          "baseWeight": 418.2694219
+        },
+        {
+          "product": "5b5609532738180d48c39736",
+          "baseWeight": 116.8548157
+        },
+        {
+          "product": "5b5609532738180d48c39737",
+          "baseWeight": 0.064914903
+        },
+        {
+          "product": "5b5609532738180d48c39738",
+          "baseWeight": 8.389004487
+        },
+        {
+          "product": "5b5609532738180d48c39739",
+          "baseWeight": 1.796789038
+        },
+        {
+          "product": "5b5609532738180d48c3973a",
+          "baseWeight": 1.500153089
+        },
+        {
+          "product": "5b5609532738180d48c3973b",
+          "baseWeight": 47.8945855
+        },
+        {
+          "product": "5b5609532738180d48c3973c",
+          "baseWeight": 6.076914345
+        },
+        {
+          "product": "5b5609532738180d48c3973d",
+          "baseWeight": 6.9447
+        },
+        {
+          "product": "5b5609532738180d48c3973e",
+          "baseWeight": 4206.42042
+        },
+        {
+          "product": "5b5609532738180d48c3973f",
+          "baseWeight": 10369.9281
+        },
+        {
+          "product": "5b5609532738180d48c39740",
+          "baseWeight": 2080.716737
+        },
+        {
+          "product": "5b5609532738180d48c39741",
+          "baseWeight": 360.2226678
+        },
+        {
+          "product": "5b5609532738180d48c39742",
+          "baseWeight": 1061.769165
+        },
+        {
+          "product": "5b5609532738180d48c39743",
+          "baseWeight": 6078.364003
+        },
+        {
+          "product": "5b5609532738180d48c39744",
+          "baseWeight": 145.7495541
+        },
+        {
+          "product": "5b5609532738180d48c39745",
+          "baseWeight": 503.0611917
+        },
+        {
+          "product": "5b5609532738180d48c39746",
+          "baseWeight": 16008.31575
+        },
+        {
+          "product": "5b5609532738180d48c39747",
+          "baseWeight": 2524.596107
+        },
+        {
+          "product": "5b5609532738180d48c39748",
+          "baseWeight": 4091.795318
+        },
+        {
+          "product": "5b5609532738180d48c39749",
+          "baseWeight": 1055.180899
+        },
+        {
+          "product": "5b5609532738180d48c3974a",
+          "baseWeight": 659.1578858
+        },
+        {
+          "product": "5b5609532738180d48c3974b",
+          "baseWeight": 213.2285081
+        },
+        {
+          "product": "5b5609532738180d48c3974c",
+          "baseWeight": 24.71853804
+        },
+        {
+          "product": "5b5609532738180d48c3974d",
+          "baseWeight": 4719.276067
+        },
+        {
+          "product": "5b5609532738180d48c3974e",
+          "baseWeight": 2991.861673
+        },
+        {
+          "product": "5b5609532738180d48c3974f",
+          "baseWeight": 107.7443607
+        },
+        {
+          "product": "5b5609532738180d48c39750",
+          "baseWeight": 1483.181487
+        },
+        {
+          "product": "5b5609532738180d48c39751",
+          "baseWeight": 2709.346568
+        },
+        {
+          "product": "5b5609532738180d48c39752",
+          "baseWeight": 0.055831241
+        },
+        {
+          "product": "5b5609532738180d48c39753",
+          "baseWeight": 480.1171042
+        },
+        {
+          "product": "5b5609532738180d48c39754",
+          "baseWeight": 79.54922766
+        },
+        {
+          "product": "5b5609532738180d48c39755",
+          "baseWeight": 692.6176977
+        },
+        {
+          "product": "5b5609532738180d48c39756",
+          "baseWeight": 254.281276
+        },
+        {
+          "product": "5b5609532738180d48c39757",
+          "baseWeight": 49.04545619
+        },
+        {
+          "product": "5b5609532738180d48c39758",
+          "baseWeight": 8.233425382
+        },
+        {
+          "product": "5b5609532738180d48c39759",
+          "baseWeight": 35621.52463
+        },
+        {
+          "product": "5b5609532738180d48c3975a",
+          "baseWeight": 41.04213712
+        },
+        {
+          "product": "5b5609532738180d48c3975b",
+          "baseWeight": 12921.46377
+        },
+        {
+          "product": "5b5609532738180d48c3975c",
+          "baseWeight": 17.32581857
+        },
+        {
+          "product": "5b5609532738180d48c3975d",
+          "baseWeight": 86.9368265
+        },
+        {
+          "product": "5b5609532738180d48c3975e",
+          "baseWeight": 464.8917347
+        },
+        {
+          "product": "5b5609532738180d48c3975f",
+          "baseWeight": 136.3705219
+        },
+        {
+          "product": "5b5609532738180d48c39760",
+          "baseWeight": 4925.834559
+        },
+        {
+          "product": "5b5609532738180d48c39761",
+          "baseWeight": 3551.04696
+        },
+        {
+          "product": "5b5609532738180d48c39762",
+          "baseWeight": 0.029683011
+        },
+        {
+          "product": "5b5609532738180d48c39763",
+          "baseWeight": 0.009924981
+        },
+        {
+          "product": "5b5609532738180d48c39764",
+          "baseWeight": 0.007326898
+        },
+        {
+          "product": "5b5609532738180d48c39765",
+          "baseWeight": 0.007872573
+        },
+        {
+          "product": "5b5609532738180d48c39766",
+          "baseWeight": 42429.91216
+        },
+        {
+          "product": "5b5609532738180d48c39767",
+          "baseWeight": 30851.48736
+        },
+        {
+          "product": "5b5609532738180d48c39768",
+          "baseWeight": 786.8762609
+        },
+        {
+          "product": "5b5609532738180d48c39769",
+          "baseWeight": 1088.758273
+        },
+        {
+          "product": "5b5609532738180d48c3976a",
+          "baseWeight": 1020.066529
+        },
+        {
+          "product": "5b5609532738180d48c3976b",
+          "baseWeight": 19834.20642
+        },
+        {
+          "product": "5b5609532738180d48c3976c",
+          "baseWeight": 2122.17332
+        },
+        {
+          "product": "5b5609532738180d48c3976d",
+          "baseWeight": 3853.221371
+        },
+        {
+          "product": "5b5609532738180d48c3976e",
+          "baseWeight": 363.0236847
+        },
+        {
+          "product": "5b5609532738180d48c3976f",
+          "baseWeight": 428.6862667
+        },
+        {
+          "product": "5b5609532738180d48c39770",
+          "baseWeight": 32123.7487
+        },
+        {
+          "product": "5b5609532738180d48c39771",
+          "baseWeight": 12888.24061
+        },
+        {
+          "product": "5b5609532738180d48c39772",
+          "baseWeight": 9022.57672
+        },
+        {
+          "product": "5b5609532738180d48c39773",
+          "baseWeight": 4045.764313
+        },
+        {
+          "product": "5b5609532738180d48c39774",
+          "baseWeight": 1526.20518
+        },
+        {
+          "product": "5b5609532738180d48c39775",
+          "baseWeight": 587.7119085
+        },
+        {
+          "product": "5b5609532738180d48c39776",
+          "baseWeight": 2635.871424
+        },
+        {
+          "product": "5b5609532738180d48c39777",
+          "baseWeight": 16.52
+        },
+        {
+          "product": "5b5609532738180d48c39778",
+          "baseWeight": 154.68
+        },
+        {
+          "product": "5b5609532738180d48c39779",
+          "baseWeight": 124.3883668
+        },
+        {
+          "product": "5b5609532738180d48c3977a",
+          "baseWeight": 236.9453353
+        },
+        {
+          "product": "5b5609532738180d48c3977b",
+          "baseWeight": 326.825797
+        },
+        {
+          "product": "5b5609532738180d48c3977c",
+          "baseWeight": 6158.989474
+        },
+        {
+          "product": "5b5609532738180d48c3977d",
+          "baseWeight": 0.04
+        },
+        {
+          "product": "5b5609532738180d48c3977e",
+          "baseWeight": 14869.11379
+        },
+        {
+          "product": "5b5609532738180d48c3977f",
+          "baseWeight": 2.294190132
+        },
+        {
+          "product": "5b5609532738180d48c39780",
+          "baseWeight": 3468.092647
+        },
+        {
+          "product": "5b5609532738180d48c39781",
+          "baseWeight": 16550.56377
+        },
+        {
+          "product": "5b5609532738180d48c39782",
+          "baseWeight": 17252.8545
+        },
+        {
+          "product": "5b5609532738180d48c39783",
+          "baseWeight": 1047.916675
+        },
+        {
+          "product": "5b5609532738180d48c39784",
+          "baseWeight": 474.0528836
+        },
+        {
+          "product": "5b5609532738180d48c39785",
+          "baseWeight": 35681.6679
+        },
+        {
+          "product": "5b5609532738180d48c39786",
+          "baseWeight": 39.18613333
+        },
+        {
+          "product": "5b5609532738180d48c39787",
+          "baseWeight": 1978.273295
+        },
+        {
+          "product": "5b5609532738180d48c39788",
+          "baseWeight": 159.39476
+        },
+        {
+          "product": "5b5609532738180d48c39789",
+          "baseWeight": 34066.84531
+        },
+        {
+          "product": "5b5609532738180d48c3978a",
+          "baseWeight": 752.0918269
+        },
+        {
+          "product": "5b5609532738180d48c3978b",
+          "baseWeight": 927.6317911
+        },
+        {
+          "product": "5b5609532738180d48c3978c",
+          "baseWeight": 178.5790526
+        },
+        {
+          "product": "5b5609532738180d48c3978d",
+          "baseWeight": 1.773264572
+        },
+        {
+          "product": "5b5609532738180d48c3978e",
+          "baseWeight": 3723.478578
+        },
+        {
+          "product": "5b5609532738180d48c3978f",
+          "baseWeight": 19190.34087
+        },
+        {
+          "product": "5b5609532738180d48c39790",
+          "baseWeight": 6789.276502
+        }
+      ]
+    }
+  ]
+}

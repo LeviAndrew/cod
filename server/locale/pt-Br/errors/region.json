@@ -1,0 +1,24 @@
+{
+  "nameRequired": {
+    "title": "Nome",
+    "description": "Então djow, você precisa me informar qual o nome da Região <br/> ex: Sul de algum lungar",
+    "buttons": [
+      {
+        "label": "Ok",
+        "method": null
+      }
+    ],
+    "type": "nameRequired"
+  },
+  "sourceRequired": {
+    "title": "Fonte",
+    "description": "Cara, pra cadastrar uma região vc precisa ter fontes, saca?",
+    "buttons": [
+      {
+        "label": "Ok",
+        "method": null
+      }
+    ],
+    "type": "sourceRequired"
+  }
+}

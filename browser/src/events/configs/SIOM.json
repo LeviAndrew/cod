@@ -1,0 +1,11 @@
+{
+  "eventEmitter2": {
+    "wildcard": true,
+    "newListener": true,
+    "maxListeners": 200
+  },
+  "server": {
+    "address": "179.97.106.127:",
+    "port": 1337
+  }
+}

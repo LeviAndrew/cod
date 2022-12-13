@@ -1,0 +1,41 @@
+.normal-title {
+    background-color: #2196f3;
+    color: white
+}
+
+.is-danger {
+    color: red;
+    font-size: 12px;
+}
+
+.card-shape{
+    padding: 2em 25em;
+}
+.grey_color {
+    background-color: #f5f5f5;
+}
+
+.blue_color {
+    color: #2196f3;
+}
+
+.red_color_dialog_text {
+    color: #F44336;
+    text-align: center;
+}
+
+.green_color_dialog_text {
+    color: #00C853;
+    text-align: center;
+}
+
+.green_color_snackbar_text {
+    color: #00C853;
+}
+
+.dialog-title {
+    background-color: #2196f3;
+    color: white;
+    text-align: center;
+    padding-bottom: 15px;
+}

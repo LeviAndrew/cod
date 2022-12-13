@@ -1,0 +1,13 @@
+{
+  "reviewXLSXUnauthorized": {
+    "title": "Usuario não autorizado!",
+    "description": "Você não tem permissão de usuario, por isso não pode ver os dados no formato XLSX",
+    "buttons": [
+      {
+        "label": "Ok",
+        "method": null
+      }
+    ],
+    "type": "reviewXLSXUnauthorized"
+  }
+}

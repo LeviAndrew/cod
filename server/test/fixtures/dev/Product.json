@@ -1,0 +1,2154 @@
+{
+  "model": "product",
+  "data": [
+    {
+      "_id": "5b5609532738180d48c3965e",
+      "name": "AÇÚCAR REFINADO",
+      "code": "1110101",
+      "id": "5b5609532738180d48c3965e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39661",
+      "name": "COLA",
+      "code": "1110203",
+      "id": "5b5609532738180d48c39661",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3965f",
+      "name": "ÁGUA MINERAL",
+      "code": "1110201",
+      "id": "5b5609532738180d48c3965f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39660",
+      "name": "CERVEJA",
+      "code": "1110202",
+      "id": "5b5609532738180d48c39660",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39662",
+      "name": "GUARANÁ",
+      "code": "1110204",
+      "id": "5b5609532738180d48c39662",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39667",
+      "name": "VODKA",
+      "code": "1110209",
+      "id": "5b5609532738180d48c39667",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39664",
+      "name": "SUCO DE FRUTAS",
+      "code": "1110206",
+      "id": "5b5609532738180d48c39664",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39665",
+      "name": "AGUARDENTE",
+      "code": "1110207",
+      "id": "5b5609532738180d48c39665",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3966c",
+      "name": "KIBE PRONTO",
+      "code": "1110401",
+      "id": "5b5609532738180d48c3966c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3966a",
+      "name": "CAFÉ SOLÚVEL",
+      "code": "1110302",
+      "id": "5b5609532738180d48c3966a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39669",
+      "name": "CAFÉ EM PÓ",
+      "code": "1110301",
+      "id": "5b5609532738180d48c39669",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39663",
+      "name": "LARANJA",
+      "code": "1110205",
+      "id": "5b5609532738180d48c39663",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39671",
+      "name": "SALSICHAS",
+      "code": "1110406",
+      "id": "5b5609532738180d48c39671",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3966f",
+      "name": "PATÊ",
+      "code": "1110404",
+      "id": "5b5609532738180d48c3966f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3966e",
+      "name": "LINGUIÇA DE PORCO",
+      "code": "1110403",
+      "id": "5b5609532738180d48c3966e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39676",
+      "name": "MEL DE ABELHA",
+      "code": "1110504",
+      "id": "5b5609532738180d48c39676",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39674",
+      "name": "PÊSSEGO EM CALDA",
+      "code": "1110502",
+      "id": "5b5609532738180d48c39674",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39668",
+      "name": "UÍSQUE",
+      "code": "1110210",
+      "id": "5b5609532738180d48c39668",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3967b",
+      "name": "MILHO EM CONSERVA",
+      "code": "1110509",
+      "id": "5b5609532738180d48c3967b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39673",
+      "name": "ABACAXI EM CALDA",
+      "code": "1110501",
+      "id": "5b5609532738180d48c39673",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39679",
+      "name": "AZEITONA",
+      "code": "1110507",
+      "id": "5b5609532738180d48c39679",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39680",
+      "name": "NESCAU",
+      "code": "1110514",
+      "id": "5b5609532738180d48c39680",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3967e",
+      "name": "BALAS",
+      "code": "1110512",
+      "id": "5b5609532738180d48c3967e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3966d",
+      "name": "LINGUIÇA MISTA",
+      "code": "1110402",
+      "id": "5b5609532738180d48c3966d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39685",
+      "name": "BISCOITOS DOCES",
+      "code": "1110604",
+      "id": "5b5609532738180d48c39685",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39678",
+      "name": "AMENDOIM",
+      "code": "1110506",
+      "id": "5b5609532738180d48c39678",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39683",
+      "name": "FARINHA DE TRIGO",
+      "code": "1110602",
+      "id": "5b5609532738180d48c39683",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3968a",
+      "name": "MACARRÃO",
+      "code": "1110609",
+      "id": "5b5609532738180d48c3968a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39672",
+      "name": "SALAMINHO",
+      "code": "1110407",
+      "id": "5b5609532738180d48c39672",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39688",
+      "name": "BOLACHAS MARIA",
+      "code": "1110607",
+      "id": "5b5609532738180d48c39688",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3968f",
+      "name": "PÃO INTEGRAL",
+      "code": "1110614",
+      "id": "5b5609532738180d48c3968f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3967d",
+      "name": "PEPINO EM CONSERVA",
+      "code": "1110511",
+      "id": "5b5609532738180d48c3967d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39694",
+      "name": "ÓLEO DE SOJA",
+      "code": "1110705",
+      "id": "5b5609532738180d48c39694",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39677",
+      "name": "GOIABADA",
+      "code": "1110505",
+      "id": "5b5609532738180d48c39677",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3968d",
+      "name": "PÃO DE TRIGO",
+      "code": "1110612",
+      "id": "5b5609532738180d48c3968d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39682",
+      "name": "FARINHA DE MANDIOCA",
+      "code": "1110601",
+      "id": "5b5609532738180d48c39682",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39699",
+      "name": "FARINHA LÁCTEA",
+      "code": "1110805",
+      "id": "5b5609532738180d48c39699",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39692",
+      "name": "MARGARINA",
+      "code": "1110703",
+      "id": "5b5609532738180d48c39692",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3967c",
+      "name": "PALMITO EM CONSERVA",
+      "code": "1110510",
+      "id": "5b5609532738180d48c3967c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39687",
+      "name": "BOLACHAS CREAM CRACKERS",
+      "code": "1110606",
+      "id": "5b5609532738180d48c39687",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3969e",
+      "name": "REQUEIJÃO",
+      "code": "1110810",
+      "id": "5b5609532738180d48c3969e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39681",
+      "name": "PÓ PARA GELATINA",
+      "code": "1110515",
+      "id": "5b5609532738180d48c39681",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39666",
+      "name": "VINHO",
+      "code": "1110208",
+      "id": "5b5609532738180d48c39666",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39697",
+      "name": "LEITE CONDENSADO",
+      "code": "1110803",
+      "id": "5b5609532738180d48c39697",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a3",
+      "name": "SAL",
+      "code": "1111003",
+      "id": "5b5609532738180d48c396a3",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39686",
+      "name": "BISCOITOS SALGADOS",
+      "code": "1110605",
+      "id": "5b5609532738180d48c39686",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3968c",
+      "name": "PÃO DE FORMA",
+      "code": "1110611",
+      "id": "5b5609532738180d48c3968c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a8",
+      "name": "ARROZ AMARELÃO",
+      "code": "1120102",
+      "id": "5b5609532738180d48c396a8",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3968b",
+      "name": "PÃO DOCE",
+      "code": "1110610",
+      "id": "5b5609532738180d48c3968b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3969c",
+      "name": "QUEIJO PARMESÃO",
+      "code": "1110808",
+      "id": "5b5609532738180d48c3969c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3966b",
+      "name": "CHIMARRÃO",
+      "code": "1110303",
+      "id": "5b5609532738180d48c3966b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39691",
+      "name": "MANTEIGA",
+      "code": "1110702",
+      "id": "5b5609532738180d48c39691",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ad",
+      "name": "CARNE MOÍDA DE PRIMEIRA",
+      "code": "1120205",
+      "id": "5b5609532738180d48c396ad",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39690",
+      "name": "AZEITE DE OLIVA",
+      "code": "1110701",
+      "id": "5b5609532738180d48c39690",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b2",
+      "name": "MIÚDOS DE AVES (CORAÇÃO",
+      "code": "1120210",
+      "id": "5b5609532738180d48c396b2",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39670",
+      "name": "PRESUNTO",
+      "code": "1110405",
+      "id": "5b5609532738180d48c39670",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a1",
+      "name": "CATCHUP",
+      "code": "1111001",
+      "id": "5b5609532738180d48c396a1",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39696",
+      "name": "IOGURTE",
+      "code": "1110802",
+      "id": "5b5609532738180d48c39696",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b7",
+      "name": "FEIJÃO PRETO",
+      "code": "1130101",
+      "id": "5b5609532738180d48c396b7",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39695",
+      "name": "CREME DE LEITE",
+      "code": "1110801",
+      "id": "5b5609532738180d48c39695",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396bc",
+      "name": "TANGERINA OU BERGAMOTA",
+      "code": "1130204",
+      "id": "5b5609532738180d48c396bc",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a6",
+      "name": "MAIONESE",
+      "code": "1111006",
+      "id": "5b5609532738180d48c396a6",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3969b",
+      "name": "QUEIJO MUSSARELA",
+      "code": "1110807",
+      "id": "5b5609532738180d48c3969b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39675",
+      "name": "GELÉIA DE UVA",
+      "code": "1110503",
+      "id": "5b5609532738180d48c39675",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3969a",
+      "name": "QUEIJO MINAS",
+      "code": "1110806",
+      "id": "5b5609532738180d48c3969a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c1",
+      "name": "MORANGO",
+      "code": "1130209",
+      "id": "5b5609532738180d48c396c1",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ab",
+      "name": "CHURRASCO (CHULETA",
+      "code": "1120203",
+      "id": "5b5609532738180d48c396ab",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c6",
+      "name": "BATATA INGLESA",
+      "code": "1130305",
+      "id": "5b5609532738180d48c396c6",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a0",
+      "name": "SARDINHA",
+      "code": "1110902",
+      "id": "5b5609532738180d48c396a0",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3967a",
+      "name": "ERVILHA EM CONSERVA",
+      "code": "1110508",
+      "id": "5b5609532738180d48c3967a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3969f",
+      "name": "CAMARÃO PRÉ-COZIDO",
+      "code": "1110901",
+      "id": "5b5609532738180d48c3969f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a4",
+      "name": "SOPAS PREPARADAS",
+      "code": "1111004",
+      "id": "5b5609532738180d48c396a4",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b0",
+      "name": "CARNE DE GALINHA (MORTA",
+      "code": "1120208",
+      "id": "5b5609532738180d48c396b0",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396cb",
+      "name": "COUVE-FLOR",
+      "code": "1130310",
+      "id": "5b5609532738180d48c396cb",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a5",
+      "name": "VINAGRE",
+      "code": "1111005",
+      "id": "5b5609532738180d48c396a5",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3967f",
+      "name": "CHOCOLATE EM TABLETES",
+      "code": "1110513",
+      "id": "5b5609532738180d48c3967f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a9",
+      "name": "CARNE DE SEGUNDA",
+      "code": "1120201",
+      "id": "5b5609532738180d48c396a9",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b5",
+      "name": "LEITE NATURAL \"B\"",
+      "code": "1120401",
+      "id": "5b5609532738180d48c396b5",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396aa",
+      "name": "CARNE DE PRIMEIRA",
+      "code": "1120202",
+      "id": "5b5609532738180d48c396aa",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d0",
+      "name": "OVOS DE GALINHA VERMELHO",
+      "code": "1130401",
+      "id": "5b5609532738180d48c396d0",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39684",
+      "name": "AMIDO DE MILHO",
+      "code": "1110603",
+      "id": "5b5609532738180d48c39684",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ae",
+      "name": "CARNE MOÍDA DE SEGUNDA",
+      "code": "1120206",
+      "id": "5b5609532738180d48c396ae",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d5",
+      "name": "PESCADINHA",
+      "code": "1130505",
+      "id": "5b5609532738180d48c396d5",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b3",
+      "name": "CARNE SECA",
+      "code": "1120301",
+      "id": "5b5609532738180d48c396b3",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396af",
+      "name": "PERNIL DE PORCO",
+      "code": "1120207",
+      "id": "5b5609532738180d48c396af",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ba",
+      "name": "LARANJA PAULISTA",
+      "code": "1130202",
+      "id": "5b5609532738180d48c396ba",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39689",
+      "name": "BOLOS CONFECCIONADOS",
+      "code": "1110608",
+      "id": "5b5609532738180d48c39689",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396da",
+      "name": "X GALINHA",
+      "code": "1210103",
+      "id": "5b5609532738180d48c396da",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b8",
+      "name": "FEIJÃO VERMELHO",
+      "code": "1130102",
+      "id": "5b5609532738180d48c396b8",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396df",
+      "name": "PRATO COMERCIAL",
+      "code": "1220204",
+      "id": "5b5609532738180d48c396df",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b4",
+      "name": "COSTELA",
+      "code": "1120302",
+      "id": "5b5609532738180d48c396b4",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3968e",
+      "name": "PÃO FRANCÊS",
+      "code": "1110613",
+      "id": "5b5609532738180d48c3968e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396bf",
+      "name": "MAÇÃ",
+      "code": "1130207",
+      "id": "5b5609532738180d48c396bf",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396bd",
+      "name": "LIMÃO",
+      "code": "1130205",
+      "id": "5b5609532738180d48c396bd",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e4",
+      "name": "BLUSÃO/BLUSA DE LÃ",
+      "code": "2110104",
+      "id": "5b5609532738180d48c396e4",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39693",
+      "name": "ÓLEO DE MILHO",
+      "code": "1110704",
+      "id": "5b5609532738180d48c39693",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c4",
+      "name": "ALFACE",
+      "code": "1130303",
+      "id": "5b5609532738180d48c396c4",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b9",
+      "name": "BANANA BRANCA",
+      "code": "1130201",
+      "id": "5b5609532738180d48c396b9",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c2",
+      "name": "ABÓBORA",
+      "code": "1130301",
+      "id": "5b5609532738180d48c396c2",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e9",
+      "name": "BLUSA",
+      "code": "2110109",
+      "id": "5b5609532738180d48c396e9",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ee",
+      "name": "CALCINHA",
+      "code": "2110114",
+      "id": "5b5609532738180d48c396ee",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396be",
+      "name": "ABACAXI",
+      "code": "1130206",
+      "id": "5b5609532738180d48c396be",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c9",
+      "name": "CENOURA",
+      "code": "1130308",
+      "id": "5b5609532738180d48c396c9",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39698",
+      "name": "LEITE EM PÓ INSTANTÂNEO",
+      "code": "1110804",
+      "id": "5b5609532738180d48c39698",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c7",
+      "name": "BETERRABA",
+      "code": "1130306",
+      "id": "5b5609532738180d48c396c7",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f3",
+      "name": "MEIA CALÇA",
+      "code": "2110119",
+      "id": "5b5609532738180d48c396f3",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396cc",
+      "name": "PIMENTÃO",
+      "code": "1130311",
+      "id": "5b5609532738180d48c396cc",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ce",
+      "name": "TOMATE",
+      "code": "1130313",
+      "id": "5b5609532738180d48c396ce",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f8",
+      "name": "CASACO, CAPOTE, PULOVER",
+      "code": "2120101",
+      "id": "5b5609532738180d48c396f8",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3969d",
+      "name": "QUEIJO PRATO",
+      "code": "1110809",
+      "id": "5b5609532738180d48c3969d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c3",
+      "name": "AIPIM",
+      "code": "1130302",
+      "id": "5b5609532738180d48c396c3",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396fd",
+      "name": "PALETÓ",
+      "code": "2120106",
+      "id": "5b5609532738180d48c396fd",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d1",
+      "name": "CORVINA",
+      "code": "1130501",
+      "id": "5b5609532738180d48c396d1",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d3",
+      "name": "GAROPA",
+      "code": "1130503",
+      "id": "5b5609532738180d48c396d3",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c8",
+      "name": "CEBOLA DE CABECA",
+      "code": "1130307",
+      "id": "5b5609532738180d48c396c8",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a2",
+      "name": "MASSA DE TOMATE",
+      "code": "1111002",
+      "id": "5b5609532738180d48c396a2",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39702",
+      "name": "CAMISETA DE MEIA",
+      "code": "2120111",
+      "id": "5b5609532738180d48c39702",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d6",
+      "name": "TAINHA",
+      "code": "1130506",
+      "id": "5b5609532738180d48c396d6",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39707",
+      "name": "TÊNIS",
+      "code": "2120116",
+      "id": "5b5609532738180d48c39707",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d8",
+      "name": "CACHORRO QUENTE",
+      "code": "1210101",
+      "id": "5b5609532738180d48c396d8",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396cd",
+      "name": "REPOLHO",
+      "code": "1130312",
+      "id": "5b5609532738180d48c396cd",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396a7",
+      "name": "ARROZ AGULHA",
+      "code": "1120101",
+      "id": "5b5609532738180d48c396a7",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3970c",
+      "name": "CALÇA JEANS",
+      "code": "2130103",
+      "id": "5b5609532738180d48c3970c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396db",
+      "name": "X SALADA",
+      "code": "1210104",
+      "id": "5b5609532738180d48c396db",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39711",
+      "name": "TIP-TOP",
+      "code": "2130108",
+      "id": "5b5609532738180d48c39711",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396dd",
+      "name": "FILÉ COM FRITAS",
+      "code": "1220202",
+      "id": "5b5609532738180d48c396dd",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d2",
+      "name": "ENCHOVA",
+      "code": "1130502",
+      "id": "5b5609532738180d48c396d2",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ac",
+      "name": "COSTELA",
+      "code": "1120204",
+      "id": "5b5609532738180d48c396ac",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e0",
+      "name": "MARMITA",
+      "code": "1220205",
+      "id": "5b5609532738180d48c396e0",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39716",
+      "name": "MESA",
+      "code": "2210103",
+      "id": "5b5609532738180d48c39716",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b1",
+      "name": "FÍGADO DE BOI",
+      "code": "1120209",
+      "id": "5b5609532738180d48c396b1",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e2",
+      "name": "JAQUETA",
+      "code": "2110102",
+      "id": "5b5609532738180d48c396e2",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3971b",
+      "name": "ABAJOURS",
+      "code": "2210108",
+      "id": "5b5609532738180d48c3971b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d7",
+      "name": "CAMARÃO FRESCO",
+      "code": "1130507",
+      "id": "5b5609532738180d48c396d7",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e5",
+      "name": "PALETÓ",
+      "code": "2110105",
+      "id": "5b5609532738180d48c396e5",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39720",
+      "name": "EQUIPAMENTOS 3 EM 1",
+      "code": "2220104",
+      "id": "5b5609532738180d48c39720",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ea",
+      "name": "CAMISÃO",
+      "code": "2110110",
+      "id": "5b5609532738180d48c396ea",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e7",
+      "name": "CALÇA JEANS",
+      "code": "2110107",
+      "id": "5b5609532738180d48c396e7",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396dc",
+      "name": "CAMARÃO À GREGA",
+      "code": "1220201",
+      "id": "5b5609532738180d48c396dc",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39725",
+      "name": "DISCOS",
+      "code": "2220109",
+      "id": "5b5609532738180d48c39725",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396b6",
+      "name": "LEITE NATURAL \"C\"",
+      "code": "1120402",
+      "id": "5b5609532738180d48c396b6",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ef",
+      "name": "PIJAMA",
+      "code": "2110115",
+      "id": "5b5609532738180d48c396ef",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e1",
+      "name": "CASACO, CAPOTE, PULOVER",
+      "code": "2110101",
+      "id": "5b5609532738180d48c396e1",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ec",
+      "name": "CAMISETA DE MEIA",
+      "code": "2110112",
+      "id": "5b5609532738180d48c396ec",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396bb",
+      "name": "LARANJA LIMA",
+      "code": "1130203",
+      "id": "5b5609532738180d48c396bb",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3972a",
+      "name": "GELADEIRA ELET. SIMPLES",
+      "code": "2240101",
+      "id": "5b5609532738180d48c3972a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f4",
+      "name": "MEIA FINA",
+      "code": "2110120",
+      "id": "5b5609532738180d48c396f4",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e6",
+      "name": "VESTIDO SOCIAL",
+      "code": "2110106",
+      "id": "5b5609532738180d48c396e6",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3972f",
+      "name": "LIQUIDIFICADOR",
+      "code": "2240106",
+      "id": "5b5609532738180d48c3972f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f1",
+      "name": "BOTAS/BOTINHAS",
+      "code": "2110117",
+      "id": "5b5609532738180d48c396f1",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c0",
+      "name": "MAMÃO",
+      "code": "1130208",
+      "id": "5b5609532738180d48c396c0",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f9",
+      "name": "JAQUETA",
+      "code": "2120102",
+      "id": "5b5609532738180d48c396f9",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39734",
+      "name": "ASPIRADOR DE PÓ",
+      "code": "2240111",
+      "id": "5b5609532738180d48c39734",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f6",
+      "name": "BOLSA, CARTEIRA, PASTA",
+      "code": "2110122",
+      "id": "5b5609532738180d48c396f6",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396eb",
+      "name": "CAMISA DE MALHA",
+      "code": "2110111",
+      "id": "5b5609532738180d48c396eb",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396fe",
+      "name": "CAMISA SOCIAL",
+      "code": "2120107",
+      "id": "5b5609532738180d48c396fe",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396c5",
+      "name": "ALHO",
+      "code": "1130304",
+      "id": "5b5609532738180d48c396c5",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39739",
+      "name": "COBERTOR DE SOLTEIRO",
+      "code": "2250102",
+      "id": "5b5609532738180d48c39739",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3973e",
+      "name": "SABÃO EM BARRA",
+      "code": "2260101",
+      "id": "5b5609532738180d48c3973e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396fb",
+      "name": "BLUSÃO/BLUSA DE LÃ",
+      "code": "2120104",
+      "id": "5b5609532738180d48c396fb",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f0",
+      "name": "SAPATOS",
+      "code": "2110116",
+      "id": "5b5609532738180d48c396f0",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39703",
+      "name": "AGASALHO ESPORTIVO",
+      "code": "2120112",
+      "id": "5b5609532738180d48c39703",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ca",
+      "name": "CHUCHU",
+      "code": "1130309",
+      "id": "5b5609532738180d48c396ca",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39743",
+      "name": "ESPONJA DE AÇO",
+      "code": "2260106",
+      "id": "5b5609532738180d48c39743",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39700",
+      "name": "CAMISA DE MALHA",
+      "code": "2120109",
+      "id": "5b5609532738180d48c39700",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f5",
+      "name": "CINTO",
+      "code": "2110121",
+      "id": "5b5609532738180d48c396f5",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39708",
+      "name": "MEIAS",
+      "code": "2120117",
+      "id": "5b5609532738180d48c39708",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396cf",
+      "name": "VAGEM",
+      "code": "1130314",
+      "id": "5b5609532738180d48c396cf",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39748",
+      "name": "SABONETE",
+      "code": "2310101",
+      "id": "5b5609532738180d48c39748",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3974d",
+      "name": "SHAMPOO",
+      "code": "2310106",
+      "id": "5b5609532738180d48c3974d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396fa",
+      "name": "JAPONA",
+      "code": "2120103",
+      "id": "5b5609532738180d48c396fa",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39705",
+      "name": "PIJAMA",
+      "code": "2120114",
+      "id": "5b5609532738180d48c39705",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3970d",
+      "name": "SAIA INFANTIL",
+      "code": "2130104",
+      "id": "5b5609532738180d48c3970d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d4",
+      "name": "LINGUADO",
+      "code": "1130504",
+      "id": "5b5609532738180d48c396d4",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39752",
+      "name": "PAPEL HIGIÊNICO",
+      "code": "2310111",
+      "id": "5b5609532738180d48c39752",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39712",
+      "name": "SAPATOS",
+      "code": "2130109",
+      "id": "5b5609532738180d48c39712",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3970a",
+      "name": "JAPONA",
+      "code": "2130101",
+      "id": "5b5609532738180d48c3970a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ff",
+      "name": "CALÇA JEANS",
+      "code": "2120108",
+      "id": "5b5609532738180d48c396ff",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396d9",
+      "name": "MISTO QUENTE",
+      "code": "1210102",
+      "id": "5b5609532738180d48c396d9",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39757",
+      "name": "HOMEOPÁTICOS",
+      "code": "2320105",
+      "id": "5b5609532738180d48c39757",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39717",
+      "name": "CADEIRA",
+      "code": "2210104",
+      "id": "5b5609532738180d48c39717",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3975c",
+      "name": "REVISTAS NOTICIOSAS",
+      "code": "2420102",
+      "id": "5b5609532738180d48c3975c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3970f",
+      "name": "UNIFORME ESCOLAR",
+      "code": "2130106",
+      "id": "5b5609532738180d48c3970f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39704",
+      "name": "CUECA",
+      "code": "2120113",
+      "id": "5b5609532738180d48c39704",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396de",
+      "name": "PIZZA",
+      "code": "1220203",
+      "id": "5b5609532738180d48c396de",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39761",
+      "name": "MATERIAL ESCOLAR",
+      "code": "2420107",
+      "id": "5b5609532738180d48c39761",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3971c",
+      "name": "CORTINAS",
+      "code": "2210109",
+      "id": "5b5609532738180d48c3971c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39714",
+      "name": "SOFÁ",
+      "code": "2210101",
+      "id": "5b5609532738180d48c39714",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e3",
+      "name": "JAPONA",
+      "code": "2110103",
+      "id": "5b5609532738180d48c396e3",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39766",
+      "name": "GASOLINA",
+      "code": "2430101",
+      "id": "5b5609532738180d48c39766",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39721",
+      "name": "RECEIVER",
+      "code": "2220105",
+      "id": "5b5609532738180d48c39721",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39709",
+      "name": "RELÓGIOS DE PULSO MASCUL.",
+      "code": "2120118",
+      "id": "5b5609532738180d48c39709",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3976b",
+      "name": "ENERGIA ELÉTRICA",
+      "code": "3110101",
+      "id": "5b5609532738180d48c3976b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39726",
+      "name": "FITAS CASSETE",
+      "code": "2220110",
+      "id": "5b5609532738180d48c39726",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396e8",
+      "name": "SAIA",
+      "code": "2110108",
+      "id": "5b5609532738180d48c396e8",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3970e",
+      "name": "AGASALHO ESPORTIVO",
+      "code": "2130105",
+      "id": "5b5609532738180d48c3970e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39719",
+      "name": "GUARDA-ROUPA",
+      "code": "2210106",
+      "id": "5b5609532738180d48c39719",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3972b",
+      "name": "GELADEIRA ELET. BIPLEX",
+      "code": "2240102",
+      "id": "5b5609532738180d48c3972b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39770",
+      "name": "ÔNIBUS-CARTÃO",
+      "code": "3210103",
+      "id": "5b5609532738180d48c39770",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396ed",
+      "name": "AGASALHO ESPORTIVO",
+      "code": "2110113",
+      "id": "5b5609532738180d48c396ed",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3971e",
+      "name": "UNIDADES DE DISCOS",
+      "code": "2220102",
+      "id": "5b5609532738180d48c3971e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39713",
+      "name": "TÊNIS",
+      "code": "2130110",
+      "id": "5b5609532738180d48c39713",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39730",
+      "name": "BATEDEIRA",
+      "code": "2240107",
+      "id": "5b5609532738180d48c39730",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39775",
+      "name": "CONFECÇÃO-ALFAIATE",
+      "code": "4110101",
+      "id": "5b5609532738180d48c39775",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f2",
+      "name": "TÊNIS",
+      "code": "2110118",
+      "id": "5b5609532738180d48c396f2",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39735",
+      "name": "MÁQUINA DE LAVAR ROUPA",
+      "code": "2240112",
+      "id": "5b5609532738180d48c39735",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3977a",
+      "name": "LAVAÇÃO CALÇA HOMEM",
+      "code": "4110106",
+      "id": "5b5609532738180d48c3977a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39718",
+      "name": "CAMA",
+      "code": "2210105",
+      "id": "5b5609532738180d48c39718",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39723",
+      "name": "TELEVISOR COLORIDO",
+      "code": "2220107",
+      "id": "5b5609532738180d48c39723",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3973a",
+      "name": "COLCHA DE CASAL",
+      "code": "2250103",
+      "id": "5b5609532738180d48c3973a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3977f",
+      "name": "IMPOSTOS E TAXAS",
+      "code": "4210104",
+      "id": "5b5609532738180d48c3977f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396f7",
+      "name": "RELOGIOS DE PULSO FEMIN.",
+      "code": "2110123",
+      "id": "5b5609532738180d48c396f7",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3971d",
+      "name": "MICRO COMPUTADOR PESSOAL",
+      "code": "2220101",
+      "id": "5b5609532738180d48c3971d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39728",
+      "name": "APARELHO DE PORCELANA",
+      "code": "2230102",
+      "id": "5b5609532738180d48c39728",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3973f",
+      "name": "SABÃO EM PÓ",
+      "code": "2260102",
+      "id": "5b5609532738180d48c3973f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39784",
+      "name": "DIÁRIA HOSPITALAR",
+      "code": "4310105",
+      "id": "5b5609532738180d48c39784",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39722",
+      "name": "CAIXAS DE SOM",
+      "code": "2220106",
+      "id": "5b5609532738180d48c39722",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3972d",
+      "name": "FOGÃO A GÁS",
+      "code": "2240104",
+      "id": "5b5609532738180d48c3972d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39744",
+      "name": "VASSOURA",
+      "code": "2260107",
+      "id": "5b5609532738180d48c39744",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c396fc",
+      "name": "TERNO",
+      "code": "2120105",
+      "id": "5b5609532738180d48c396fc",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39789",
+      "name": "TAXAS E MENSALIDADES",
+      "code": "4510101",
+      "id": "5b5609532738180d48c39789",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39749",
+      "name": "CREME DE BARBA",
+      "code": "2310102",
+      "id": "5b5609532738180d48c39749",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39732",
+      "name": "EXAUSTOR/COIFA",
+      "code": "2240109",
+      "id": "5b5609532738180d48c39732",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39727",
+      "name": "APARELHO DE VIDRO",
+      "code": "2230101",
+      "id": "5b5609532738180d48c39727",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3978e",
+      "name": "MENSALIDADES DE CLUBES",
+      "code": "4710103",
+      "id": "5b5609532738180d48c3978e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39701",
+      "name": "CAMISA POLO",
+      "code": "2120110",
+      "id": "5b5609532738180d48c39701",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3974e",
+      "name": "PASTA DE DENTES",
+      "code": "2310107",
+      "id": "5b5609532738180d48c3974e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39753",
+      "name": "ANTIALÉRGICOS",
+      "code": "2320101",
+      "id": "5b5609532738180d48c39753",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3972c",
+      "name": "FREEZER",
+      "code": "2240103",
+      "id": "5b5609532738180d48c3972c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39737",
+      "name": "FERRO ELÉTRICO A VAPOR",
+      "code": "2240114",
+      "id": "5b5609532738180d48c39737",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39706",
+      "name": "SAPATOS",
+      "code": "2120115",
+      "id": "5b5609532738180d48c39706",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39758",
+      "name": "ALGODÃO",
+      "code": "2320106",
+      "id": "5b5609532738180d48c39758",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3973c",
+      "name": "TOALHAS DE BANHO",
+      "code": "2250105",
+      "id": "5b5609532738180d48c3973c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39731",
+      "name": "CENTRÍFUGA",
+      "code": "2240108",
+      "id": "5b5609532738180d48c39731",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3975d",
+      "name": "REVISTAS DE RÁDIO,TV,ETC",
+      "code": "2420103",
+      "id": "5b5609532738180d48c3975d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3970b",
+      "name": "BLUSÃO DE LÃ",
+      "code": "2130102",
+      "id": "5b5609532738180d48c3970b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39762",
+      "name": "BICICLETAS",
+      "code": "2420108",
+      "id": "5b5609532738180d48c39762",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39736",
+      "name": "SECADOURA DE ROUPA",
+      "code": "2240113",
+      "id": "5b5609532738180d48c39736",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39741",
+      "name": "CERA PARA ASSOALHO",
+      "code": "2260104",
+      "id": "5b5609532738180d48c39741",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39710",
+      "name": "FRALDAS",
+      "code": "2130107",
+      "id": "5b5609532738180d48c39710",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39767",
+      "name": "ÁLCOOL",
+      "code": "2430102",
+      "id": "5b5609532738180d48c39767",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3976c",
+      "name": "ÁGUA E ESGOTO",
+      "code": "3110102",
+      "id": "5b5609532738180d48c3976c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39746",
+      "name": "GÁS DE BUJÃO",
+      "code": "2270101",
+      "id": "5b5609532738180d48c39746",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39715",
+      "name": "ARMÁRIO, ESTANTE",
+      "code": "2210102",
+      "id": "5b5609532738180d48c39715",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3973b",
+      "name": "LENÇOL DE CASAL",
+      "code": "2250104",
+      "id": "5b5609532738180d48c3973b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39771",
+      "name": "ÔNIBUS-DINHEIRO",
+      "code": "3210104",
+      "id": "5b5609532738180d48c39771",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3974b",
+      "name": "PERFUME",
+      "code": "2310104",
+      "id": "5b5609532738180d48c3974b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39740",
+      "name": "DETERGENTE LÍQUIDO",
+      "code": "2260103",
+      "id": "5b5609532738180d48c39740",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39776",
+      "name": "CONFECÇÃO-COSTUREIRA",
+      "code": "4110102",
+      "id": "5b5609532738180d48c39776",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3971a",
+      "name": "COLCHÃO",
+      "code": "2210107",
+      "id": "5b5609532738180d48c3971a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3977b",
+      "name": "LAVAÇÃO ROUP.BRANCAS KG",
+      "code": "4110107",
+      "id": "5b5609532738180d48c3977b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39750",
+      "name": "LÂMINA PARA BARBA",
+      "code": "2310109",
+      "id": "5b5609532738180d48c39750",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39745",
+      "name": "LUSTRA MÓVEIS",
+      "code": "2260108",
+      "id": "5b5609532738180d48c39745",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39780",
+      "name": "MENSALIDADES INST.PART.",
+      "code": "4310101",
+      "id": "5b5609532738180d48c39780",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3971f",
+      "name": "RÁDIO",
+      "code": "2220103",
+      "id": "5b5609532738180d48c3971f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39755",
+      "name": "ANTIGRIPAIS",
+      "code": "2320103",
+      "id": "5b5609532738180d48c39755",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3974a",
+      "name": "TALCO",
+      "code": "2310103",
+      "id": "5b5609532738180d48c3974a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39785",
+      "name": "CORTE DE CABELO",
+      "code": "4410101",
+      "id": "5b5609532738180d48c39785",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3978a",
+      "name": "LAVAÇÃO",
+      "code": "4610101",
+      "id": "5b5609532738180d48c3978a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39724",
+      "name": "MÁQUINA FOTOGRÁFICA",
+      "code": "2220108",
+      "id": "5b5609532738180d48c39724",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3975a",
+      "name": "ISQUEIRO DESCARTÁVEL",
+      "code": "2410102",
+      "id": "5b5609532738180d48c3975a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3974f",
+      "name": "DESODORANTE",
+      "code": "2310108",
+      "id": "5b5609532738180d48c3974f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3978f",
+      "name": "DE SALÁRIO MENSAL",
+      "code": "4810101",
+      "id": "5b5609532738180d48c3978f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3975f",
+      "name": "LIVROS",
+      "code": "2420105",
+      "id": "5b5609532738180d48c3975f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39754",
+      "name": "ANTIBIÓTICOS",
+      "code": "2320102",
+      "id": "5b5609532738180d48c39754",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39729",
+      "name": "JOGOS DE PANELAS",
+      "code": "2230103",
+      "id": "5b5609532738180d48c39729",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39764",
+      "name": "BOLAS",
+      "code": "2420110",
+      "id": "5b5609532738180d48c39764",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3972e",
+      "name": "FORNO MICROONDAS",
+      "code": "2240105",
+      "id": "5b5609532738180d48c3972e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39759",
+      "name": "CIGARROS",
+      "code": "2410101",
+      "id": "5b5609532738180d48c39759",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39733",
+      "name": "ENCERADEIRA",
+      "code": "2240110",
+      "id": "5b5609532738180d48c39733",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3975e",
+      "name": "REV. TÉCNICAS OU CIENT.",
+      "code": "2420104",
+      "id": "5b5609532738180d48c3975e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39769",
+      "name": "PNEU",
+      "code": "2430104",
+      "id": "5b5609532738180d48c39769",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3976e",
+      "name": "CORRESPONDÊNCIA",
+      "code": "3110104",
+      "id": "5b5609532738180d48c3976e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39763",
+      "name": "BONECAS",
+      "code": "2420109",
+      "id": "5b5609532738180d48c39763",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39738",
+      "name": "COBERTOR DE CASAL",
+      "code": "2250101",
+      "id": "5b5609532738180d48c39738",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39768",
+      "name": "ÓLEO",
+      "code": "2430103",
+      "id": "5b5609532738180d48c39768",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39773",
+      "name": "ÔNIBUS-DINHEIRO-TARIFA SOCIAL",
+      "code": "3210106",
+      "id": "5b5609532738180d48c39773",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3973d",
+      "name": "TECIDOS PARA CORTINAS",
+      "code": "2250106",
+      "id": "5b5609532738180d48c3973d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3976d",
+      "name": "TELEFONE",
+      "code": "3110103",
+      "id": "5b5609532738180d48c3976d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39742",
+      "name": "DESINFETANTE",
+      "code": "2260105",
+      "id": "5b5609532738180d48c39742",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39778",
+      "name": "CONSERTO SAPATO MASCUL.",
+      "code": "4110104",
+      "id": "5b5609532738180d48c39778",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3977d",
+      "name": "AMORTIZAÇÃO",
+      "code": "4210102",
+      "id": "5b5609532738180d48c3977d",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39772",
+      "name": "ÔNIBUS-CARTÃO-TARIFA SOCIAL",
+      "code": "3210105",
+      "id": "5b5609532738180d48c39772",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39747",
+      "name": "FÓSFORO USO DOMÉSTICO",
+      "code": "2270102",
+      "id": "5b5609532738180d48c39747",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39782",
+      "name": "DENTISTAS",
+      "code": "4310103",
+      "id": "5b5609532738180d48c39782",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39777",
+      "name": "CONSERTO SAPATO FEMININO",
+      "code": "4110103",
+      "id": "5b5609532738180d48c39777",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3974c",
+      "name": "ESTOJO DE PINTURA",
+      "code": "2310105",
+      "id": "5b5609532738180d48c3974c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39787",
+      "name": "MANICURE",
+      "code": "4410103",
+      "id": "5b5609532738180d48c39787",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3977c",
+      "name": "ALUGUEL",
+      "code": "4210101",
+      "id": "5b5609532738180d48c3977c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39751",
+      "name": "ABSORVENTES",
+      "code": "2310110",
+      "id": "5b5609532738180d48c39751",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3978c",
+      "name": "CINEMA",
+      "code": "4710101",
+      "id": "5b5609532738180d48c3978c",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39781",
+      "name": "MÉDICO",
+      "code": "4310102",
+      "id": "5b5609532738180d48c39781",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39756",
+      "name": "ANTI-HIPERTENSIVOS",
+      "code": "2320104",
+      "id": "5b5609532738180d48c39756",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39786",
+      "name": "BARBA",
+      "code": "4410102",
+      "id": "5b5609532738180d48c39786",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3975b",
+      "name": "JORNAIS",
+      "code": "2420101",
+      "id": "5b5609532738180d48c3975b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3978b",
+      "name": "MÃO DE OBRA REVISÃO",
+      "code": "4610102",
+      "id": "5b5609532738180d48c3978b",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39760",
+      "name": "LIVROS ESCOLARES",
+      "code": "2420106",
+      "id": "5b5609532738180d48c39760",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39765",
+      "name": "BRINQUEDOS EDUCATIVOS",
+      "code": "2420111",
+      "id": "5b5609532738180d48c39765",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39790",
+      "name": "DIARISTAS",
+      "code": "4810102",
+      "id": "5b5609532738180d48c39790",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3976a",
+      "name": "BATERIAS",
+      "code": "2430105",
+      "id": "5b5609532738180d48c3976a",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3976f",
+      "name": "TÁXI",
+      "code": "3210102",
+      "id": "5b5609532738180d48c3976f",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39774",
+      "name": "ÔNIBUS-AMARELINHO",
+      "code": "3210107",
+      "id": "5b5609532738180d48c39774",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39779",
+      "name": "LAVAÇÃO VESTIDO MULHER",
+      "code": "4110105",
+      "id": "5b5609532738180d48c39779",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3977e",
+      "name": "CONDOMÍNIO",
+      "code": "4210103",
+      "id": "5b5609532738180d48c3977e",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39783",
+      "name": "ÓCULOS",
+      "code": "4310104",
+      "id": "5b5609532738180d48c39783",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c39788",
+      "name": "MASSAGISTA",
+      "code": "4410104",
+      "id": "5b5609532738180d48c39788",
+      "removed": false
+    },
+    {
+      "_id": "5b5609532738180d48c3978d",
+      "name": "FUTEBOL",
+      "code": "4710102",
+      "id": "5b5609532738180d48c3978d",
+      "removed": false
+    }
+  ]
+}

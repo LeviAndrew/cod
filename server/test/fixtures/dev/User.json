@@ -1,0 +1,25 @@
+{
+  "model": "user",
+  "data": [
+    {
+      "_id": "5b5609502738180d48c3965b",
+      "name": "Osvaldo",
+      "surname": "Miguel Junior",
+      "email": "admin@admin",
+      "password": "admin",
+      "phoneNumber": "48999476823",
+      "id": "5b5609502738180d48c3965b",
+      "type": "admin"
+    },
+    {
+      "_id": "5b5609552738180d48c39803",
+      "name": "Osvaldo",
+      "surname": "Miguel",
+      "email": "juniorpalmas@hotmail.com",
+      "password": "123",
+      "phoneNumber": "48999476823",
+      "id": "5b5609552738180d48c39803",
+      "type": "researcher"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "image": {},
+  "db": {
+    "mongodb": {
+      "fixture": "test/fixtures/prod",
+      "host": "localhost",
+      "name": "codTest",
+      "erase_db": false
+    }
+  },
+  "authy": {},
+  "onesignal": {},
+  "server": {
+    "domain": "",
+    "port": 8081,
+    "images": "",
+    "socketio": {
+    }
+  },
+  "eventConfig": {
+    "wildcard": true,
+    "newListener": true,
+    "maxListeners": 2000
+  }
+}

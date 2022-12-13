@@ -1,0 +1,11 @@
+{
+  "model": "city",
+  "data": [
+    {
+      "_id" : "5b5609542738180d48c397f3",
+      "name" : "Florianópolis",
+      "id" : "5b5609542738180d48c397f3",
+      "removed" : false
+    }
+  ]
+}

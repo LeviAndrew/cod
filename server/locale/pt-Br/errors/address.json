@@ -1,0 +1,35 @@
+{
+  "initialRequired": {
+    "title": "Estado",
+    "description": "Opa, eu preciso saber o Estado aqui...",
+    "buttons": [
+      {
+        "label": "Sim sim, já falo.",
+        "method": null
+      }
+    ],
+    "type": "initialRequired"
+  },
+  "cityNameRequired": {
+    "title": "Cidade",
+    "description": "Olar, eu preciso saber qual a cidade aqui :D",
+    "buttons": [
+      {
+        "label": "Já to mandando",
+        "method": null
+      }
+    ],
+    "type": "cityNameRequired"
+  },
+  "neighborhoodNameRequired": {
+    "title": "Bairro",
+    "description": "Opa, podes me mandar o nome do bairro???",
+    "buttons": [
+      {
+        "label": "X-queci",
+        "method": null
+      }
+    ],
+    "type": "neighborhoodNameRequired"
+  }
+}

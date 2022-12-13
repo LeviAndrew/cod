@@ -1,0 +1,6 @@
+/server/node_modules
+/server/build
+/server/typings
+/browser/node_modules
+/browser/dist
+/.idea

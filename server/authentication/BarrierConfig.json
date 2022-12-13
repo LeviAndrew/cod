@@ -1,0 +1,31 @@
+{
+  "modules": [
+    {
+      "path": "/",
+      "location": "../browser"
+    },
+    {
+      "path": "/images/",
+      "location": "resources/images/"
+    }
+  ],
+  "apis": [
+    {
+      "path": "/api/open/"
+    },
+    {
+      "path": "/api/research/"
+    },
+    {
+      "path": "/images/"
+    }
+  ],
+  "opens": [
+    {
+      "path": "/api/login"
+    },
+    {
+      "path": "/favicon.ico"
+    }
+  ]
+}

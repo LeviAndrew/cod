@@ -1,0 +1,177 @@
+{
+  "nameRequired": {
+    "title": "Nome",
+    "description": "Então djow, você precisa me informar qual o nome da fonte <br/> ex: Supermercado do zé",
+    "buttons": [
+      {
+        "label": "x-culpa",
+        "method": null
+      }
+    ],
+    "type": "nameRequired"
+  },
+  "hasNoSourceId": {
+    "title": "Id da fonte",
+    "description": "Que programador é esse que não respeita os atributos? <br/>Tem que passar o id da fonte manolo...",
+    "buttons": [
+      {
+        "label": "bele",
+        "method": null
+      }
+    ],
+    "type": "nameRequired"
+  },
+  "codeRequired": {
+    "title": "Código",
+    "description": "Eu preciso de um código para a fonte, eu já tenho um, mas vc não vai entender. <br/> Malzae...",
+    "buttons": [
+      {
+        "label": "Saquei mano",
+        "method": null
+      }
+    ],
+    "type": "codeRequired"
+  },
+  "researchersRequired": {
+    "title": "Pesquisador",
+    "description": "Fala mestre, tudo na paz???<br/> Então amizade, eu não posso cadastrar uma fonte sem pesquisador :D",
+    "buttons": [
+      {
+        "label": "Já vou arrumar isso",
+        "method": null
+      }
+    ],
+    "type": "researchersRequired"
+  },
+  "addressRequired": {
+    "stateRequired": {
+      "title": "Estado",
+      "description": "Opa, tudo certo? Se essa fonte não é virtual, vc pode me dizer o endereço?",
+      "buttons": [
+        {
+          "label": "É pra já",
+          "method": null
+        }
+      ],
+      "type": "addressRequired.stateRequired"
+    },
+    "cityRequired": {
+      "title": "Cidade",
+      "description": "Amigo, só preciso do nome da cidade :D",
+      "buttons": [
+        {
+          "label": "To mandando",
+          "method": null
+        }
+      ],
+      "type": "addressRequired.cityRequired"
+    },
+    "neighborhoodRequired": {
+      "title": "Bairro",
+      "description": "Para cadastrar... <br/>hehehe, preciso é do Bairro aqui, manolo",
+      "buttons": [
+        {
+          "label": "Ah, foi mal",
+          "method": null
+        }
+      ],
+      "type": "addressRequired.neighborhoodRequired"
+    },
+    "streetRequired": {
+      "title": "Rua",
+      "description": "Oxa, pode me dizer a rua desse pico?",
+      "buttons": [
+        {
+          "label": "Sim sim",
+          "method": null
+        }
+      ],
+      "type": "addressRequired.streetRequired"
+    },
+    "postalCodeRequired": {
+      "title": "CEP",
+      "description": "Podes me passar o CEP?",
+      "buttons": [
+        {
+          "label": "Sim sim",
+          "method": null
+        }
+      ],
+      "type": "addressRequired.postalCodeRequired"
+    }
+  },
+  "CastError": {
+    "researchers": {
+      "ObjectId": {
+        "title": "Usuario invalido",
+        "description": "Fala dev, aqui vc só me passa o ObjectId do usuario, blz?",
+        "buttons": [
+          {
+            "label": "Ah, eu não sabia!",
+            "method": null
+          }
+        ],
+        "type": "CastError.researchers.ObjectId"
+      }
+    }
+  },
+  "connect": {
+    "fontId": {
+      "title": "Id da fonte",
+      "description": "Fala dev, como eu vou addicionar o cara em uma fonte que eu não tenho o id",
+      "buttons": [
+        {
+          "label": "hehehe",
+          "method": null
+        }
+      ],
+      "type": "connect.fontId"
+    },
+    "researcherId": {
+      "title": "Id do pesquisador",
+      "description": "Fala dev, parabéns por me mandar o id da fonte, mas preciso saber quem vai pra lá tbm",
+      "buttons": [
+        {
+          "label": "Oxa cara, tu quer tudo.",
+          "method": null
+        }
+      ],
+      "type": "connect.researcherId"
+    },
+    "researcherAlreadyConnected": {
+      "title": "Pessoa já cadastrada",
+      "description": "Esse ser humaninho já está cadastrado no sistema.",
+      "buttons": [
+        {
+          "label": "Como pode, hehehe",
+          "method": null
+        }
+      ],
+      "type": "connect.researcherAlreadyConnected"
+    }
+  },
+  "connectProduct": {
+    "sourceIdRequired": {
+      "title": "Fonte",
+      "description": "Então pessoa querida, eu preciso saber qual a fonte, pra colocar produto nela.",
+      "buttons": [
+        {
+          "label": "Verdade hehe",
+          "method": null
+        }
+      ],
+      "type": "connectProduct.sourceIdRequired"
+    },
+    "productsIdRequired": {
+      "title": "Produtos",
+      "description": "E ai, tudo na paz? Eu preciso de pelo menos 1 produto para colocar na fonte.",
+      "buttons": [
+        {
+          "label": "Eeeeeroooouuu",
+          "method": null
+        }
+      ],
+      "type": "connectProduct.productsIdRequired"
+    }
+  }
+}
