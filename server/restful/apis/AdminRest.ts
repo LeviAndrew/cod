@@ -16,10 +16,12 @@ export class AdminRest extends BasicRest {
         '/admin/addressByZipCode/:zipCode': this.addressByZipCode.bind(this),
       },
       post: {
-        '/admin/region_create': this.regionCreate.bind(this),
-        '/admin/region_update': this.regionUpdate.bind(this),
-        '/admin/import_basket': this.importBasket.bind(this),
         // '/research/uploadProfileImage/:userId': this.uploadProfileImage.bind(this),
+        // '/admin/region_create': this.regionCreate.bind(this),
+        // '/admin/region_update': this.regionUpdate.bind(this),
+        // '/admin/import_basket': this.importBasket.bind(this),
+        // '/admin/source_create': this.sourceCreate.bind(this),
+        '/admin/:metodo': this.callAdminAction.bind(this),
       }
     };
 
@@ -45,6 +47,16 @@ export class AdminRest extends BasicRest {
   private async getSearches(req, res) {  // remover
     let ret = await this.handler.getSearches(req.params.userId);
     return res
+      .status(200)
+      .send(ret);
+  }
+
+  private async callAdminAction(request, response) {
+    let ret = await this.handler[request.params.metodo]({
+      data: request.body,
+      auth: request.headers["authentication-key"],
+    });;
+    return response
       .status(200)
       .send(ret);
   }

@@ -91,7 +91,7 @@ describe('Teste aplicativo', () => {
 
       it('Sem nome', (done) => {
         chai.request(baseURL)
-          .post(`/api/admin/region_create`)
+          .post(`/api/admin/regionCreate`)
           .set("authentication-key", loggedUser.id)
           .send({name: ""})
           .end((error, response) => {
@@ -114,7 +114,7 @@ describe('Teste aplicativo', () => {
 
       it('ok', (done) => {
         chai.request(baseURL)
-          .post(`/api/admin/region_create`)
+          .post(`/api/admin/regionCreate`)
           .set("authentication-key", loggedUser.id)
           .send({
             name: 'Grande Florianópolis',
@@ -141,7 +141,7 @@ describe('Teste aplicativo', () => {
 
       it('ok', (done) => {
         chai.request(baseURL)
-          .post(`/api/admin/region_update`)
+          .post(`/api/admin/regionUpdate`)
           .set("authentication-key", loggedUser.id)
           .send({
             id: regions[0].id,
@@ -171,7 +171,7 @@ describe('Teste aplicativo', () => {
 
         it('importa XLSX', (done) => {
           chai.request(baseURL)
-            .post(`/api/admin/import_basket`)
+            .post(`/api/admin/importBasket`)
             .set("authentication-key", loggedUser.id)
             .send({
               "regionId": regions[0].id,
