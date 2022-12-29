@@ -209,105 +209,387 @@ describe('Teste aplicativo', () => {
 
       describe('criar', () => {
 
-        // it('sem nome', (done) => {
-        //   chai.request(baseURL)
-        //     .post(`/api/admin/sourceCreate`)
-        //     .set("authentication-key", loggedUser.id)
-        //     .send({
-        //       regionId: regions[0].id,
-        //       source: {
-        //         name: "",
-        //         products: [],
-        //         code: "123dz",
-        //         researchers: [loggedUser.id],
-        //         address: {
-        //           state: address.uf,
-        //           city: address.localidade,
-        //           neighborhood: address.bairro,
-        //           street: address.logradouro,
-        //           postalCode: address.cep,
-        //           number: 179,
-        //         }
-        //       }
-        //     })
-        //     .end((error, response) => {
-        //       expect(response.body).to.be.instanceOf(Object);
-        //       expect(response.body).to.have.all.keys("success", "data");
-        //       expect(response.body.success).to.be.false;
-        //       expect(response.body.data).to.be.instanceOf(Array);
-        //       response.body.data.forEach(error => {
-        //         expect(error).to.be.instanceOf(Object);
-        //         expect(error).to.have.all.keys("title", "description", "buttons", "type");
-        //         expect(error.buttons).to.be.instanceOf(Array);
-        //         error.buttons.forEach(button => {
-        //           expect(button).to.be.instanceOf(Object);
-        //           expect(button).to.have.all.keys("label", "method");
-        //         });
-        //       });
-        //       done();
-        //     })
-        // });
+        it('sem nome', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "",
+                products: [],
+                code: "123dz",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem codigo', (done) => {
-        //   chai.request(baseURL)
-        //     .post(`/api/admin/sourceCreate`)
-        //     .set("authentication-key", loggedUser.id)
-        //     .send({
-        //       regionId: regions[0].id,
-        //       source: {
-        //         name: "Hippo",
-        //         products: [],
-        //         researchers: [loggedUser.id],
-        //         address: {
-        //           state: address.uf,
-        //           city: address.localidade,
-        //           neighborhood: address.bairro,
-        //           street: address.logradouro,
-        //           postalCode: address.cep,
-        //           number: 179,
-        //         }
-        //       }})
-        //     .end((error, response) => {
-        //       expect(response.body).to.be.instanceOf(Object);
-        //       expect(response.body).to.have.all.keys("success", "data");
-        //       expect(response.body.success).to.be.false;
-        //       expect(response.body.data).to.be.instanceOf(Array);
-        //       response.body.data.forEach(error => {
-        //         expect(error).to.be.instanceOf(Object);
-        //         expect(error).to.have.all.keys("title", "description", "buttons", "type");
-        //         expect(error.buttons).to.be.instanceOf(Array);
-        //         error.buttons.forEach(button => {
-        //           expect(button).to.be.instanceOf(Object);
-        //           expect(button).to.have.all.keys("label", "method");
-        //         });
-        //       });
-        //       done();
-        //     })
-        // });
+        it('sem codigo', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem pesquisador', (done) => {
-        // });
+        it('sem pesquisador', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                code: "123dz",
+                researchers: [],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem estado', (done) => {
-        // });
+        it('sem estado', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                code: "123dz",
+                researchers: [loggedUser.id],
+                address: {
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem cidade', (done) => {
-        // });
+        it('sem cidade', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                code: "1234dz",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: '',
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem bairro', (done) => {
-        // });
+        it('sem bairro', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                code: "1234dz",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: null,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem rua', (done) => {
-        // });
+        it('sem rua', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                code: "1234dz",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: null,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem cep', (done) => {
-        // });
+        it('sem cep', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                code: "1234dz",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem nome e sem code', (done) => {
-        // });
+        it('sem nome e sem code', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                products: [],
+                code: "",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
-        // it('sem code e sem rua', (done) => {
-        // });
+        it('sem code e sem rua', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: null,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(error => {
+                expect(error).to.be.instanceOf(Object);
+                expect(error).to.have.all.keys("title", "description", "buttons", "type");
+                expect(error.buttons).to.be.instanceOf(Array);
+                error.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+              });
+              done();
+            })
+        });
 
         it('OK!', (done) => {
           chai.request(baseURL)
