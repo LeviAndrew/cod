@@ -81,6 +81,7 @@ describe('Teste aplicativo', () => {
           expect(response.body.success).to.be.true;
           expect(response.body.data).to.be.instanceof(Object);
           expect(response.body.data).to.have.all.keys("bairro", "cep", "complemento", "ddd", "gia", "ibge", "localidade", "logradouro", "siafi", "uf");
+          addressToEdit =  response.body.data;
           done();
         })
     });
@@ -635,7 +636,52 @@ describe('Teste aplicativo', () => {
 
       describe('editar', () => {
 
-        it('ok', (done) => {
+        it('OK!', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceUpdate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              id: sources[0].id,
+              update: {
+                name: "Rosa teste",
+                products: [],
+                code: "12345dz",
+                researchers: [loggedUser.id],
+                address: {
+                  neighborhood: addressToEdit.bairro,
+                  street: addressToEdit.logradouro,
+                  postalCode: addressToEdit.cep,
+                  number: 199,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.true;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(font => {
+                expect(font).to.be.instanceOf(Object);
+                expect(font).to.have.all.keys("name", "code", "address", "id", "researchers", "products");
+                expect(font.address).to.be.instanceof(Object);
+                expect(font.address).to.have.all.keys("state", "city", "neighborhood", "street", "postalCode", "number");
+                expect(font.address.city).to.be.instanceof(Object);
+                expect(font.address.city).to.have.all.keys("_id", "name", "id");
+                expect(font.address.neighborhood).to.be.instanceof(Object);
+                expect(font.address.neighborhood).to.have.all.keys("_id", "name", "id");
+                expect(font.address.state).to.be.instanceof(Object);
+                expect(font.address.state).to.have.all.keys("_id", "initial", "id", "name");
+                expect(font.products).to.be.instanceof(Array);
+                expect(font.researchers).to.be.instanceof(Array);
+                font.researchers.forEach(researcher => {
+                  expect(researcher).to.be.instanceof(Object);
+                  expect(researcher).to.have.all.keys("_id", "name", "surname", "email", "id", "type");
+                });
+              });
+              sources[0] = response.body.data[0];
+              // cliente.removeListener("retorno", retorno);
+              done();
+            })
         });
 
       });
@@ -643,18 +689,133 @@ describe('Teste aplicativo', () => {
       describe('ASSOCIAR PRODUTOS A FONTE', () => {
 
         it('ler product basket', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/read_product_basket`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id
+            })
+            .end((error, response) => {
+              expect(response.body.success).to.be.true;
+              expect(response.body.data).to.be.instanceOf(Array);
+              expect(response.body.data[0]).to.be.instanceOf(Object);
+              expect(response.body.data[0].basket).to.be.instanceOf(Array);
+              expect(response.body.data[0].basket.length).to.be.greaterThan(0);
+              expect(response.body.data[0]).to.include.all.keys('basket', 'id', 'region');
+              expect(response.body.data[0].basket[0]).to.include.all.keys('baseWeight', 'product');
+              productbaskets = response.body.data[0];  
+              // cliente.removeListener('retorno', retorno);
+              done();
+            })
         });
 
         it('sem id da fonte', (done) => {
+          let data = {
+            sourceId: '',
+            productsId: [],
+          };
+          for (let i = 0; i < 90; i++){
+            data.productsId.push(productsId[i]);
+          }
+          chai.request(baseURL)
+            .post(`/api/admin/connectProductsSource`)
+            .set("authentication-key", loggedUser.id)
+            .send({data})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Object);
+              expect(response.body.data).to.have.all.keys("title", "description", "buttons", "type");
+              expect(response.body.data.buttons).to.be.instanceOf(Array);
+              response.body.data.buttons.forEach(button => {
+                expect(button).to.be.instanceOf(Object);
+                expect(button).to.have.all.keys("label", "method");
+              });
+              // cliente.removeListener("retorno", retorno);
+              done();
+            })
         });
 
         it('sem produto', (done) => {
+          let data = {
+            sourceId: sources[0].id,
+            productsId: null,
+          };
+          chai.request(baseURL)
+            .post(`/api/admin/connectProductsSource`)
+            .set("authentication-key", loggedUser.id)
+            .send({data})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.false;
+              expect(response.body.data).to.be.instanceOf(Object);
+              expect(response.body.data).to.have.all.keys("title", "description", "buttons", "type");
+              expect(response.body.data.buttons).to.be.instanceOf(Array);
+              response.body.data.buttons.forEach(button => {
+                expect(button).to.be.instanceOf(Object);
+                expect(button).to.have.all.keys("label", "method");
+              });
+              // cliente.removeListener("retorno", retorno);
+              done();
+            })
         });
 
-        it('ok', (done) => {
+        it('OK!', (done) => {
+          let data = {
+            sourceId: sources[0].id,
+            productsId: [],
+          };
+          for (let i = 0; i < 90; i++){
+            data.productsId.push(productsId[i]);
+          }
+          chai.request(baseURL)
+            .post(`/api/admin/connectProductsSource`)
+            .set("authentication-key", loggedUser.id)
+            .send({data})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.true;
+              expect(response.body.data).to.be.instanceOf(Object);
+              expect(response.body.data).to.have.all.keys("_id", "name", "id", "products");
+              expect(response.body.data.products).to.be.instanceof(Array);
+              response.body.data.products.forEach(product => {
+                expect(product).to.be.instanceof(Object);
+                expect(product).to.have.all.keys("_id", "name", "code", "id");
+              });
+              // cliente.removeListener("retorno", retorno);
+              done();
+            })
         });
 
         it('ok, mas repete produtos', (done) => {
+          let data = {
+            sourceId: sources[0].id,
+            productsId: [],
+          };
+          for (let i = 80; i < 110; i++){
+            data.productsId.push(productsId[i]);
+          }
+          chai.request(baseURL)
+            .post(`/api/admin/connectProductsSource`)
+            .set("authentication-key", loggedUser.id)
+            .send({data})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.true;
+              expect(response.body.data).to.be.instanceOf(Object);
+              expect(response.body.data).to.have.all.keys("_id", "name", "id", "products");
+              expect(response.body.data.products).to.be.instanceof(Array);
+              response.body.data.products.forEach(product => {
+                expect(product).to.be.instanceof(Object);
+                expect(product).to.have.all.keys("_id", "name", "code", "id");
+              });
+              // cliente.removeListener("retorno", retorno);
+              done();
+            })
         });
 
       });

@@ -44,13 +44,6 @@ export class AdminRest extends BasicRest {
     return this._routes;
   }
 
-  private async getSearches(req, res) {  // remover
-    let ret = await this.handler.getSearches(req.params.userId);
-    return res
-      .status(200)
-      .send(ret);
-  }
-
   private async callAdminAction(request, response) {
     let ret = await this.handler[request.params.metodo]({
       data: request.body,
@@ -71,34 +64,41 @@ export class AdminRest extends BasicRest {
       .send(ret);
   }
 
-  private async regionCreate(req, res) {
-    let ret = await this.handler.regionCreate({
-      data: req.body,
-      auth: req.headers["authentication-key"],
-    });
-    return res
-      .status(200)
-      .send(ret);
-  }
+  // private async getSearches(req, res) {  // remover
+  //   let ret = await this.handler.getSearches(req.params.userId);
+  //   return res
+  //     .status(200)
+  //     .send(ret);
+  // }
 
-  private async regionUpdate(req, res) {
-    let ret = await this.handler.regionUpdate({
-      data: req.body,
-      auth: req.headers["authentication-key"],
-    });
-    return res
-      .status(200)
-      .send(ret);
-  }
+  // private async regionCreate(req, res) {
+  //   let ret = await this.handler.regionCreate({
+  //     data: req.body,
+  //     auth: req.headers["authentication-key"],
+  //   });
+  //   return res
+  //     .status(200)
+  //     .send(ret);
+  // }
 
-  private async importBasket(req, res) {
-    let ret = await this.handler.importBasket({
-      data: req.body,
-      auth: req.headers["authentication-key"],
-    });
-    return res
-      .status(200)
-      .send(ret);
-  }
+  // private async regionUpdate(req, res) {
+  //   let ret = await this.handler.regionUpdate({
+  //     data: req.body,
+  //     auth: req.headers["authentication-key"],
+  //   });
+  //   return res
+  //     .status(200)
+  //     .send(ret);
+  // }
+
+  // private async importBasket(req, res) {
+  //   let ret = await this.handler.importBasket({
+  //     data: req.body,
+  //     auth: req.headers["authentication-key"],
+  //   });
+  //   return res
+  //     .status(200)
+  //     .send(ret);
+  // }
 
 }

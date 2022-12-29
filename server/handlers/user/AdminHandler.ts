@@ -137,17 +137,17 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<any>}
    */
   async sourceUpdate(data) {
-    delete data.update.products;
-    let updateValidate = await this.updateValidator(data);
+    delete data.data.update.products;
+    let updateValidate = await this.updateValidator(data.data);
     if (!updateValidate.success) return updateValidate;
-    if (data.update.address) {
-      let newAddress = await this.updateSourceAddress(data.id, data.update.address);
+    if (data.data.update.address) {
+      let newAddress = await this.updateSourceAddress(data.data.id, data.data.update.address);
       if (!newAddress.success) return newAddress;
-      data.update.address = newAddress.data;
+      data.data.update.address = newAddress.data;
     }
     let ret = await this.emit_to_server('db.source.update', new UpdateObject(
-      data.id,
-      data.update,
+      data.data.id,
+      data.data.update,
       {
         new: true,
         runValidators: true,
@@ -160,7 +160,7 @@ export class AdminHandler extends CommonHandler {
       model: 'source',
       data: ret.data,
     });
-    return await this.sourceReadById([data.id]);
+    return await this.sourceReadById([data.data.id]);
   }
 
   /**
@@ -253,7 +253,7 @@ export class AdminHandler extends CommonHandler {
     data.update = {
       removed: true,
     };
-    let removed = await this.sourceUpdate(data);
+    let removed = await this.sourceUpdate({data: data});
     if (!removed.success) return removed;
     let regions = await this.emit_to_server('db.region.update', new UpdateObject(
       {
@@ -332,17 +332,17 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<null>}
    */
   async connectProductsSource(data) {
-    if (!data.sourceId) return await this.returnHandler({
+    if (!data.data.data.sourceId) return await this.returnHandler({
       model: 'source',
       data: {error: 'connectProduct.sourceIdRequired'}
     });
-    if (!Array.isArray(data.productsId) || !data.productsId.length) return await this.returnHandler({
+    if (!Array.isArray(data.data.data.productsId) || !data.data.data.productsId.length) return await this.returnHandler({
       model: 'source',
       data: {error: 'connectProduct.productsIdRequired'}
     });
-    let produtctsToConnect = await this.unconnectedProduct(data);
+    let produtctsToConnect = await this.unconnectedProduct(data.data.data);
     let ret = await this.emit_to_server('db.source.update', new UpdateObject(
-      data.sourceId,
+      data.data.data.sourceId,
       {
         $push: {
           products: {
@@ -363,7 +363,7 @@ export class AdminHandler extends CommonHandler {
       data: ret.data,
     });
     let source = await this.emit_to_server('db.source.read', new QueryObject(
-      data.sourceId,
+      data.data.data.sourceId,
       'name products',
       {
         path: 'products',
@@ -566,7 +566,7 @@ export class AdminHandler extends CommonHandler {
     data.update = {
       removed: true,
     };
-    return await this.regionUpdate(data);
+    return await this.regionUpdate({data: data});
   }
 
   /**
@@ -1748,8 +1748,8 @@ export class AdminHandler extends CommonHandler {
    * @param {{regionId: string}} data
    * @returns {Promise<void>}
    */
-  public async read_product_basket(data: { regionId: string }) {
-    let read_obj = new QueryObject({region: data.regionId}, 'id region basket',
+  public async read_product_basket(data: { data: {regionId: string} }) {
+    let read_obj = new QueryObject({region: data.data.regionId}, 'id region basket',
       {path: 'basket.product', select: 'id name code'});
     let ret = await this.emit_to_server('db.productbasket.read', read_obj);
     return await this.returnHandler({
@@ -1880,7 +1880,7 @@ export class AdminHandler extends CommonHandler {
       model: 'grouper',
       data: savedGroups.data,
     });
-    return await this.read_product_basket({regionId: data.data.regionId});
+    return await this.read_product_basket({data: {regionId: data.data.regionId}});
   }
 
   /**
@@ -1938,7 +1938,7 @@ export class AdminHandler extends CommonHandler {
   }
 
   private async getProductsByRegion(data: { regionId: string }) {
-    let ret: any = await this.read_product_basket({regionId: data.regionId});
+    let ret: any = await this.read_product_basket({data:{regionId: data.regionId}});
     if (!ret.success) return null;
     let products = [];
     for (let i = 0; i < ret.data[0].basket.length; i++) {
