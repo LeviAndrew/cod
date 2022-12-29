@@ -17,8 +17,8 @@ describe('Teste aplicativo', () => {
   });
 
   let cliente = null;
-  let usuario = null;
-  let regions = null;
+  // let usuario = null;
+  let regions = [];
   let address = null;
   let sources = null;
   let pesquisadores = null;
@@ -27,6 +27,7 @@ describe('Teste aplicativo', () => {
   let searches = null;
   let productbaskets = null;
   let loggedUser;
+  let data;
 
   describe('LOGIN', () => {
 
@@ -65,6 +66,7 @@ describe('Teste aplicativo', () => {
           expect(response.body.success).to.be.true;
           expect(response.body.data).to.be.instanceof(Object);
           expect(response.body.data).to.have.all.keys("bairro", "cep", "complemento", "ddd", "gia", "ibge", "localidade", "logradouro", "siafi", "uf");
+          address =  response.body.data;
           done();
         })
     });
@@ -207,37 +209,144 @@ describe('Teste aplicativo', () => {
 
       describe('criar', () => {
 
-        it('sem nome', (done) => {
-        });
-        
-        it('sem codigo', (done) => {
-        });
+        // it('sem nome', (done) => {
+        //   chai.request(baseURL)
+        //     .post(`/api/admin/sourceCreate`)
+        //     .set("authentication-key", loggedUser.id)
+        //     .send({
+        //       regionId: regions[0].id,
+        //       source: {
+        //         name: "",
+        //         products: [],
+        //         code: "123dz",
+        //         researchers: [loggedUser.id],
+        //         address: {
+        //           state: address.uf,
+        //           city: address.localidade,
+        //           neighborhood: address.bairro,
+        //           street: address.logradouro,
+        //           postalCode: address.cep,
+        //           number: 179,
+        //         }
+        //       }
+        //     })
+        //     .end((error, response) => {
+        //       expect(response.body).to.be.instanceOf(Object);
+        //       expect(response.body).to.have.all.keys("success", "data");
+        //       expect(response.body.success).to.be.false;
+        //       expect(response.body.data).to.be.instanceOf(Array);
+        //       response.body.data.forEach(error => {
+        //         expect(error).to.be.instanceOf(Object);
+        //         expect(error).to.have.all.keys("title", "description", "buttons", "type");
+        //         expect(error.buttons).to.be.instanceOf(Array);
+        //         error.buttons.forEach(button => {
+        //           expect(button).to.be.instanceOf(Object);
+        //           expect(button).to.have.all.keys("label", "method");
+        //         });
+        //       });
+        //       done();
+        //     })
+        // });
 
-        it('sem pesquisador', (done) => {
-        });
+        // it('sem codigo', (done) => {
+        //   chai.request(baseURL)
+        //     .post(`/api/admin/sourceCreate`)
+        //     .set("authentication-key", loggedUser.id)
+        //     .send({
+        //       regionId: regions[0].id,
+        //       source: {
+        //         name: "Hippo",
+        //         products: [],
+        //         researchers: [loggedUser.id],
+        //         address: {
+        //           state: address.uf,
+        //           city: address.localidade,
+        //           neighborhood: address.bairro,
+        //           street: address.logradouro,
+        //           postalCode: address.cep,
+        //           number: 179,
+        //         }
+        //       }})
+        //     .end((error, response) => {
+        //       expect(response.body).to.be.instanceOf(Object);
+        //       expect(response.body).to.have.all.keys("success", "data");
+        //       expect(response.body.success).to.be.false;
+        //       expect(response.body.data).to.be.instanceOf(Array);
+        //       response.body.data.forEach(error => {
+        //         expect(error).to.be.instanceOf(Object);
+        //         expect(error).to.have.all.keys("title", "description", "buttons", "type");
+        //         expect(error.buttons).to.be.instanceOf(Array);
+        //         error.buttons.forEach(button => {
+        //           expect(button).to.be.instanceOf(Object);
+        //           expect(button).to.have.all.keys("label", "method");
+        //         });
+        //       });
+        //       done();
+        //     })
+        // });
 
-        it('sem estado', (done) => {
-        });
+        // it('sem pesquisador', (done) => {
+        // });
 
-        it('sem cidade', (done) => {
-        });
+        // it('sem estado', (done) => {
+        // });
 
-        it('sem bairro', (done) => {
-        });
+        // it('sem cidade', (done) => {
+        // });
 
-        it('sem rua', (done) => {
-        });
+        // it('sem bairro', (done) => {
+        // });
 
-        it('sem cep', (done) => {
-        });
+        // it('sem rua', (done) => {
+        // });
 
-        it('sem nome e sem code', (done) => {
-        });
+        // it('sem cep', (done) => {
+        // });
 
-        it('sem code e sem rua', (done) => {
-        });
+        // it('sem nome e sem code', (done) => {
+        // });
 
-        it('ok', (done) => {
+        // it('sem code e sem rua', (done) => {
+        // });
+
+        it('OK!', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                name: "Hippo",
+                products: [],
+                code: "1234dz",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.true;
+              expect(response.body.data).to.be.instanceOf(Array);
+              response.body.data.forEach(font => {
+                expect(font).to.be.instanceOf(Object);
+                expect(font).to.have.all.keys("updatedAt", "createdAt", "name", "code", "address", "id", "removed", "researchers", "products", "urlImage");
+                expect(font.address).to.be.instanceOf(Object);
+                expect(font.address).to.have.all.keys("state", "city", "neighborhood", "street", "postalCode", "number", "id");
+                expect(font.products).to.be.instanceOf(Array);
+                expect(font.researchers).to.be.instanceOf(Array);
+              });
+              sources = response.body.data;
+              // cliente.removeListener("retorno", retorno);
+              done();
+            })
         });
 
       });
