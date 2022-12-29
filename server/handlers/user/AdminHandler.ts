@@ -17,7 +17,14 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<{success: boolean; data: any & [any , any , any , any , any , any , any , any , any , any]} | {success: boolean; data}>}
    */
   async regionCreate(data) {
-    let ret = await this.emit_to_server('db.region.create', data);
+    // let test = await this.isAdmin(data.auth); // Validar se usuário é Admin // Levi
+    // if (test.data.success[0].type === "admin") { // Validar se usuário é Admin // Levi
+    //   return await this.returnHandler({
+    //     model: 'address',
+    //     data: {error: "Usuário não é admin"}
+    //   })
+    // }
+    let ret = await this.emit_to_server('db.region.create', data.data);
     return await this.returnHandler({
       model: 'region',
       data: ret.data,
@@ -477,6 +484,13 @@ export class AdminHandler extends CommonHandler {
    */
   async addressByZipCode(data) {
     try {
+      // let test = await this.isAdmin(data.auth); // Validar se usuário é Admin // Levi
+      // if (test.data.success[0].type === "admin") { // Validar se usuário é Admin // Levi
+      //   return await this.returnHandler({
+      //     model: 'address',
+      //     data: {error: "Usuário não é admin"}
+      //   })
+      // }
       let addressBuscaCEP = await buscaCEP(data.zipCode);
       return await this.returnHandler({
         model: 'address',
@@ -522,11 +536,11 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<any>}
    */
   async regionUpdate(data) {
-    let updateValidate = await this.updateValidator(data);
+    let updateValidate = await this.updateValidator(data.data);
     if (!updateValidate.success) return updateValidate;
     let ret = await this.emit_to_server('db.region.update', new UpdateObject(
-      data.id,
-      data.update,
+      data.data.id,
+      data.data.update,
       {
         new: true,
         runValidators: true,
@@ -1811,7 +1825,7 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<any>}
    */
   public async importBasket(data) {
-    let exists = await this.emit_to_server('db.productbasket.exists', {query: {region: data.regionId}});
+    let exists = await this.emit_to_server('db.productbasket.exists', {query: {region: data.data.regionId}});
     if (exists.data.success) {
       return await this.returnHandler({
         model: 'productbasket',
@@ -1820,12 +1834,12 @@ export class AdminHandler extends CommonHandler {
         },
       })
     }
-    let documentSource = await Util.writeXLS(data.document, data.regionId);
+    let documentSource = await Util.writeXLS(data.data.document, data.data.regionId);
     let jsonDocument = await xlsx2json(documentSource);
     await Util.removeFile(documentSource);
     let products = [];
     let basket = {
-      region: data.regionId,
+      region: data.data.regionId,
       basket: [],
     };
     let productsByCode = {};
@@ -1866,7 +1880,7 @@ export class AdminHandler extends CommonHandler {
       model: 'grouper',
       data: savedGroups.data,
     });
-    return await this.read_product_basket({regionId: data.regionId});
+    return await this.read_product_basket({regionId: data.data.regionId});
   }
 
   /**
@@ -3019,6 +3033,16 @@ export class AdminHandler extends CommonHandler {
       'id'
     ));
     return !!ret.data.success.length;
+  }
+
+  private async isAdmin(_id){
+      const ret = await this.emit_to_server('db.user.read', new QueryObject(
+        {
+          _id
+        },
+        'type'
+      ));
+      return ret;
   }
 
 }

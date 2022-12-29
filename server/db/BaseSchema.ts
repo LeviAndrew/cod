@@ -4,11 +4,13 @@ let schema = {
   id: {
     type: Schema.Types.String,
     required: true,
-    trim: true
+    trim: true,
+    index: true,
   },
   removed: {
     type: Schema.Types.Boolean,
-    default: false
+    default: false,
+    index: true,
   },
 };
 
