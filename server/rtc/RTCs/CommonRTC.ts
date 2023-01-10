@@ -16,14 +16,14 @@ export class CommonRTC extends BasicRTC {
 
     openRTC.destroy();
     this.interfaceListeners = {
-      'logout': this.logout.bind(this),
-      'user_change_infos': this.userChangeInfos.bind(this),
-      'source_read_of_researcher': this.sourceReadOfResearcher.bind(this),
-      'get_searches': this.getSearches.bind(this),
-      'get_searches_by_source': this.getSearchesBySource.bind(this),
-      'user_searches_save': this.userSearchesSave.bind(this),
-      'user_searches_send': this.userSearchesSend.bind(this),
-      'readSearchesByProductCode': this.readSearchesByProductCode.bind(this),
+      'logout': this.logout.bind(this), // USER
+      'user_change_infos': this.userChangeInfos.bind(this), // USER
+      'source_read_of_researcher': this.sourceReadOfResearcher.bind(this), // FONTE
+      'get_searches': this.getSearches.bind(this), // PESQUISA
+      'get_searches_by_source': this.getSearchesBySource.bind(this), // PESQUISA
+      'user_searches_save': this.userSearchesSave.bind(this), // PESQUISA
+      'user_searches_send': this.userSearchesSend.bind(this), // PESQUISA
+      'readSearchesByProductCode': this.readSearchesByProductCode.bind(this), // falta documentar
     };
     this.loggedUser = msg.datas.data;
     this.emit_to_browser(msg);

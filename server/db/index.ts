@@ -22,7 +22,7 @@ import {ManagerMap} from "../interfaces/ManagerMap";
 let managers: ManagerMap = {
   "user": new User(),
   "admin": new Admin(),
-  "ciry": new City(),
+  "city": new City(),
   "grouper": new Grouper(),
   "neighborhood": new Neighborhood(),
   "product": new Product(),

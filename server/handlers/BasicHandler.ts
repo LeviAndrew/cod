@@ -322,11 +322,23 @@ export class BasicHandler extends Source {
       year: data.year,
       month: data.month
     });
-    let searches = await Promise.all([
-      this.getPreviousSearchInLine(searchesFilter, data.regionId),
-      this.mappingSearchesByCode(previous.data.success[0].searches)
-    ]);
-    this.setPreviousValue(searches[0].data.success, searches[1]);
+    let searches;
+    if (previous.data.success.length !== 0) {
+      searches = await Promise.all([
+        this.getPreviousSearchInLine(searchesFilter, data.regionId),
+        this.mappingSearchesByCode(previous.data.success[0].searches)
+      ]);
+      this.setPreviousValue(searches[0].data.success, searches[1]);
+    } else {
+      searches = await Promise.all([
+        this.getPreviousSearchInLine(searchesFilter, data.regionId)
+      ]);
+    }
+    // searches = await Promise.all([
+    //   this.getPreviousSearchInLine(searchesFilter, data.regionId),
+    //   this.mappingSearchesByCode(previous.data.success[0].searches)
+    // ]);
+    // this.setPreviousValue(searches[0].data.success, searches[1]);
     return searches[0];
   }
 
@@ -367,7 +379,7 @@ export class BasicHandler extends Source {
 
   protected async getPreviousSearches(data): Promise<any> {
     let previousDate = this.getPreviousDate(data);
-    return await this.emit_to_server('db.review.read', new QueryObject(
+    const obj = new QueryObject(
       {
         region: data.regionId,
         year: previousDate.year,
@@ -382,7 +394,9 @@ export class BasicHandler extends Source {
           select: 'code especOne especTwo price changed'
         }
       }
-    ));
+    );
+    const ret = await this.emit_to_server('db.review.read', obj);
+    return ret
   }
 
   protected getPreviousDate(date) {
@@ -504,7 +518,7 @@ export class BasicHandler extends Source {
     return ret;
   }
 
-  public async readReport(data) {
+  public async readReport(data) { // metodo enviado para o AdminHandler
     let date: any = data.date;
     if (!data.date) {
       date = await this.readReviewDate(data);
@@ -541,7 +555,7 @@ export class BasicHandler extends Source {
     });
   }
 
-  public async readReviewDate(data) {
+  public async readReviewDate(data) { // metodo enviado para o AdminHandler
     let ret = await this.emit_to_server('db.review.read', new QueryObject(
       {
         region: data.regionId
@@ -559,7 +573,7 @@ export class BasicHandler extends Source {
     });
   }
 
-  private tableHandler(report) {
+  private tableHandler(report) { // metodo enviado para o AdminHandler (tableHandlerAdmin)
     let mapCalculatedProducts = this.mapCalculatedProducts(report.calculatedProducts);
     return this.mountTree(report.groups, mapCalculatedProducts);
   }

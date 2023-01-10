@@ -1,11 +1,13 @@
 import {Source} from '../events/Source';
 import {OpenRest} from './apis/OpenRest';
 import {AdminRest} from './apis/AdminRest';
+import {CommonRest} from './apis/CommonRest';
 import {ResearcherRest} from './apis/researcherRest'
 
 const Restfuls = {
   open_rest: OpenRest,
   admin_rest: AdminRest,
+  common_rest: CommonRest,
   research_rest: ResearcherRest
 };
 

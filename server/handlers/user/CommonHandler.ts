@@ -83,7 +83,7 @@ export class CommonHandler extends BasicHandler {
    */
   public async getSearches(userId) {
     let searchRet: any = await this.getSearch({
-      user: new Types.ObjectId(userId),
+      user: new Types.ObjectId(userId.auth),
       status: {
         $ne: "Closed",
       }
@@ -103,8 +103,8 @@ export class CommonHandler extends BasicHandler {
    */
   public async getSearchesBySource(userId, data) {
     let searchRet = await this.getSearch({
-      user: new Types.ObjectId(userId),
-      source: new Types.ObjectId(data.sourceId),
+      user: new Types.ObjectId(userId.auth),
+      source: new Types.ObjectId(userId.data.sourceId),
       status: {
         $ne: "Closed",
       }
@@ -130,7 +130,7 @@ export class CommonHandler extends BasicHandler {
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | any[]} | {success: boolean; data: any | any[] | boolean}>}
    */
   public async userSearchesSave(data) {
-    if (!data.searches || !data.searches.length) {
+    if (!data.data.searches || !data.data.searches.length) {
       return await this.returnHandler({
         model: 'search',
         data: {
@@ -138,13 +138,13 @@ export class CommonHandler extends BasicHandler {
         }
       });
     }
-    let updates = await Promise.all(this.getSearchesUpdatePromises(data.searches));
-    this.adjustData({data: data.searches, updates});
+    let updates = await Promise.all(this.getSearchesUpdatePromises(data.data.searches));
+    this.adjustData({data: data.data.searches, updates});
     return this.returnHandler(
       {
         model: 'search',
         data: {
-          success: data
+          success: data.data
         },
       }
     );
@@ -179,12 +179,20 @@ export class CommonHandler extends BasicHandler {
    */
   public async userSearchesSend(userId) {
     let query = {
-      user: userId,
+      user: userId.auth,
       status: {
         $ne: "Closed",
       }
     };
     let ret = await this.emit_to_server('db.search.close', query);
+    if (ret.data.success === null) {
+      return await this.returnHandler(
+        {
+          model: 'search',
+          data: {error: ret.data.error.message || ret.data.error}
+        }
+      );
+    }
     return await this.returnHandler(
       {
         model: 'search',
@@ -202,7 +210,7 @@ export class CommonHandler extends BasicHandler {
   public async sourceReadOfResearcher(userId) {
     let ret = await this.emit_to_server('db.source.read', new QueryObject(
       {
-        researchers: userId,
+        researchers: userId.auth,
       },
       "name code id address.street address.number urlImage"
     ));
@@ -266,9 +274,9 @@ export class CommonHandler extends BasicHandler {
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | any[]} | {success: boolean; data: any | any[] | boolean}>}
    */
   public async userChangeInfos(userId, data) {
-    data = this.beforeChangeInfos(data);
+    data = this.beforeChangeInfos(userId.data);
     let ret = await this.emit_to_server('db.user.update', new UpdateObject(
-      userId,
+      userId.auth,
       data,
       {
         new: true,

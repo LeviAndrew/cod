@@ -31,6 +31,24 @@ export class AdminHandler extends CommonHandler {
     });
   }
 
+  public async readReviewDate(data) {
+    let ret = await this.emit_to_server('db.review.read', new QueryObject(
+      {
+        region: data.data.regionId
+      },
+      "year month",
+      null, 2, null,
+      {
+        year: -1,
+        month: -1,
+      }
+    ));
+    return await this.returnHandler({
+      model: 'review',
+      data: ret.data,
+    });
+  }
+
   /**
    * Cria fonte e coloca na região.
    *
@@ -197,7 +215,7 @@ export class AdminHandler extends CommonHandler {
    */
   public async sourceReadRegion(data) {
     let region = await this.emit_to_server('db.region.read', new QueryObject(
-      data.regionId,
+      data.data.regionId,
       "sources",
       {
         path: "sources",
@@ -228,7 +246,7 @@ export class AdminHandler extends CommonHandler {
   public async sourceReadId(data) {
     let source = await this.emit_to_server('db.source.read', new QueryObject(
       {
-        _id: data.sourceId,
+        _id: data.data.sourceId,
         removed: false,
       },
       "name code address",
@@ -250,18 +268,18 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<any>}
    */
   async sourceRemove(data) {
-    data.update = {
+    data.data.update = {
       removed: true,
     };
-    let removed = await this.sourceUpdate({data: data});
+    let removed = await this.sourceUpdate({data: data.data});
     if (!removed.success) return removed;
     let regions = await this.emit_to_server('db.region.update', new UpdateObject(
       {
-        sources: data.id,
+        sources: data.data.id,
       },
       {
         $pull: {
-          sources: data.id,
+          sources: data.data.id,
         }
       }
     ));
@@ -279,12 +297,12 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | any[]} | {success: boolean; data: any | any[] | boolean}>}
    */
   public async sourceReadProducts(data) {
-    if (!data.sourceId) return await this.returnHandler({
+    if (!data.data.sourceId) return await this.returnHandler({
       model: 'source',
       data: {error: "hasNoSourceId"},
     });
     let ret = await this.emit_to_server('db.source.read', new QueryObject(
-      data.sourceId,
+      data.data.sourceId,
       'products',
       {
         path: 'products',
@@ -563,10 +581,10 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<{success: boolean; data: any} | {success: boolean} | Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | [any]} | {success: boolean; data: any}>>}
    */
   async regionRemove(data) {
-    data.update = {
+    data.data.update = {
       removed: true,
     };
-    return await this.regionUpdate({data: data});
+    return await this.regionUpdate({data: data.data});
   }
 
   /**
@@ -576,7 +594,7 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | [any]} | {success: boolean; data: any}>}
    */
   async researcherCreate(data) {
-    let ret = await this.emit_to_server('db.researcher.create', data);
+    let ret = await this.emit_to_server('db.researcher.create', data.data);
     return this.returnHandler({
       model: 'researcher',
       data: ret.data,
@@ -609,12 +627,12 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<any>}
    */
   async researcherUpdate(data) {
-    delete data.update.password;
-    let updateValidate = await this.updateValidator(data);
+    delete data.data.update.password;
+    let updateValidate = await this.updateValidator(data.data);
     if (!updateValidate.success) return updateValidate;
-    let ret = await this.emit_to_server('db.researcher.update', new UpdateObject(
-      data.id,
-      data.update,
+    const updateObj = new UpdateObject(
+      data.data.id,
+      data.data.update,
       {
         new: true,
         runValidators: true,
@@ -627,7 +645,8 @@ export class AdminHandler extends CommonHandler {
           surname: 1,
         }
       }
-    ));
+    );
+    let ret = await this.emit_to_server('db.researcher.update', updateObj);
     return this.returnHandler({
       model: 'researcher',
       data: ret.data,
@@ -642,22 +661,23 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<any>}
    */
   async researcherRemove(data) {
-    data.update = {
+    data.data.update = {
       removed: true,
     };
     let removed = await this.researcherUpdate(data);
     if (!removed.success) return removed;
+    const userId = data.data.id;
     let sources = await this.emit_to_server('db.source.update', new UpdateObject(
       {
-        researchers: data.id,
+        researchers: userId,
       },
       {
         $pull: {
-          researchers: data.id,
+          researchers: userId,
         }
       }
     ));
-    if (sources.data.error) return this.returnHandler({
+    if (sources.data.error) return this.returnHandler({ // dando erro aqui
       model: 'region',
       data: sources.data,
     });
@@ -689,23 +709,23 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | [any]} | {success: boolean; data: any}>}
    */
   async connectResearcherSource(data) {
-    if (!data.fontId) return this.returnHandler({
+    if (!data.data.fontId) return this.returnHandler({
       model: 'source',
       data: {error: 'connect.fontId'}
     });
-    if (!data.researcherId) return this.returnHandler({
+    if (!data.data.researcherId) return this.returnHandler({
       model: 'source',
       data: {error: 'connect.researcherId'}
     });
-    if (await this.verifyUserAlreadyConnected(data.fontId, data.researcherId)) return this.returnHandler({
+    if (await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId)) return this.returnHandler({
       model: 'source',
       data: {error: 'connect.researcherAlreadyConnected'},
     });
     let ret = await this.emit_to_server('db.source.update', new UpdateObject(
-      data.fontId,
+      data.data.fontId,
       {
         $push: {
-          researchers: data.researcherId,
+          researchers: data.data.researcherId,
         },
       },
       {
@@ -825,11 +845,11 @@ export class AdminHandler extends CommonHandler {
    */
   public async calculateReport(data) {
     let query = {
-      region: data.regionId,
-      year: data.year,
-      month: data.month,
+      region: data.data.regionId,
+      year: data.data.year,
+      month: data.data.month,
     };
-    let previousSearches = await this.getPreviousSearches(data);
+    let previousSearches = await this.getPreviousSearches(data.data);
     if (previousSearches.data.error || !previousSearches.data.success.length) return this.returnHandler({
       model: 'report',
       data: {success: false},
@@ -838,14 +858,15 @@ export class AdminHandler extends CommonHandler {
     if (!searchInLine.success) return searchInLine;
     await this.mergeSearches(previousSearches.data.success[0].searches, searchInLine.data);
     let productsCalculation = this.calculateIPCs(searchInLine.data);
-    let ret = await this.emit_to_server('db.report.read', new QueryObject(
+    const obj = new QueryObject(
       query,
       "calculatedProducts",
       {
         path: "calculatedProducts",
         select: "id ipc previousWeight product weight",
       }
-    ));
+    );
+    let ret = await this.emit_to_server('db.report.read', obj);
     await this.saveCalculatedProducts(productsCalculation, ret.data.success[0].calculatedProducts);
     return this.returnHandler({
       model: 'report',
@@ -881,7 +902,7 @@ export class AdminHandler extends CommonHandler {
   public async readReportDates(data) {
     let report = await this.emit_to_server('db.report.read', new QueryObject(
       {
-        region: data.regionId
+        region: data.data.regionId
       },
       'year month'
     ));
@@ -904,6 +925,56 @@ export class AdminHandler extends CommonHandler {
       model: 'report',
       data: report.data,
     });
+  }
+
+  public async readReport(data) { // metodo enviado para o AdminHandler
+    let date: any = data.data.date;
+    if (!data.data.date) {
+      date = await this.readReviewDate({data: data.data});
+      if (!date.success) return this.returnHandler({
+        model: 'report',
+        data: {error: "dateNotFound"},
+      });
+      date = date.data[0];
+    }
+    let report = await this.emit_to_server('db.report.read', new QueryObject(
+      {
+        region: data.data.regionId,
+        year: date.year,
+        month: date.month,
+        removed: false,
+      },
+      'calculatedProducts groups month year',
+      {
+        path: 'calculatedProducts groups',
+        select: 'id ipc previousWeight product weight name node nodeSon products',
+        populate: {
+          path: 'product',
+          model: 'product',
+          select: 'id code name'
+        }
+      }
+    ));
+    let ret = this.tableHandlerAdmin(report.data.success[0]);
+    return await this.returnHandler({
+      model: 'report',
+      data: {
+        success: ret,
+      }
+    });
+  }
+
+  private tableHandlerAdmin(report) { // metodo do BasicHandler // tableHandler
+    let mapCalculatedProducts = this.mapCalculatedProductsAdmin(report.calculatedProducts);
+    return this.mountTree(report.groups, mapCalculatedProducts);
+  }
+
+  protected mapCalculatedProductsAdmin(calculatedProducts) { // metodo do BasicHandler // mapCalculatedProducts
+    let mapCalculatedProducts = {};
+    for (let i = 0; i < calculatedProducts.length; i++) {
+      mapCalculatedProducts[calculatedProducts[i].product.id] = calculatedProducts[i];
+    }
+    return mapCalculatedProducts;
   }
 
   private getChild(groupId, groupsMap, mapCalculatedProducts) {
@@ -1028,7 +1099,7 @@ export class AdminHandler extends CommonHandler {
     let lastReviewProductsSearchId = await this.emit_to_server('db.review.aggregate', [
       {
         $match: {
-          region: new Types.ObjectId(data.regionId)
+          region: new Types.ObjectId(data.data.regionId)
         }
       },
       {
@@ -1199,7 +1270,7 @@ export class AdminHandler extends CommonHandler {
   async openNewMonthDiscardPrevious(data) {
     let initPromises = await this.emit_to_server('db.productbasket.read', new QueryObject(
       {
-        region: data.regionId,
+        region: data.data.regionId,
       },
       "basket"
     ));
@@ -1221,16 +1292,16 @@ export class AdminHandler extends CommonHandler {
         "id"
       )),
       this.openNewSearch({
-        year: data.year,
-        month: data.month,
-        regionId: data.regionId,
+        year: data.data.year,
+        month: data.data.month,
+        regionId: data.data.regionId,
         searchNumber: 1
       })
     ]);
     let report: any = {
-      region: data.regionId,
-      year: data.year,
-      month: data.month,
+      region: data.data.regionId,
+      year: data.data.year,
+      month: data.data.month,
       groups: [],
       calculatedProducts: [],
     };
@@ -1262,7 +1333,7 @@ export class AdminHandler extends CommonHandler {
    */
   public async openNewMonth(data) {
     let lastReviewProductsSearchId = await this.emit_to_server('db.review.aggregate', [
-      {$match: {region: new Types.ObjectId(data.regionId)}},
+      {$match: {region: new Types.ObjectId(data.data.regionId)}},
       {$sort: {year: -1, month: -1}},
       {$limit: 1},
       {
@@ -1321,7 +1392,7 @@ export class AdminHandler extends CommonHandler {
       currentYear: lastReviewProductsSearchId.data.success[0].year,
       currentMonth: lastReviewProductsSearchId.data.success[0].month,
       searches: newSearches,
-      regionId: data.regionId
+      regionId: data.data.regionId
     });
   }
 
@@ -1427,9 +1498,11 @@ export class AdminHandler extends CommonHandler {
     }
     let ret = await this.emit_to_server('db.review.create', toSave);
     await this.calculateReport({
-      regionId: data.regionId,
-      year: data.currentYear,
-      month: data.currentMonth,
+      data: {
+        regionId: data.regionId,
+        year: data.currentYear,
+        month: data.currentMonth,
+      }
     });
     let nextReport = await this.createNextReport({
       regionId: data.regionId,
@@ -1748,7 +1821,7 @@ export class AdminHandler extends CommonHandler {
    * @param {{regionId: string}} data
    * @returns {Promise<void>}
    */
-  public async read_product_basket(data: { data: {regionId: string} }) {
+  public async readProductBasket(data: { data: {regionId: string} }) { // read_product_basket
     let read_obj = new QueryObject({region: data.data.regionId}, 'id region basket',
       {path: 'basket.product', select: 'id name code'});
     let ret = await this.emit_to_server('db.productbasket.read', read_obj);
@@ -1880,7 +1953,7 @@ export class AdminHandler extends CommonHandler {
       model: 'grouper',
       data: savedGroups.data,
     });
-    return await this.read_product_basket({data: {regionId: data.data.regionId}});
+    return await this.readProductBasket({data: {regionId: data.data.regionId}});
   }
 
   /**
@@ -1938,7 +2011,7 @@ export class AdminHandler extends CommonHandler {
   }
 
   private async getProductsByRegion(data: { regionId: string }) {
-    let ret: any = await this.read_product_basket({data:{regionId: data.regionId}});
+    let ret: any = await this.readProductBasket({data:{regionId: data.regionId}});
     if (!ret.success) return null;
     let products = [];
     for (let i = 0; i < ret.data[0].basket.length; i++) {
@@ -2068,31 +2141,31 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | any[]} | {success: boolean; data: any | any[] | boolean}>}
    */
   public async readAllSearchesToReviewFilter(data) {
-    if (!data.filter) return await this.readAllSearchesToReview(data);
+    if (!data.data.filter) return await this.readAllSearchesToReview(data.data);
     let reviews = await this.emit_to_server('db.review.read', new QueryObject(
       {
-        region: data.regionId,
-        year: data.year,
-        month: data.month,
+        region: data.data.regionId,
+        year: data.data.year,
+        month: data.data.month,
       },
       "searches",
     ));
     let byFilter = [];
-    for (let filter in data.filter) {
-      if (data.filter.hasOwnProperty(filter) && data.filter[filter].length > 0) {
+    for (let filter in data.data.filter) {
+      if (data.data.filter.hasOwnProperty(filter) && data.data.filter[filter].length > 0) {
         if (this[`${filter}Filter`]) {
-          byFilter.push(this[`${filter}Filter`](data.filter[filter], reviews.data.success[0].searches));
+          byFilter.push(this[`${filter}Filter`](data.data.filter[filter], reviews.data.success[0].searches));
         }
       }
     }
-    if (byFilter.length < 1) return await this.readAllSearchesToReview(data);
+    if (byFilter.length < 1) return await this.readAllSearchesToReview(data.data);
     let rets = await Promise.all(byFilter);
     let ret = null;
     if (rets[0].searches) {
-      ret = await this.getSearchesInLIneFilter(rets[0].searches.data.success, data);
+      ret = await this.getSearchesInLIneFilter(rets[0].searches.data.success, data.data);
       this.getValidSearches(ret.data.success, rets[0].ids);
     } else {
-      ret = await this.getSearchesInLIneFilter(rets[0].data.success, data);
+      ret = await this.getSearchesInLIneFilter(rets[0].data.success, data.data);
     }
     ret = await this.returnHandler({
       model: 'review',
@@ -2347,7 +2420,7 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<null>}
    */
   public async changeResearchByReview(data) {
-    let promises = await Promise.all(this.getPromiseToUpdate(data.searches));
+    let promises = await Promise.all(this.getPromiseToUpdate(data.data.searches));
     return this.returnHandler({
       model: 'search',
       data: this.getUpdated(promises),
@@ -2356,10 +2429,10 @@ export class AdminHandler extends CommonHandler {
 
   public async checkedReviewSearch(data) {
     let ret = await this.emit_to_server('db.search.update', new UpdateObject(
-      data.searchId,
+      data.data.searchId,
       {
         $set: {
-          reviewChecked: data.reviewChecked
+          reviewChecked: data.data.reviewChecked
         }
       },
       {
@@ -2389,45 +2462,45 @@ export class AdminHandler extends CommonHandler {
   }
 
   public async importReview(data) {
-    if (!await this.verifyRegionHasBasket(data.regionId)) return await this.returnHandler({
+    if (!await this.verifyRegionHasBasket(data.data.regionId)) return await this.returnHandler({
       model: 'review',
       data: {error: 'regionHasNoBasket'},
     });
-    let documentSource = await Util.writeXLS(data.document, `review_${data.year}_${data.month}_${data.regionId}`);
+    let documentSource = await Util.writeXLS(data.data.document, `review_${data.data.year}_${data.data.month}_${data.data.regionId}`);
     let jsonDocument = await xlsx2json(documentSource);
     await Util.removeFile(documentSource);
     if (jsonDocument[1] && jsonDocument[1].length > 1) await this.researcherCreateFromTable(jsonDocument[1]);
-    if (jsonDocument[2] && jsonDocument[2].length > 1) await this.sourceCreateFromTable(jsonDocument[0], jsonDocument[2], data.regionId);
-    if (await this.existReportByDate(data)) {
+    if (jsonDocument[2] && jsonDocument[2].length > 1) await this.sourceCreateFromTable(jsonDocument[0], jsonDocument[2], data.data.regionId);
+    if (await this.existReportByDate(data.data)) {
       await this.updateSearchesFromTable({
         searches: jsonDocument[0],
-        year: data.year,
-        month: data.month,
-        regionId: data.regionId
+        year: data.data.year,
+        month: data.data.month,
+        regionId: data.data.regionId
       });
     } else {
       let withPrevious = await this.createMonthFromTable({
-        year: data.year,
-        month: data.month,
-        regionId: data.regionId
+        year: data.data.year,
+        month: data.data.month,
+        regionId: data.data.regionId
       });
       if (!withPrevious) {
         await this.createNewSearchesFromTable({
           searches: jsonDocument[0],
-          year: data.year,
-          month: data.month,
-          regionId: data.regionId
+          year: data.data.year,
+          month: data.data.month,
+          regionId: data.data.regionId
         });
       } else {
         await this.updateSearchesFromTable({
           searches: jsonDocument[0],
-          year: data.year,
-          month: data.month,
-          regionId: data.regionId
+          year: data.data.year,
+          month: data.data.month,
+          regionId: data.data.regionId
         });
       }
     }
-    await this.calculateReport(data);
+    await this.calculateReport({data:data.data});
     return await this.returnHandler({
       model: 'review',
       data: {success: true}
@@ -2883,7 +2956,7 @@ export class AdminHandler extends CommonHandler {
       });
       return false;
     }
-    await this.openNewMonth({regionId: data.regionId});
+    await this.openNewMonth({data:{regionId: data.regionId}});
     return true;
   }
 
@@ -3022,7 +3095,7 @@ export class AdminHandler extends CommonHandler {
         phoneNumber: newResearches[i].E,
       })
     }
-    return await this.researcherCreate(toSave);
+    return await this.researcherCreate({data: toSave});
   }
 
   private async verifyRegionHasBasket(regionId: string) {

@@ -15,46 +15,46 @@ export class AdminRTC extends BasicRTC {
     super('admin', Handler, conf);
     openRTC.destroy();
     this.interfaceListeners = {
-      'logout': this.logout.bind(this),
-      'user_change_infos': this.userChangeInfos.bind(this),
-      'region_create': this.regionCreate.bind(this),
-      'read_all_regions': this.readAllRegions.bind(this),
-      'region_update': this.regionUpdate.bind(this),
-      'region_remove': this.regionRemove.bind(this),
-      'source_create': this.sourceCreate.bind(this),
-      'source_update': this.sourceUpdate.bind(this),
-      'source_read_region': this.sourceReadRegion.bind(this),
-      'source_read_id': this.sourceReadId.bind(this),
-      'source_remove': this.sourceRemove.bind(this),
-      'source_read_products': this.sourceReadProducts.bind(this),
-      'source_read_of_researcher': this.sourceReadOfResearcher.bind(this),
-      'connect_products_source': this.connectProductsSource.bind(this),
-      'address_by_zipCode': this.addressByZipCode.bind(this),
-      'researcher_create': this.researcherCreate.bind(this),
-      'read_all_researchers': this.readAllResearchers.bind(this),
-      'researcher_update': this.researcherUpdate.bind(this),
-      'researcher_remove': this.researcherRemove.bind(this),
-      'connect_researcher_source': this.connectResearcherSource.bind(this),
-      'calculate_report': this.calculateReport.bind(this),
-      'read_report': this.readReport.bind(this),
-      'read_report_dates': this.readReportDates.bind(this),
-      'open_new_month_discard_previous': this.openNewMonthDiscardPrevious.bind(this),
-      'open_new_month': this.openNewMonth.bind(this),
-      'open_new_month_searches': this.openNewMonthSearches.bind(this),
-      'verify_opened_searches_user': this.verifyOpenedSearchesUser.bind(this),
-      'get_searches': this.getSearches.bind(this),
-      'get_searches_by_source': this.getSearchesBySource.bind(this),
-      'readSearchesByProductCode': this.readSearchesByProductCode.bind(this),
-      'user_searches_save': this.userSearchesSave.bind(this),
-      'user_searches_send': this.userSearchesSend.bind(this),
-      'read_product_basket': this.read_product_basket.bind(this),
-      'import_basket': this.importBasket.bind(this),
-      'read_all_searches_to_review': this.readAllSearchesToReview.bind(this),
-      'read_all_searches_to_review_filter': this.readAllSearchesToReviewFilter.bind(this),
-      'change_research_by_review': this.changeResearchByReview.bind(this),
-      'checkedReviewSearch': this.checkedReviewSearch.bind(this),
-      'read_review_date': this.readReviewDate.bind(this),
-      'import_review': this.importReview.bind(this),
+      'logout': this.logout.bind(this), // USER // Common
+      'user_change_infos': this.userChangeInfos.bind(this), // USER // Common
+      'region_create': this.regionCreate.bind(this), // REGIAO
+      'read_all_regions': this.readAllRegions.bind(this), // REGIAO
+      'region_update': this.regionUpdate.bind(this), // REGIAO
+      'region_remove': this.regionRemove.bind(this), // REGIAO
+      'source_create': this.sourceCreate.bind(this), // FONTE
+      'source_update': this.sourceUpdate.bind(this), // FONTE
+      'source_read_region': this.sourceReadRegion.bind(this), // FONTE
+      'source_read_id': this.sourceReadId.bind(this), // FONTE
+      'source_remove': this.sourceRemove.bind(this), // FONTE
+      'source_read_products': this.sourceReadProducts.bind(this), // FONTE
+      'source_read_of_researcher': this.sourceReadOfResearcher.bind(this), // FONTE // Common
+      'connect_products_source': this.connectProductsSource.bind(this), // FONTE
+      'address_by_zipCode': this.addressByZipCode.bind(this), // USER
+      'researcher_create': this.researcherCreate.bind(this), // PESQUISADOR
+      'read_all_researchers': this.readAllResearchers.bind(this), // PESQUISADOR
+      'researcher_update': this.researcherUpdate.bind(this), // PESQUISADOR
+      'researcher_remove': this.researcherRemove.bind(this), // PESQUISADOR
+      'connect_researcher_source': this.connectResearcherSource.bind(this), // PESQUISADOR
+      'calculate_report': this.calculateReport.bind(this), // RELATORIO
+      'read_report': this.readReport.bind(this), // RELATORIO
+      'read_report_dates': this.readReportDates.bind(this), // RELATORIO
+      'open_new_month_discard_previous': this.openNewMonthDiscardPrevious.bind(this), // PESQUISA
+      'open_new_month': this.openNewMonth.bind(this), // RELATORIO
+      'open_new_month_searches': this.openNewMonthSearches.bind(this), // PESQUISA
+      'verify_opened_searches_user': this.verifyOpenedSearchesUser.bind(this), // PESQUISA
+      'get_searches': this.getSearches.bind(this), // PESQUISA // Common
+      'get_searches_by_source': this.getSearchesBySource.bind(this), // PESQUISA // Common
+      'readSearchesByProductCode': this.readSearchesByProductCode.bind(this), // falta documentar // Common
+      'user_searches_save': this.userSearchesSave.bind(this), // PESQUISA // Common
+      'user_searches_send': this.userSearchesSend.bind(this), // PESQUISA // Common
+      'read_product_basket': this.read_product_basket.bind(this), // CESTA DE PRODUTO
+      'import_basket': this.importBasket.bind(this), // CESTA DE PRODUTO
+      'read_all_searches_to_review': this.readAllSearchesToReview.bind(this), // PESQUISA
+      'read_all_searches_to_review_filter': this.readAllSearchesToReviewFilter.bind(this), // PESQUISA
+      'change_research_by_review': this.changeResearchByReview.bind(this), // PESQUISA
+      'checkedReviewSearch': this.checkedReviewSearch.bind(this), // PESQUISA // não foi feito teste unitário
+      'read_review_date': this.readReviewDate.bind(this), // REGIAO
+      'import_review': this.importReview.bind(this), // REGIAO
     };
     this.loggedUser = msg.datas.data;
     this.emit_to_browser(msg);
@@ -253,7 +253,7 @@ export class AdminRTC extends BasicRTC {
   }
 
   private async read_product_basket(msg) {
-    msg.datas = await this.handler.read_product_basket(msg.datas);
+    msg.datas = await this.handler.readProductBasket(msg.datas); // alterado // read_product_basket
     this.emit_to_browser(msg)
   }
 

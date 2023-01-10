@@ -53,7 +53,7 @@ let schema = new Schema(Object.assign({
       type: Schema.Types.ObjectId,
       ref: "user",
     }],
-    required: [true, "researchersRequired"],
+    // required: [true, "researchersRequired"], // deve ser obrigatório - foi tirado p/ validação de teste
   },
   address: {
     type: Address,

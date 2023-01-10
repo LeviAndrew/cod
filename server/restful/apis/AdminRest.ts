@@ -3,6 +3,7 @@ import {AdminHandler} from "../../handlers/user/AdminHandler";
 import Handler from "../../handlers/user/AdminHandler";
 import * as multer from 'multer';
 import * as path from 'path'
+import { OpenRest } from "./OpenRest";
 
 export class AdminRest extends BasicRest {
   protected _handler: AdminHandler;
@@ -14,6 +15,7 @@ export class AdminRest extends BasicRest {
       get: {
         // '/research/searches/:userId': this.getSearches.bind(this),
         '/admin/addressByZipCode/:zipCode': this.addressByZipCode.bind(this),
+        '/admin/:metodo': this.callAdminAction.bind(this),
       },
       post: {
         // '/research/uploadProfileImage/:userId': this.uploadProfileImage.bind(this),
@@ -22,6 +24,8 @@ export class AdminRest extends BasicRest {
         // '/admin/import_basket': this.importBasket.bind(this),
         // '/admin/source_create': this.sourceCreate.bind(this),
         '/admin/:metodo': this.callAdminAction.bind(this),
+        '/admin/import/importReview': this.getImportReview.bind(this),
+        '/logout': this.logout.bind(this),
       }
     };
 
@@ -54,6 +58,17 @@ export class AdminRest extends BasicRest {
       .send(ret);
   }
 
+  private async getImportReview(request, response) {
+    let ret = await this.handler.importReview({
+      data: request.query,
+      auth: request.headers["authentication-key"],
+      // document: "document",
+    });
+    return response
+      .status(200)
+      .send(ret);
+  }
+
   private async addressByZipCode(req, res) {
     let ret = await this.handler.addressByZipCode({
       zipCode: req.params.zipCode,
@@ -62,6 +77,13 @@ export class AdminRest extends BasicRest {
     return res
       .status(200)
       .send(ret);
+  }
+
+  async logout(req, res) {
+    let ret = await this.handler.logout();
+    return res
+    .status(200)
+    .send(ret);
   }
 
   // private async getSearches(req, res) {  // remover
