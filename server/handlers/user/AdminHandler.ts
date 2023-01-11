@@ -2079,14 +2079,14 @@ export class AdminHandler extends CommonHandler {
    * @param data {regionId: string, year: number, month: number}
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | [any]} | {success: boolean; data: any | any[] | boolean}>}
    */
-  public async readAllSearchesToReview(data: { regionId: string, year: number, month: number }) {
+  public async readAllSearchesToReview(data: {data:{ regionId: string, year: number, month: number }}) {
     let ret = await Promise.all([
       this.getSearchesInLIne({
-        region: data.regionId,
-        year: data.year,
-        month: data.month,
+        region: data.data.regionId,
+        year: data.data.year,
+        month: data.data.month,
       }),
-      this.getFilters({regionId: data.regionId})
+      this.getFilters({regionId: data.data.regionId})
     ]);
     if (!ret[0].success) return ret;
     let review = this.handlerReview(ret[0]);
@@ -2141,31 +2141,32 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | any[]} | {success: boolean; data: any | any[] | boolean}>}
    */
   public async readAllSearchesToReviewFilter(data) {
-    if (!data.data.filter) return await this.readAllSearchesToReview(data.data);
+    let dados = data.data;
+    if (!dados.filter) return await this.readAllSearchesToReview({data: dados});
     let reviews = await this.emit_to_server('db.review.read', new QueryObject(
       {
-        region: data.data.regionId,
-        year: data.data.year,
-        month: data.data.month,
+        region: dados.regionId,
+        year: dados.year,
+        month: dados.month,
       },
       "searches",
     ));
     let byFilter = [];
-    for (let filter in data.data.filter) {
-      if (data.data.filter.hasOwnProperty(filter) && data.data.filter[filter].length > 0) {
+    for (let filter in dados.filter) {
+      if (dados.filter.hasOwnProperty(filter) && dados.filter[filter].length > 0) {
         if (this[`${filter}Filter`]) {
-          byFilter.push(this[`${filter}Filter`](data.data.filter[filter], reviews.data.success[0].searches));
+          byFilter.push(this[`${filter}Filter`](dados.filter[filter], reviews.data.success[0].searches));
         }
       }
     }
-    if (byFilter.length < 1) return await this.readAllSearchesToReview(data.data);
+    if (byFilter.length < 1) return await this.readAllSearchesToReview({data: dados});
     let rets = await Promise.all(byFilter);
     let ret = null;
     if (rets[0].searches) {
-      ret = await this.getSearchesInLIneFilter(rets[0].searches.data.success, data.data);
+      ret = await this.getSearchesInLIneFilter(rets[0].searches.data.success, dados);
       this.getValidSearches(ret.data.success, rets[0].ids);
     } else {
-      ret = await this.getSearchesInLIneFilter(rets[0].data.success, data.data);
+      ret = await this.getSearchesInLIneFilter(rets[0].data.success, dados);
     }
     ret = await this.returnHandler({
       model: 'review',

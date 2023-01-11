@@ -16,18 +16,22 @@ export abstract class BasicManager extends Source {
    */
 
 
-  async beforeCreate(data) {
+  protected beforeCreate(data) {
     if (Array.isArray(data)) {
       for (let i = 0; i < data.length; ++i) {
-        data[i]._id = data[i]._id ? new Types.ObjectId(data[i]._id) : new Types.ObjectId();
+        data[i]._id = data[i]._id ? this.objectIdGenerator(data[i]._id) : this.objectIdGenerator();
         data[i].id = data[i]._id.toString();
       }
     } else {
-      data._id = data._id ? new Types.ObjectId(data._id) : new Types.ObjectId();
+      data._id = data._id ? this.objectIdGenerator(data._id) : this.objectIdGenerator();
       data.id = data._id.toString();
     }
 
     return data;
+  }
+
+  protected objectIdGenerator (id?: string): Types.ObjectId {
+    return id ? new Types.ObjectId(id) : new Types.ObjectId();
   }
 
   //noinspection JSMethodCanBeStatic
@@ -36,7 +40,7 @@ export abstract class BasicManager extends Source {
    *
    * @param data
    */
-  async afterCreate(data: any[]) {
+  protected afterCreate(data: any[]) {
     for (let i = 0; i < data.length; i++) {
       data[i] = data[i].toJSON();
     }
@@ -48,10 +52,12 @@ export abstract class BasicManager extends Source {
    * Cria um novo documento no banco.
    *
    * @param data
+   * 
+   * Responsvel por executar o beforeCreate, create e afterCreate.
    */
-  async create(data) {
-    let dados: any[] = await this.beforeCreate(data);
-    let ret: any = await this.model.create(dados);
+  protected async create(data) {
+    data = await this.beforeCreate(data);
+    let ret: any = await this.model.create(data);
     return await this.afterCreate(Array.isArray(ret) ? ret : [ret]);
   }
 
@@ -147,7 +153,7 @@ export abstract class BasicManager extends Source {
    *
    * @param data
    */
-  async beforeUpdate(data) {
+  protected beforeUpdate(data) {
     return data;
   }
 

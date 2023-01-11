@@ -46,7 +46,7 @@ describe('Teste aplicativo', () => {
           expect(response.body).to.have.all.keys("success", "data");
           expect(response.body.success).to.be.true;
           expect(response.body.data).to.be.instanceof(Object);
-          expect(response.body.data).to.have.all.keys("id", "name", "surname", "email", "phoneNumber", "profile", "type");
+          expect(response.body.data).to.have.all.keys("id", "name", "password", "surname", "email", "phoneNumber", "profile", "type");
           loggedUser =  response.body.data;
           done();
         })
@@ -981,7 +981,6 @@ describe('Teste aplicativo', () => {
                     expect(button).to.have.all.keys("label", "method");
                   });
                 });
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });
@@ -1059,17 +1058,13 @@ describe('Teste aplicativo', () => {
                 expect(response.body).to.be.instanceOf(Object);
                 expect(response.body).to.have.all.keys("success", "data");
                 expect(response.body.success).to.be.false;
-                expect(response.body.data).to.be.instanceOf(Array);
-                response.body.data.forEach(researcherError => {
-                  expect(researcherError).to.be.instanceOf(Object);
-                  expect(researcherError).to.have.all.keys("title", "description", "buttons", "type");
-                  expect(researcherError.buttons).to.be.instanceOf(Array);
-                  researcherError.buttons.forEach(button => {
-                    expect(button).to.be.instanceOf(Object);
-                    expect(button).to.have.all.keys("label", "method");
-                  });
+                expect(response.body.data).to.be.instanceOf(Object);
+                expect(response.body.data).to.have.all.keys("title", "description", "buttons", "type");
+                expect(response.body.data.buttons).to.be.instanceOf(Array);
+                response.body.data.buttons.forEach(button => {
+                  expect(button).to.be.instanceOf(Object);
+                  expect(button).to.have.all.keys("label", "method");
                 });
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });
@@ -1201,7 +1196,7 @@ describe('Teste aplicativo', () => {
                 expect(response.body.data).to.be.instanceOf(Array);
                 response.body.data.forEach(researcher => {
                   expect(researcher).to.be.instanceOf(Object);
-                  expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "logged", "type");
+                  expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "logged");
                 });
                 pesquisadores = [response.body.data[1]];
                 // cliente.removeListener("retorno", retorno);
@@ -2594,7 +2589,7 @@ describe('Teste aplicativo', () => {
           expect(response.body.data).to.be.instanceOf(Array);
           response.body.data.forEach(user=>{
             expect(user).to.be.instanceof(Object);
-            expect(user).to.have.all.keys("name","surname","email","phoneNumber","id","type");
+            expect(user).to.have.all.keys("name","surname","email","phoneNumber","id");
           });
           done();
         })

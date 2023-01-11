@@ -27,6 +27,7 @@
   "license": "ISC",
   "homepage": "https://nao/existe",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "bluebird": "^3.4.7",
     "body-parser": "^1.16.0",
     "busca-cep": "^0.3.6",
