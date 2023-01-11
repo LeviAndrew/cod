@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "postinstall": "typings install",
     "start": "node index.js",
     "test": "mocha",
     "test-gui": "codeceptjs run teste-UI --steps",
-    "generate-docs": "jsdoc --configure .jsdoc.json --verbose"
+    "generate-docs": "jsdoc --configure .jsdoc.json --verbose",
+    "dev": "node build/index.js --ENVIRONMENT dev",
+    "prod": "node build/index.js --ENVIRONMENT prod"
   },
   "repository": {
     "type": "git",
