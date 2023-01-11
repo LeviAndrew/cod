@@ -54,7 +54,7 @@ export class AdminRTC extends BasicRTC {
       'change_research_by_review': this.changeResearchByReview.bind(this), // PESQUISA
       'checkedReviewSearch': this.checkedReviewSearch.bind(this), // PESQUISA // não foi feito teste unitário
       'read_review_date': this.readReviewDate.bind(this), // REGIAO
-      'import_review': this.importReview.bind(this), // REGIAO
+      'import_review': this.importReview.bind(this), // REGIAO // SEGUE COMO RTC
     };
     this.loggedUser = msg.datas.data;
     this.emit_to_browser(msg);

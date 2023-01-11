@@ -2462,45 +2462,45 @@ export class AdminHandler extends CommonHandler {
   }
 
   public async importReview(data) {
-    if (!await this.verifyRegionHasBasket(data.data.regionId)) return await this.returnHandler({
+    if (!await this.verifyRegionHasBasket(data.regionId)) return await this.returnHandler({
       model: 'review',
       data: {error: 'regionHasNoBasket'},
     });
-    let documentSource = await Util.writeXLS(data.data.document, `review_${data.data.year}_${data.data.month}_${data.data.regionId}`);
+    let documentSource = await Util.writeXLS(data.document, `review_${data.year}_${data.month}_${data.regionId}`);
     let jsonDocument = await xlsx2json(documentSource);
     await Util.removeFile(documentSource);
     if (jsonDocument[1] && jsonDocument[1].length > 1) await this.researcherCreateFromTable(jsonDocument[1]);
-    if (jsonDocument[2] && jsonDocument[2].length > 1) await this.sourceCreateFromTable(jsonDocument[0], jsonDocument[2], data.data.regionId);
-    if (await this.existReportByDate(data.data)) {
+    if (jsonDocument[2] && jsonDocument[2].length > 1) await this.sourceCreateFromTable(jsonDocument[0], jsonDocument[2], data.regionId);
+    if (await this.existReportByDate(data)) {
       await this.updateSearchesFromTable({
         searches: jsonDocument[0],
-        year: data.data.year,
-        month: data.data.month,
-        regionId: data.data.regionId
+        year: data.year,
+        month: data.month,
+        regionId: data.regionId
       });
     } else {
       let withPrevious = await this.createMonthFromTable({
-        year: data.data.year,
-        month: data.data.month,
-        regionId: data.data.regionId
+        year: data.year,
+        month: data.month,
+        regionId: data.regionId
       });
       if (!withPrevious) {
         await this.createNewSearchesFromTable({
           searches: jsonDocument[0],
-          year: data.data.year,
-          month: data.data.month,
-          regionId: data.data.regionId
+          year: data.year,
+          month: data.month,
+          regionId: data.regionId
         });
       } else {
         await this.updateSearchesFromTable({
           searches: jsonDocument[0],
-          year: data.data.year,
-          month: data.data.month,
-          regionId: data.data.regionId
+          year: data.year,
+          month: data.month,
+          regionId: data.regionId
         });
       }
     }
-    await this.calculateReport({data:data.data});
+    await this.calculateReport({data:data});
     return await this.returnHandler({
       model: 'review',
       data: {success: true}
