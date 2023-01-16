@@ -2,11 +2,20 @@
   "model": "admin",
   "data": [
     {
+      "_id": "63c54783645c8c2e4bae6434",
       "name": "ADMIN",
       "surname": "ADMIN",
       "email": "admin@admin.com",
       "password": "4dm1ncv3",
       "phoneNumber": "48999476823"
+    },
+    {
+      "_id": "63c547fb59da1745888dee70",
+      "name": "Admin2",
+      "surname": "LabTic",
+      "email": "admin2@labtic.com",
+      "password": "l4bt1c23",
+      "phoneNumber": "48984112734"
     }
   ]
 }
