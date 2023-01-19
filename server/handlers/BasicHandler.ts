@@ -644,5 +644,17 @@ export class BasicHandler extends Source {
     }
     return ret;
   }
+  
+  protected async getErrorAttributeRequired (attributes) {
+    return this.returnHandler({
+      model: 'global',
+      data: {
+        error: {
+          type: "attributeRequired",
+          errorMessage: attributes,
+        }
+      }
+    })
+  }
 
 }

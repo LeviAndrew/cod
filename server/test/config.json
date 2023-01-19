@@ -2,10 +2,10 @@
   "image": {},
   "db": {
     "mongodb": {
-      "fixture": "test/fixtures/prod",
+      "fixture": "test/fixtures/dev",
       "host": "localhost",
-      "name": "codTest",
-      "erase_db": false
+      "name": "cod",
+      "erase_db": true
     }
   },
   "authy": {},

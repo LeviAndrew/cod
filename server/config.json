@@ -5,7 +5,7 @@
       "fixture": "test/fixtures/prod",
       "host": "localhost",
       "name": "cod",
-      "erase_db": false
+      "erase_db": true
     }
   },
   "authy": {},

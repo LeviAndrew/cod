@@ -20,6 +20,16 @@
       "phoneNumber": "48999476823",
       "id": "5b5609552738180d48c39803",
       "type": "researcher"
+    },
+    {
+      "_id": "63c54783645c8c2e4bae6434",
+      "name": "Levi",
+      "surname": "Andrew",
+      "email": "levi@hotmail.com",
+      "password": "4dm1ncv3",
+      "phoneNumber": "48999454663",
+      "id": "63c54783645c8c2e4bae6434",
+      "type": "admin"
     }
   ]
 }
