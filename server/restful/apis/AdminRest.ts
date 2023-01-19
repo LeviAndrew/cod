@@ -1,6 +1,7 @@
 import {BasicRest} from "../BasicRest";
 import {AdminHandler} from "../../handlers/user/AdminHandler";
 import Handler from "../../handlers/user/AdminHandler";
+import * as HTTPStatus from 'http-status-codes';
 import * as multer from 'multer';
 import * as path from 'path'
 import { OpenRest } from "./OpenRest";
@@ -49,41 +50,65 @@ export class AdminRest extends BasicRest {
   }
 
   private async callAdminAction(request, response) {
-    let ret = await this.handler[request.params.metodo]({
-      data: request.body,
-      auth: request.headers["authentication-key"],
-    });;
-    return response
-      .status(200)
-      .send(ret);
+    try {
+      let ret = await this.handler[request.params.metodo]({
+        data: request.body,
+        auth: request.headers["authentication-key"],
+      });
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }    
   }
 
   private async getImportReview(request, response) {
-    let ret = await this.handler.importReview({
-      data: request.query,
-      auth: request.headers["authentication-key"],
-      // document: "document",
-    });
-    return response
-      .status(200)
-      .send(ret);
+    try{
+      let ret = await this.handler.importReview({
+        data: request.query,
+        auth: request.headers["authentication-key"],
+        // document: "document",
+      });
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }    
   }
 
-  private async addressByZipCode(req, res) {
-    let ret = await this.handler.addressByZipCode({
-      zipCode: req.params.zipCode,
-      auth: req.headers["authentication-key"],
-    });
-    return res
-      .status(200)
-      .send(ret);
+  private async addressByZipCode(request, response) {
+    try {
+      let ret = await this.handler.addressByZipCode({
+        zipCode: request.params.zipCode,
+        auth: request.headers["authentication-key"],
+      });
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }    
   }
 
-  async logout(req, res) {
-    let ret = await this.handler.logout();
-    return res
-    .status(200)
-    .send(ret);
+  async logout(request, response) {
+    try {
+      let ret = await this.handler.logout();
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    } 
   }
 
   // private async getSearches(req, res) {  // remover
