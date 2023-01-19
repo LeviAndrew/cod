@@ -1,6 +1,7 @@
 import {BasicRest} from "../BasicRest";
 import {CommonHandler} from "../../handlers/user/CommonHandler";
 import Handler from "../../handlers/user/CommonHandler";
+import * as HTTPStatus from 'http-status-codes';
 import * as multer from 'multer';
 import * as path from 'path'
 
@@ -41,38 +42,62 @@ export class CommonRest extends BasicRest {
   }
 
   private async callCommonAction(request, response) {
-    let ret = await this.handler[request.params.metodo]({
-      data: request.body,
-      auth: request.headers["authentication-key"],
-    });;
-    return response
-      .status(200)
-      .send(ret);
+    try {
+      let ret = await this.handler[request.params.metodo]({
+        data: request.body,
+        auth: request.headers["authentication-key"],
+      });
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }     
   }
 
-  private async sourceReadOfResearcher(req, res) {
-    let ret = await this.handler.sourceReadOfResearcher({
-      auth: req.headers["authentication-key"],
-    });
-    return res
-      .status(200)
-      .send(ret);
+  private async sourceReadOfResearcher(request, response) {
+    try {
+      let ret = await this.handler.sourceReadOfResearcher({
+        auth: request.headers["authentication-key"],
+      });
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }   
   }
 
-  private async getSearches(req, res) {
-    let ret = await this.handler.getSearches({
-      auth: req.headers["authentication-key"],
-    });
-    return res
-      .status(200)
-      .send(ret);
+  private async getSearches(request, response) {
+    try {
+      let ret = await this.handler.getSearches({
+        auth: request.headers["authentication-key"],
+      });
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }   
   }
 
-  async logout(req, res) {
-    let ret = await this.handler.logout();
-    return res
-    .status(200)
-    .send(ret);
+  async logout(request, response) {
+    try {
+      let ret = await this.handler.logout();
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }    
   }
 
 }
