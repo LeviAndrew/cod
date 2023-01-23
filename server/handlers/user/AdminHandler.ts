@@ -2951,9 +2951,11 @@ export class AdminHandler extends CommonHandler {
     );
     if (!previousReport.data.success) {
       await this.openNewMonthDiscardPrevious({
-        regionId: data.regionId,
-        year: data.year,
-        month: data.month
+        data: {
+          regionId: data.regionId,
+          year: data.year,
+          month: data.month
+        }
       });
       return false;
     }
