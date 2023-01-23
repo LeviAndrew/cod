@@ -249,9 +249,9 @@ export class AdminHandler extends CommonHandler {
         _id: data.data.sourceId,
         removed: false,
       },
-      "name code address",
+      "name code address researchers",
       {
-        path: "address.city address.neighborhood address.state",
+        path: "address.city address.neighborhood address.state researchers",
         select: "id name initial"
       }
     ));

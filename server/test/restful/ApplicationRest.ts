@@ -1405,7 +1405,7 @@ describe('Teste aplicativo', () => {
               expect(response.body.success).to.be.true;
               expect(response.body.data).to.be.instanceOf(Array);
               response.body.data.forEach(fonte => {
-                expect(fonte).to.have.all.keys("name", "code", "address", "id");
+                expect(fonte).to.have.all.keys("researchers", "name", "code", "address", "id");
                 expect(fonte.address).to.be.instanceof(Object);
                 expect(fonte.address).to.have.all.keys("state", "city", "neighborhood", "street", "postalCode", "number");
                 expect(fonte.address.city).to.be.instanceof(Object);
