@@ -1447,7 +1447,6 @@ describe('Teste aplicativo', () => {
                   expect(report.calculatedProducts).to.be.instanceOf(Array);
                   expect(report.groups).to.be.instanceof(Array);
                 });
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });

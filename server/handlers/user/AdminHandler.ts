@@ -664,7 +664,7 @@ export class AdminHandler extends CommonHandler {
     data.data.update = {
       removed: true,
     };
-    let removed = await this.researcherUpdate(data);
+    let removed = await this.researcherUpdate({data: data.data});
     if (!removed.success) return removed;
     const userId = data.data.id;
     let sources = await this.emit_to_server('db.source.update', new UpdateObject(
@@ -2142,7 +2142,7 @@ export class AdminHandler extends CommonHandler {
    */
   public async readAllSearchesToReviewFilter(data) {
     let dados = data.data;
-    if (!dados.filter) return await this.readAllSearchesToReview({data: dados});
+    if (!dados.filter) return await this.readAllSearchesToReview({data: data.data});
     let reviews = await this.emit_to_server('db.review.read', new QueryObject(
       {
         region: dados.regionId,
@@ -2159,7 +2159,7 @@ export class AdminHandler extends CommonHandler {
         }
       }
     }
-    if (byFilter.length < 1) return await this.readAllSearchesToReview({data: dados});
+    if (byFilter.length < 1) return await this.readAllSearchesToReview({data: data.data});
     let rets = await Promise.all(byFilter);
     let ret = null;
     if (rets[0].searches) {
@@ -2501,7 +2501,7 @@ export class AdminHandler extends CommonHandler {
         });
       }
     }
-    await this.calculateReport({data:data});
+    await this.calculateReport({data: data});
     return await this.returnHandler({
       model: 'review',
       data: {success: true}
@@ -3088,9 +3088,9 @@ export class AdminHandler extends CommonHandler {
   }
 
   private async researcherCreateFromTable(newResearches) {
-    let toSave = [];
+    let data = [];
     for (let i = 1; i < newResearches.length; i++) {
-      toSave.push({
+      data.push({
         name: newResearches[i].A,
         surname: newResearches[i].B,
         email: newResearches[i].C,
@@ -3098,7 +3098,7 @@ export class AdminHandler extends CommonHandler {
         phoneNumber: newResearches[i].E,
       })
     }
-    return await this.researcherCreate({data: toSave});
+    return await this.researcherCreate({data: data});
   }
 
   private async verifyRegionHasBasket(regionId: string) {
