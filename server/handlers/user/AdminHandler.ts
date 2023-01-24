@@ -698,7 +698,8 @@ export class AdminHandler extends CommonHandler {
         researchers: userId,
       }
     ));
-    return !!ret.data.success.length;
+    let reet = !!ret.data.success.length;
+    return reet;
   }
 
   /**
@@ -725,6 +726,47 @@ export class AdminHandler extends CommonHandler {
       data.data.fontId,
       {
         $push: {
+          researchers: data.data.researcherId,
+        },
+      },
+      {
+        new: true,
+        runValidators: true,
+        fields: {
+          id: 1,
+          name: 1,
+          code: 1,
+        }
+      }
+    ));
+    return this.returnHandler({
+      model: 'source',
+      data: ret.data,
+    });
+  }
+
+  async disconnectResearcherSource(data) {
+    if (!data.data.fontId) return this.returnHandler({
+      model: 'source',
+      data: {error: 'connect.fontId'}
+    });
+    if (!data.data.researcherId) return this.returnHandler({
+      model: 'source',
+      data: {error: 'connect.researcherId'}
+    });
+    let condicao = await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId);
+    if (condicao) {
+      console.log("usuário está na fonte")
+    } else {
+      return this.returnHandler({
+        model: 'source',
+        data: {error: 'connect.researcherNotConnected'},
+      });
+    }
+    let ret = await this.emit_to_server('db.source.update', new UpdateObject(
+      data.data.fontId,
+      {
+        $pull: {
           researchers: data.data.researcherId,
         },
       },

@@ -1238,7 +1238,7 @@ describe('Teste aplicativo', () => {
 
         });
 
-        describe('ASSOCIAR PESQUISADOR A FONTE', () => { // olhar dps aqui
+        describe('ASSOCIAR/DESASSOCIAR PESQUISADOR A FONTE', () => { // olhar dps aqui
 
           it('sem id da fonte', (done) => {
             chai.request(baseURL)
@@ -1259,7 +1259,6 @@ describe('Teste aplicativo', () => {
                   expect(button).to.be.instanceof(Object);
                   expect(button).to.have.all.keys("label", "method");
                 });
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });
@@ -1282,12 +1281,11 @@ describe('Teste aplicativo', () => {
                   expect(button).to.be.instanceof(Object);
                   expect(button).to.have.all.keys("label", "method");
                 });
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });
 
-          it('OK!', (done) => {
+          it('Conectar usuário a fonte: OK!', (done) => {
             chai.request(baseURL)
               .post(`/api/admin/connectResearcherSource`)
               .set("authentication-key", loggedUser.id)
@@ -1304,7 +1302,71 @@ describe('Teste aplicativo', () => {
                   expect(font).to.be.instanceOf(Object);
                   expect(font).to.have.all.keys("name", "code", "id");
                 });
-                // cliente.removeListener("retorno", retorno);
+                done();
+              })
+          });
+
+          it('Disconnect: id do usuário errado (não cadastrado na fonte)', (done) => {
+            chai.request(baseURL)
+              .post(`/api/admin/disconnectResearcherSource`)
+              .set("authentication-key", loggedUser.id)
+              .send({
+                researcherId: "63d0360cc0809a610818a6d2",
+                fontId: sources[0].id
+              })
+              .end((error, response) => {
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.false;
+                expect(response.body.data).to.be.instanceOf(Object);
+                expect(response.body.data).to.have.all.keys("title", "description", "buttons", "type");
+                expect(response.body.data.buttons).to.be.instanceof(Array);
+                response.body.data.buttons.forEach(button => {
+                  expect(button).to.be.instanceof(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
+                done();
+              })
+          });
+
+          it('Desconectar usuário da fonte: OK!', (done) => {
+            chai.request(baseURL)
+              .post(`/api/admin/disconnectResearcherSource`)
+              .set("authentication-key", loggedUser.id)
+              .send({
+                researcherId: "63b037987a047b06288c390c",
+                fontId: sources[0].id
+              })
+              .end((error, response) => {
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
+                response.body.data.forEach(font => {
+                  expect(font).to.be.instanceOf(Object);
+                  expect(font).to.have.all.keys("name", "code", "id");
+                });
+                done();
+              })
+          });
+
+          it('Conectar usuário a fonte novamente: OK!', (done) => {
+            chai.request(baseURL)
+              .post(`/api/admin/connectResearcherSource`)
+              .set("authentication-key", loggedUser.id)
+              .send({
+                researcherId: "63b037987a047b06288c390c",
+                fontId: sources[0].id
+              })
+              .end((error, response) => {
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
+                response.body.data.forEach(font => {
+                  expect(font).to.be.instanceOf(Object);
+                  expect(font).to.have.all.keys("name", "code", "id");
+                });
                 done();
               })
           });

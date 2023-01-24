@@ -148,6 +148,17 @@
         }
       ],
       "type": "connect.researcherAlreadyConnected"
+    },
+    "researcherNotConnected": {
+      "title": "Pessoa não cadastrada",
+      "description": "Esse ser humaninho não está cadastrado no sistema.",
+      "buttons": [
+        {
+          "label": "Como pode, hehehe",
+          "method": null
+        }
+      ],
+      "type": "connect.researcherNotConnected"
     }
   },
   "connectProduct": {
