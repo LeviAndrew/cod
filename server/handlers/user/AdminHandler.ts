@@ -781,7 +781,7 @@ export class AdminHandler extends CommonHandler {
     });
     let condicao = await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId);
     if (condicao) {
-      console.log("usuário está na fonte")
+      console.log("testando condição, ok!");
     } else {
       return this.returnHandler({
         model: 'source',

@@ -1953,7 +1953,7 @@ describe('Teste aplicativo', () => {
                       // expect(search).to.have.all.keys("_id","code","especOne","especTwo","price","id","changed");
                     });
                     expect(productSearch.source).to.be.instanceof(Object);
-                    expect(productSearch.source).to.have.all.keys("_id","name","code","id");
+                    expect(productSearch.source).to.have.all.keys("_id","name","code","id","researchers");
                   }
                 });
                 searchByFont = response.body.data.searches;
@@ -2025,7 +2025,7 @@ describe('Teste aplicativo', () => {
                       // expect(search).to.have.all.keys("_id","code","especOne","especTwo","price","id","changed");
                     });
                     expect(productSearch.source).to.be.instanceof(Object);
-                    expect(productSearch.source).to.have.all.keys("_id","name","code","id");
+                    expect(productSearch.source).to.have.all.keys("_id","name","code","id","researchers");
                   }
                 });
                 allSearch = response.body.data.searches;
@@ -2066,7 +2066,7 @@ describe('Teste aplicativo', () => {
                       // expect(search).to.have.all.keys("_id","code","especOne","especTwo","price","id","changed");
                     });
                     expect(productSearch.source).to.be.instanceof(Object);
-                    expect(productSearch.source).to.have.all.keys("_id","name","code","id");
+                    expect(productSearch.source).to.have.all.keys("_id","name","code","id","researchers");
                   }
                 });
                 searchByProduct = response.body.data.searches;
@@ -2106,7 +2106,7 @@ describe('Teste aplicativo', () => {
                       // expect(search).to.have.all.keys("_id","code","especOne","especTwo","price","id","changed");
                     });
                     expect(productSearch.source).to.be.instanceof(Object);
-                    expect(productSearch.source).to.have.all.keys("_id","name","code","id");
+                    expect(productSearch.source).to.have.all.keys("_id","name","code","id","researchers");
                   }
                 });
                 done();
@@ -2141,7 +2141,7 @@ describe('Teste aplicativo', () => {
                       // expect(search).to.have.all.keys("_id","code","especOne","especTwo","price","id","changed");
                     });
                     expect(productSearch.source).to.be.instanceof(Object);
-                    expect(productSearch.source).to.have.all.keys("_id","name","code","id");
+                    expect(productSearch.source).to.have.all.keys("_id","name","code","id","researchers");
                   }
                 });
                 done();
@@ -2180,7 +2180,7 @@ describe('Teste aplicativo', () => {
                       // expect(search).to.have.all.keys("_id","code","especOne","especTwo","price","id","changed");
                     });
                     expect(productSearch.source).to.be.instanceof(Object);
-                    expect(productSearch.source).to.have.all.keys("_id","name","code","id");
+                    expect(productSearch.source).to.have.all.keys("_id","name","code","id","researchers");
                   }
                 });
                 done();
@@ -2216,7 +2216,7 @@ describe('Teste aplicativo', () => {
                       // expect(search).to.have.all.keys("_id","code","especOne","especTwo","price","id","changed");
                     });
                     expect(productSearch.source).to.be.instanceof(Object);
-                    expect(productSearch.source).to.have.all.keys("_id","name","code","id");
+                    expect(productSearch.source).to.have.all.keys("_id","name","code","id","researchers");
                   }
                 });
                 done();

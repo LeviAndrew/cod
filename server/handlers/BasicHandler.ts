@@ -434,7 +434,13 @@ export class BasicHandler extends Source {
         'sources',
         {
           path: 'sources',
-          select: 'code id name',
+          select: 'code id name researchers',
+          populate: [
+            {
+              path: 'researchers',
+              select: 'id name surname'
+            }
+          ]
         }
       ))
     ]);
