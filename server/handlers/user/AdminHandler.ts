@@ -2108,6 +2108,7 @@ export class AdminHandler extends CommonHandler {
           text: region.data.success.sources[i].name,
           value: {
             id: region.data.success.sources[i].id,
+            pesquisadores: region.data.success.sources[i].researchers,
           },
         })
       }
