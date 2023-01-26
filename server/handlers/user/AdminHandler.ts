@@ -619,6 +619,18 @@ export class AdminHandler extends CommonHandler {
     })
   }
 
+  async readSourcesByUser(data) {
+    let ret = await this.emit_to_server('db.source.read', new QueryObject(
+        {
+          researchers: data.data.usersId,
+        }
+      ));
+    return this.returnHandler({
+      model: 'source',
+      data: ret.data,
+    });
+  }
+
   /**
    * Atualiza informações do pesquisador.
    * Se o admin tentar mudar o password, este remove.

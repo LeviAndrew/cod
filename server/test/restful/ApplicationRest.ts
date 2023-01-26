@@ -713,7 +713,6 @@ describe('Teste aplicativo', () => {
                 expect(font.researchers).to.be.instanceOf(Array);
               });
               sources = response.body.data;
-              // cliente.removeListener("retorno", retorno);
               done();
             })
         });
@@ -1622,7 +1621,6 @@ describe('Teste aplicativo', () => {
                   expect(sourceSearch._id).to.be.instanceof(Object);
                   expect(sourceSearch._id).to.have.all.keys("name", "code", "id");
                 });
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });
@@ -1960,6 +1958,30 @@ describe('Teste aplicativo', () => {
                   }
                 });
                 searchByFont = response.body.data.searches;
+                done();
+              })
+            });
+
+            it('le fontes por lista de usuários', (done) => { // (1) -ok!
+              chai.request(baseURL)
+              .get('/api/admin/readSourcesByUser')
+              .set("authentication-key", loggedUser.id)
+              .send({
+                usersId: "5b5609502738180d48c3965b",
+              })
+              .end((error, response) => {
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
+                response.body.data.forEach(font => {
+                  expect(font).to.be.instanceOf(Object);
+                  expect(font).to.have.all.keys("__v", "updatedAt", "createdAt", "name", "code", "address", "id", "removed", "researchers", "products", "urlImage");
+                  expect(font.address).to.be.instanceOf(Object);
+                  expect(font.address).to.have.all.keys("state", "city", "neighborhood", "street", "postalCode", "number");
+                  expect(font.products).to.be.instanceOf(Array);
+                  expect(font.researchers).to.be.instanceOf(Array);
+                });
                 done();
               })
             });

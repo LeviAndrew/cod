@@ -34,8 +34,8 @@ export class Application extends Source {
     this.app.set('view engine', 'ejs');
     this.app.set('views', path.resolve(__dirname + '/views'));
     Barrier.setBrowserModules(this.app);
-    this.app.use(bodyParser.urlencoded({extended: true}));
-    this.app.use(bodyParser.json());
+    this.app.use(bodyParser.urlencoded({extended: true, parameterLimit:50000}));
+    this.app.use(bodyParser.json({limit: "50mb"}));
     this.app.use(cors());
     this.app.use(j2x.middleware);
     this.app.use(this.barrier.validateKey.bind(this.barrier));
@@ -62,6 +62,7 @@ export class Application extends Source {
     this.app.use('/favicon.ico',
       express.static(path.resolve(__dirname + '/favicon.ico'))
     );
+
   }
 
   static connection(socket) {
