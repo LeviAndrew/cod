@@ -1116,10 +1116,9 @@ describe('Teste aplicativo', () => {
                 expect(response.body.data).to.be.instanceOf(Array);
                 response.body.data.forEach(researcher => {
                   expect(researcher).to.be.instanceOf(Object);
-                  expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "type", "logged", "profile");
+                  expect(researcher).to.have.all.keys("sources", "name", "surname", "email", "phoneNumber", "id", "type", "logged", "profile");
                 });
                 pesquisadores = response.body.data;
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });
@@ -1289,7 +1288,7 @@ describe('Teste aplicativo', () => {
               .post(`/api/admin/connectResearcherSource`)
               .set("authentication-key", loggedUser.id)
               .send({
-                researcherId: "63b037987a047b06288c390c", // pesquisadores[0].id -> já cadastrado
+                researcherId: "63c54783645c8c2e4bae6434", // pesquisadores[0].id -> já cadastrado
                 fontId: sources[0].id
               })
               .end((error, response) => {
@@ -1333,7 +1332,7 @@ describe('Teste aplicativo', () => {
               .post(`/api/admin/disconnectResearcherSource`)
               .set("authentication-key", loggedUser.id)
               .send({
-                researcherId: "63b037987a047b06288c390c",
+                researcherId: "63c54783645c8c2e4bae6434",
                 fontId: sources[0].id
               })
               .end((error, response) => {
@@ -1354,7 +1353,7 @@ describe('Teste aplicativo', () => {
               .post(`/api/admin/connectResearcherSource`)
               .set("authentication-key", loggedUser.id)
               .send({
-                researcherId: "63b037987a047b06288c390c",
+                researcherId: "63c54783645c8c2e4bae6434",
                 fontId: sources[0].id
               })
               .end((error, response) => {
@@ -1964,23 +1963,20 @@ describe('Teste aplicativo', () => {
 
             it('le fontes por lista de usuários', (done) => { // (1) -ok!
               chai.request(baseURL)
-              .get('/api/admin/readSourcesByUser')
+              .get('/api/admin/readSourcesByUsers')
               .set("authentication-key", loggedUser.id)
               .send({
-                usersId: "5b5609502738180d48c3965b",
+                usersId: ["5b5609502738180d48c3965b", "5b5609552738180d48c39803"]
               })
               .end((error, response) => {
                 expect(response.body).to.be.instanceOf(Object);
                 expect(response.body).to.have.all.keys("success", "data");
                 expect(response.body.success).to.be.true;
                 expect(response.body.data).to.be.instanceOf(Array);
-                response.body.data.forEach(font => {
-                  expect(font).to.be.instanceOf(Object);
-                  expect(font).to.have.all.keys("__v", "updatedAt", "createdAt", "name", "code", "address", "id", "removed", "researchers", "products", "urlImage");
-                  expect(font.address).to.be.instanceOf(Object);
-                  expect(font.address).to.have.all.keys("state", "city", "neighborhood", "street", "postalCode", "number");
-                  expect(font.products).to.be.instanceOf(Array);
-                  expect(font.researchers).to.be.instanceOf(Array);
+                response.body.data.forEach(user => {
+                  expect(user).to.be.instanceOf(Object);
+                  expect(user).to.have.all.keys("name", "id", "sources");
+                  expect(user.sources).to.be.instanceOf(Array);
                 });
                 done();
               })

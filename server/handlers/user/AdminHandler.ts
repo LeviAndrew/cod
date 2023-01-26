@@ -619,14 +619,19 @@ export class AdminHandler extends CommonHandler {
     })
   }
 
-  async readSourcesByUser(data) {
-    let ret = await this.emit_to_server('db.source.read', new QueryObject(
+  async readSourcesByUsers(data) {
+    let ret = {data: {success: []}}, user;
+    for (let i = 0; i < data.data.usersId.length; i++) {
+      user = await this.emit_to_server('db.user.read', new QueryObject(
         {
-          researchers: data.data.usersId,
-        }
+          id: data.data.usersId[i],
+        },
+        "id name sources"
       ));
+      ret.data.success.push(user.data.success[0]);
+    }
     return this.returnHandler({
-      model: 'source',
+      model: 'user',
       data: ret.data,
     });
   }
@@ -751,6 +756,14 @@ export class AdminHandler extends CommonHandler {
         }
       }
     ));
+    await this.emit_to_server('db.user.update', new UpdateObject(
+      data.data.researcherId,
+      {
+        $push: {
+          sources: data.data.fontId,
+        },
+      }
+    ));
     return this.returnHandler({
       model: 'source',
       data: ret.data,
@@ -790,6 +803,14 @@ export class AdminHandler extends CommonHandler {
           name: 1,
           code: 1,
         }
+      }
+    ));
+    await this.emit_to_server('db.user.update', new UpdateObject(
+      data.data.researcherId,
+      {
+        $pull: {
+          sources: data.data.fontId,
+        },
       }
     ));
     return this.returnHandler({

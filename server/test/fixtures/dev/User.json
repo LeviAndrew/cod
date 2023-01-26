@@ -9,7 +9,8 @@
       "password": "admin",
       "phoneNumber": "48999476823",
       "id": "5b5609502738180d48c3965b",
-      "type": "admin"
+      "type": "admin",
+      "sources": ["5b5609542738180d48c397fc"]
     },
     {
       "_id": "5b5609552738180d48c39803",
@@ -19,7 +20,8 @@
       "password": "123",
       "phoneNumber": "48999476823",
       "id": "5b5609552738180d48c39803",
-      "type": "researcher"
+      "type": "researcher",
+      "sources": ["5b5609542738180d48c397fc"]
     },
     {
       "_id": "63c54783645c8c2e4bae6434",

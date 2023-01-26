@@ -57,6 +57,12 @@ let schema = new Schema(Object.assign({
     required: [true, "profileImageRequired"],
     default: "/images/default.jpg"
   },
+  sources: {
+    type: [{
+      type: Schema.Types.ObjectId,
+      ref: "source",
+    }],
+  },
 }, BaseSchema), schema_options);
 
 let UserModel = model("user", schema);
