@@ -611,7 +611,7 @@ export class AdminHandler extends CommonHandler {
       {
         removed: false,
       },
-      'email logged phoneNumber surname name'
+      'email logged phoneNumber surname name sources'
     ));
     return this.returnHandler({
       model: 'researcher',

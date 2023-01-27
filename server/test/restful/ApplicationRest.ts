@@ -1194,10 +1194,9 @@ describe('Teste aplicativo', () => {
                 expect(response.body.data).to.be.instanceOf(Array);
                 response.body.data.forEach(researcher => {
                   expect(researcher).to.be.instanceOf(Object);
-                  expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "logged");
+                  expect(researcher).to.have.all.keys("sources", "name", "surname", "email", "phoneNumber", "id", "logged");
                 });
                 pesquisadores = [response.body.data[1]];
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });
