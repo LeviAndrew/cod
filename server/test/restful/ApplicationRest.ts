@@ -90,11 +90,23 @@ describe('Teste aplicativo', () => {
 
   });
 
-  describe('REGIAO', () => { // tem erros aqui
+  describe('REGIAO', () => { // tem ajustes para fazer aqui
 
     describe('criar', () => {
 
-      it('Sem nome', (done) => {
+      it('Sem enviar nome (erro)', (done) => {
+        chai.request(baseURL)
+          .post(`/api/admin/regionCreate`)
+          .set("authentication-key", loggedUser.id)
+          .end((error, response) => {
+            expect(response.body).to.be.instanceOf(Object);
+            expect(response.body).to.have.all.keys("success");
+            expect(response.body.success).to.be.false;
+            done();
+          })
+      });
+
+      it('Enviando nome vazio (erro)', (done) => {
         chai.request(baseURL)
           .post(`/api/admin/regionCreate`)
           .set("authentication-key", loggedUser.id)
@@ -335,6 +347,34 @@ describe('Teste aplicativo', () => {
             })
         });
 
+        it('sem enviar parametro nome', (done) => {
+          chai.request(baseURL)
+            .post(`/api/admin/sourceCreate`)
+            .set("authentication-key", loggedUser.id)
+            .send({
+              regionId: regions[0].id,
+              source: {
+                products: [],
+                code: "123dz",
+                researchers: [loggedUser.id],
+                address: {
+                  state: address.uf,
+                  city: address.localidade,
+                  neighborhood: address.bairro,
+                  street: address.logradouro,
+                  postalCode: address.cep,
+                  number: 179,
+                }
+              }
+            })
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success");
+              expect(response.body.success).to.be.false;
+              done();
+            })
+        });
+
         it('sem codigo', (done) => {
           chai.request(baseURL)
             .post(`/api/admin/sourceCreate`)
@@ -356,18 +396,8 @@ describe('Teste aplicativo', () => {
               }})
             .end((error, response) => {
               expect(response.body).to.be.instanceOf(Object);
-              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body).to.have.all.keys("success");
               expect(response.body.success).to.be.false;
-              expect(response.body.data).to.be.instanceOf(Array);
-              response.body.data.forEach(error => {
-                expect(error).to.be.instanceOf(Object);
-                expect(error).to.have.all.keys("title", "description", "buttons", "type");
-                expect(error.buttons).to.be.instanceOf(Array);
-                error.buttons.forEach(button => {
-                  expect(button).to.be.instanceOf(Object);
-                  expect(button).to.have.all.keys("label", "method");
-                });
-              });
               done();
             })
         });
@@ -431,18 +461,8 @@ describe('Teste aplicativo', () => {
               }})
             .end((error, response) => {
               expect(response.body).to.be.instanceOf(Object);
-              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body).to.have.all.keys("success");
               expect(response.body.success).to.be.false;
-              expect(response.body.data).to.be.instanceOf(Array);
-              response.body.data.forEach(error => {
-                expect(error).to.be.instanceOf(Object);
-                expect(error).to.have.all.keys("title", "description", "buttons", "type");
-                expect(error.buttons).to.be.instanceOf(Array);
-                error.buttons.forEach(button => {
-                  expect(button).to.be.instanceOf(Object);
-                  expect(button).to.have.all.keys("label", "method");
-                });
-              });
               done();
             })
         });
@@ -509,18 +529,8 @@ describe('Teste aplicativo', () => {
             })
             .end((error, response) => {
               expect(response.body).to.be.instanceOf(Object);
-              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body).to.have.all.keys("success");
               expect(response.body.success).to.be.false;
-              expect(response.body.data).to.be.instanceOf(Array);
-              response.body.data.forEach(error => {
-                expect(error).to.be.instanceOf(Object);
-                expect(error).to.have.all.keys("title", "description", "buttons", "type");
-                expect(error.buttons).to.be.instanceOf(Array);
-                error.buttons.forEach(button => {
-                  expect(button).to.be.instanceOf(Object);
-                  expect(button).to.have.all.keys("label", "method");
-                });
-              });
               done();
             })
         });
@@ -548,18 +558,8 @@ describe('Teste aplicativo', () => {
             })
             .end((error, response) => {
               expect(response.body).to.be.instanceOf(Object);
-              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body).to.have.all.keys("success");
               expect(response.body.success).to.be.false;
-              expect(response.body.data).to.be.instanceOf(Array);
-              response.body.data.forEach(error => {
-                expect(error).to.be.instanceOf(Object);
-                expect(error).to.have.all.keys("title", "description", "buttons", "type");
-                expect(error.buttons).to.be.instanceOf(Array);
-                error.buttons.forEach(button => {
-                  expect(button).to.be.instanceOf(Object);
-                  expect(button).to.have.all.keys("label", "method");
-                });
-              });
               done();
             })
         });
@@ -586,18 +586,8 @@ describe('Teste aplicativo', () => {
             })
             .end((error, response) => {
               expect(response.body).to.be.instanceOf(Object);
-              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body).to.have.all.keys("success");
               expect(response.body.success).to.be.false;
-              expect(response.body.data).to.be.instanceOf(Array);
-              response.body.data.forEach(error => {
-                expect(error).to.be.instanceOf(Object);
-                expect(error).to.have.all.keys("title", "description", "buttons", "type");
-                expect(error.buttons).to.be.instanceOf(Array);
-                error.buttons.forEach(button => {
-                  expect(button).to.be.instanceOf(Object);
-                  expect(button).to.have.all.keys("label", "method");
-                });
-              });
               done();
             })
         });
@@ -624,18 +614,8 @@ describe('Teste aplicativo', () => {
             })
             .end((error, response) => {
               expect(response.body).to.be.instanceOf(Object);
-              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body).to.have.all.keys("success");
               expect(response.body.success).to.be.false;
-              expect(response.body.data).to.be.instanceOf(Array);
-              response.body.data.forEach(error => {
-                expect(error).to.be.instanceOf(Object);
-                expect(error).to.have.all.keys("title", "description", "buttons", "type");
-                expect(error.buttons).to.be.instanceOf(Array);
-                error.buttons.forEach(button => {
-                  expect(button).to.be.instanceOf(Object);
-                  expect(button).to.have.all.keys("label", "method");
-                });
-              });
               done();
             })
         });
@@ -662,18 +642,8 @@ describe('Teste aplicativo', () => {
             })
             .end((error, response) => {
               expect(response.body).to.be.instanceOf(Object);
-              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body).to.have.all.keys("success");
               expect(response.body.success).to.be.false;
-              expect(response.body.data).to.be.instanceOf(Array);
-              response.body.data.forEach(error => {
-                expect(error).to.be.instanceOf(Object);
-                expect(error).to.have.all.keys("title", "description", "buttons", "type");
-                expect(error.buttons).to.be.instanceOf(Array);
-                error.buttons.forEach(button => {
-                  expect(button).to.be.instanceOf(Object);
-                  expect(button).to.have.all.keys("label", "method");
-                });
-              });
               done();
             })
         });

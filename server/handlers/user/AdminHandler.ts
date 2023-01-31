@@ -16,19 +16,32 @@ export class AdminHandler extends CommonHandler {
    * @param data
    * @returns {Promise<{success: boolean; data: any & [any , any , any , any , any , any , any , any , any , any]} | {success: boolean; data}>}
    */
-  async regionCreate(data) {
+  async regionCreate(data:regionCreate) {
     // let test = await this.isAdmin(data.auth); // Validar se usuário é Admin // Levi
-    // if (test.data.success[0].type === "admin") { // Validar se usuário é Admin // Levi
+    // if (test.data.success[0].type !== "admin") { // Validar se usuário é Admin // Levi
     //   return await this.returnHandler({
     //     model: 'address',
     //     data: {error: "Usuário não é admin"}
     //   })
     // }
-    let ret = await this.emit_to_server('db.region.create', data.data);
-    return await this.returnHandler({
-      model: 'region',
-      data: ret.data,
-    });
+    let required = this.attributeValidator([
+      "auth", "data", [
+        "name"
+      ]
+    ], data);
+    if (!required.success) return await this.getErrorAttributeRequired(required.error);
+    try {
+      let ret = await this.emit_to_server('db.region.create', data.data);
+      return await this.returnHandler({
+        model: 'region',
+        data: ret.data,
+      });
+    } catch (e) {
+      return await this.returnHandler({
+        model: 'region',
+        data: {error: e.message || e},
+      });
+    }    
   }
 
   public async readReviewDate(data) {
@@ -55,45 +68,62 @@ export class AdminHandler extends CommonHandler {
    * @param data
    * @returns {Promise<any>}
    */
-  async sourceCreate(data) {
-    let address = await this.getAddressIdFromDB({
-      stateInitial: data.data.source.address.state,
-      cityName: data.data.source.address.city,
-      neighborhoodName: data.data.source.address.neighborhood,
-    });
-    if (!address.state.success || !address.city.success || !address.neighborhood.success) {
-      let invalidsAddress = [];
-      for (let attr in address) {
-        if (address.hasOwnProperty(attr)) {
-          if (!address[attr].success) invalidsAddress.push(address[attr].data);
+  async sourceCreate(data:sourceCreate) {
+    let required = this.attributeValidator([
+      "auth", "data", [
+        "regionId", "source", [
+          "name", "code", "researchers", "address", [
+            "state", "city", "neighborhood", "street", "postalCode", "number"
+          ]
+        ]
+      ]
+    ], data);
+    if (!required.success) return await this.getErrorAttributeRequired(required.error);
+    try {
+      let address = await this.getAddressIdFromDB({
+        stateInitial: data.data.source.address.state,
+        cityName: data.data.source.address.city,
+        neighborhoodName: data.data.source.address.neighborhood,
+      });
+      if (!address.state.success || !address.city.success || !address.neighborhood.success) {
+        let invalidsAddress = [];
+        for (let attr in address) {
+          if (address.hasOwnProperty(attr)) {
+            if (!address[attr].success) invalidsAddress.push(address[attr].data);
+          }
         }
+        return {
+          success: false,
+          data: invalidsAddress
+        };
       }
-      return {
-        success: false,
-        data: invalidsAddress
-      };
+      data.data.source.address.state = address.state.data[0].id;
+      data.data.source.address.city = address.city.data[0].id;
+      data.data.source.address.neighborhood = address.neighborhood.data[0].id;
+      let retSource = await this.emit_to_server('db.source.create', data.data.source);
+      if (retSource.data.error) return this.returnHandler({
+        model: 'source',
+        data: retSource.data,
+      });
+      let retRegion = await this.emit_to_server('db.region.update', new UpdateObject(
+        data.data.regionId,
+        {
+          $push: {
+            sources: retSource.data.success[0].id,
+          }
+        }
+      ));
+      if (retRegion.data.error) return console.error('não salvou a fonte dentro da região', retRegion.data.error);
+      return await this.returnHandler({
+        model: 'source',
+        data: retSource.data,
+      });
+    } catch (e) {
+      return await this.returnHandler({
+        model: 'source',
+        data: {error: e.message || e},
+      });      
     }
-    data.data.source.address.state = address.state.data[0].id;
-    data.data.source.address.city = address.city.data[0].id;
-    data.data.source.address.neighborhood = address.neighborhood.data[0].id;
-    let retSource = await this.emit_to_server('db.source.create', data.data.source);
-    if (retSource.data.error) return this.returnHandler({
-      model: 'source',
-      data: retSource.data,
-    });
-    let retRegion = await this.emit_to_server('db.region.update', new UpdateObject(
-      data.data.regionId,
-      {
-        $push: {
-          sources: retSource.data.success[0].id,
-        }
-      }
-    ));
-    if (retRegion.data.error) return console.error('não salvou a fonte dentro da região', retRegion.data.error);
-    return await this.returnHandler({
-      model: 'source',
-      data: retSource.data,
-    });
   }
 
   /**
@@ -3200,3 +3230,32 @@ export class AdminHandler extends CommonHandler {
 }
 
 export default new AdminHandler();
+
+interface regionCreate {
+  data: {
+    name: string,
+    publicSearches?: boolean,
+    canUsePublicSearches?: boolean
+  }
+}
+
+interface sourceCreate {
+  data: { 
+    regionId: string
+    source: {
+      name: string,
+      products?: [string],
+      code: string,
+      urlImage?: string,
+      researchers: [string],
+      address: {
+        state: string,
+        city: string,
+        neighborhood: string,
+        street: string,
+        postalCode: string,
+        number: number,
+      }
+    }
+   }
+}
