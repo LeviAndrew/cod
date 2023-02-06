@@ -118,7 +118,7 @@
   "connect": {
     "fontId": {
       "title": "Id da fonte",
-      "description": "Fala dev, como eu vou addicionar o cara em uma fonte que eu não tenho o id",
+      "description": "Fala dev, como eu vou adicionar o cara em uma fonte que eu não tenho o id",
       "buttons": [
         {
           "label": "hehehe",
@@ -148,6 +148,30 @@
         }
       ],
       "type": "connect.researcherAlreadyConnected"
+    }
+  },
+  "disconnect": {
+    "fontId": {
+      "title": "Id da fonte",
+      "description": "Fala dev, como eu vou remover o cara de uma fonte que eu não tenho o id",
+      "buttons": [
+        {
+          "label": "hehehe",
+          "method": null
+        }
+      ],
+      "type": "disconnect.fontId"
+    },
+    "researcherId": {
+      "title": "Id do pesquisador",
+      "description": "Fala dev, parabéns por me mandar o id da fonte, mas preciso saber quem vou tirar dela.",
+      "buttons": [
+        {
+          "label": "Oxa cara, tu quer tudo.",
+          "method": null
+        }
+      ],
+      "type": "disconnect.researcherId"
     },
     "researcherNotConnected": {
       "title": "Pessoa não cadastrada",
@@ -158,7 +182,7 @@
           "method": null
         }
       ],
-      "type": "connect.researcherNotConnected"
+      "type": "disconnect.researcherNotConnected"
     }
   },
   "connectProduct": {

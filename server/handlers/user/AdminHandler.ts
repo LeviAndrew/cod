@@ -817,11 +817,11 @@ export class AdminHandler extends CommonHandler {
   async disconnectResearcherSource(data) {
     if (!data.data.fontId) return this.returnHandler({
       model: 'source',
-      data: {error: 'connect.fontId'}
+      data: {error: 'disconnect.fontId'}
     });
     if (!data.data.researcherId) return this.returnHandler({
       model: 'source',
-      data: {error: 'connect.researcherId'}
+      data: {error: 'disconnect.researcherId'}
     });
     let condicao = await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId);
     if (condicao) {
@@ -829,7 +829,7 @@ export class AdminHandler extends CommonHandler {
     } else {
       return this.returnHandler({
         model: 'source',
-        data: {error: 'connect.researcherNotConnected'},
+        data: {error: 'disconnect.researcherNotConnected'},
       });
     }
     let ret = await this.emit_to_server('db.source.update', new UpdateObject(
