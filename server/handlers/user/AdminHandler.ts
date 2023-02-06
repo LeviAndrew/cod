@@ -770,97 +770,125 @@ export class AdminHandler extends CommonHandler {
    * @param data
    * @returns {Promise<{success: boolean; data: {title: string; description: string; buttons: {label: string; method: string}[]; type: string} | any | [any]} | {success: boolean; data: any}>}
    */
-  async connectResearcherSource(data) {
-    if (!data.data.fontId) return this.returnHandler({
-      model: 'source',
-      data: {error: 'connect.fontId'}
-    });
-    if (!data.data.researcherId) return this.returnHandler({
-      model: 'source',
-      data: {error: 'connect.researcherId'}
-    });
-    if (await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId)) return this.returnHandler({
-      model: 'source',
-      data: {error: 'connect.researcherAlreadyConnected'},
-    });
-    let ret = await this.emit_to_server('db.source.update', new UpdateObject(
-      data.data.fontId,
-      {
-        $push: {
-          researchers: data.data.researcherId,
-        },
-      },
-      {
-        new: true,
-        runValidators: true,
-        fields: {
-          id: 1,
-          name: 1,
-          code: 1,
-        }
-      }
-    ));
-    await this.emit_to_server('db.user.update', new UpdateObject(
-      data.data.researcherId,
-      {
-        $push: {
-          sources: data.data.fontId,
-        },
-      }
-    ));
-    return this.returnHandler({
-      model: 'source',
-      data: ret.data,
-    });
-  }
-
-  async disconnectResearcherSource(data) {
-    if (!data.data.fontId) return this.returnHandler({
-      model: 'source',
-      data: {error: 'disconnect.fontId'}
-    });
-    if (!data.data.researcherId) return this.returnHandler({
-      model: 'source',
-      data: {error: 'disconnect.researcherId'}
-    });
-    let condicao = await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId);
-    if (condicao) {
-      console.log("testando condição, ok!");
-    } else {
-      return this.returnHandler({
+  async connectResearcherSource(data:researcherSource) {
+    let required = this.attributeValidator([
+      "auth", "data", [
+        "researcherId", "fontId"
+      ]
+    ], data);
+    if (!required.success) {
+      if (!data.data.fontId) return this.returnHandler({
         model: 'source',
-        data: {error: 'disconnect.researcherNotConnected'},
+        data: {error: 'connect.fontId'}
+      });
+      if (!data.data.researcherId) return this.returnHandler({
+        model: 'source',
+        data: {error: 'connect.researcherId'}
       });
     }
-    let ret = await this.emit_to_server('db.source.update', new UpdateObject(
-      data.data.fontId,
-      {
-        $pull: {
-          researchers: data.data.researcherId,
+    try {
+      if (await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId)) return this.returnHandler({
+          model: 'source',
+          data: {error: 'connect.researcherAlreadyConnected'},
+        });
+        let ret = await this.emit_to_server('db.source.update', new UpdateObject(
+          data.data.fontId,
+          {
+            $push: {
+              researchers: data.data.researcherId,
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+            fields: {
+              id: 1,
+              name: 1,
+              code: 1,
+            }
+          }
+        ));
+        await this.emit_to_server('db.user.update', new UpdateObject(
+          data.data.researcherId,
+          {
+            $push: {
+              sources: data.data.fontId,
+            },
+          }
+        ));
+        return this.returnHandler({
+          model: 'source',
+          data: ret.data,
+        });
+    } catch (e) {
+      return await this.returnHandler({
+        model: 'source',
+        data: {error: e.message || e},
+      });
+    }
+  }
+
+  async disconnectResearcherSource(data:researcherSource) {
+    let required = this.attributeValidator([
+      "auth", "data", [
+        "researcherId", "fontId"
+      ]
+    ], data);
+    if (!required.success) {
+      if (!data.data.fontId) return this.returnHandler({
+        model: 'source',
+        data: {error: 'disconnect.fontId'}
+      });
+      if (!data.data.researcherId) return this.returnHandler({
+        model: 'source',
+        data: {error: 'disconnect.researcherId'}
+      });
+    }
+    try {
+      let condicao = await this.verifyUserAlreadyConnected(data.data.fontId, data.data.researcherId);
+      if (condicao) {
+        console.log("testando condição, ok!");
+      } else {
+        return this.returnHandler({
+          model: 'source',
+          data: {error: 'disconnect.researcherNotConnected'},
+        });
+      }
+      let ret = await this.emit_to_server('db.source.update', new UpdateObject(
+        data.data.fontId,
+        {
+          $pull: {
+            researchers: data.data.researcherId,
+          },
         },
-      },
-      {
-        new: true,
-        runValidators: true,
-        fields: {
-          id: 1,
-          name: 1,
-          code: 1,
+        {
+          new: true,
+          runValidators: true,
+          fields: {
+            id: 1,
+            name: 1,
+            code: 1,
+          }
         }
-      }
-    ));
-    await this.emit_to_server('db.user.update', new UpdateObject(
-      data.data.researcherId,
-      {
-        $pull: {
-          sources: data.data.fontId,
-        },
-      }
-    ));
-    return this.returnHandler({
-      model: 'source',
-      data: ret.data,
-    });
+      ));
+      await this.emit_to_server('db.user.update', new UpdateObject(
+        data.data.researcherId,
+        {
+          $pull: {
+            sources: data.data.fontId,
+          },
+        }
+      ));
+      return this.returnHandler({
+        model: 'source',
+        data: ret.data,
+      });
+    } catch (e) {
+      return await this.returnHandler({
+        model: 'source',
+        data: {error: e.message || e},
+      });
+    }
   }
 
   /**
@@ -3272,4 +3300,10 @@ interface sourceCreate {
       }
     }
    }
+}
+interface researcherSource {
+  data: {
+    researcherId: string,
+    fontId: string,
+  }
 }
