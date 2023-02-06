@@ -113,6 +113,19 @@ export class AdminHandler extends CommonHandler {
           }
         }
       ));
+      let pesquisadores = data.data.source.researchers, retUser;
+      for (let i = 0; i < pesquisadores.length; i++) { // add fonte na coleção user de cada pesquisador
+        let userId = pesquisadores[i];
+        retUser = await this.emit_to_server('db.user.update', new UpdateObject(
+          userId,
+          {
+            $push: {
+              sources: retSource.data.success[0].id,
+            },
+          }
+        ));
+        if (retUser.data.error) return console.error('não salvou a fonte dentro da usuário', retUser.data.error);
+      }
       if (retRegion.data.error) return console.error('não salvou a fonte dentro da região', retRegion.data.error);
       return await this.returnHandler({
         model: 'source',
@@ -674,7 +687,7 @@ export class AdminHandler extends CommonHandler {
    * @returns {Promise<any>}
    */
   async researcherUpdate(data) {
-    delete data.data.update.password;
+    // delete data.data.update.password;
     let updateValidate = await this.updateValidator(data.data);
     if (!updateValidate.success) return updateValidate;
     const updateObj = new UpdateObject(
@@ -710,6 +723,7 @@ export class AdminHandler extends CommonHandler {
   async researcherRemove(data) {
     data.data.update = {
       removed: true,
+      sources: [],
     };
     let removed = await this.researcherUpdate({data: data.data});
     if (!removed.success) return removed;

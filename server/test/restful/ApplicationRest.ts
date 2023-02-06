@@ -1173,7 +1173,7 @@ describe('Teste aplicativo', () => {
 
         });
 
-        describe('editar', () => { // verificar novamente aqui
+        describe('editar', () => {
 
           it('ok', (done) => {
             chai.request(baseURL)
@@ -1190,22 +1190,22 @@ describe('Teste aplicativo', () => {
                 }
               })
               .end((error, response) => {
-                // expect(response.body).to.be.instanceOf(Object);
-                // expect(response.body).to.have.all.keys("success", "data");
-                // expect(response.body.success).to.be.true;
-                // expect(response.body.data).to.be.instanceOf(Array);
-                // response.body.data.forEach(researcher => {
-                //   expect(researcher).to.be.instanceOf(Object);
-                //   expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "type", "logged");
-                // });
-                // pesquisadores[0] = response.body.data[0];
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
+                response.body.data.forEach(researcher => {
+                  expect(researcher).to.be.instanceOf(Object);
+                  expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "type", "logged");
+                });
+                pesquisadores[0] = response.body.data[0];
                 done();
               })
           });
 
         });
 
-        describe('ASSOCIAR/DESASSOCIAR PESQUISADOR A FONTE', () => { // olhar dps aqui
+        describe('ASSOCIAR/DESASSOCIAR PESQUISADOR A FONTE', () => {
 
           it('sem id da fonte', (done) => {
             chai.request(baseURL)
@@ -1338,23 +1338,32 @@ describe('Teste aplicativo', () => {
               })
           });
 
-          it('com pesquisador já na fonte', (done) => { // retornou error
+          it('com pesquisador já na fonte', (done) => {
             chai.request(baseURL)
               .post(`/api/admin/connectResearcherSource`)
               .set("authentication-key", loggedUser.id)
               .send({
-                researcherId: pesquisadores[0].id,
-                fontId: sources[0].id
+                researcherId: "5b5609552738180d48c39803",
+                fontId: "5b5609542738180d48c397fc"
               })
               .end((error, response) => {
                 expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.false;
+                expect(response.body.data).to.be.instanceOf(Object);
+                expect(response.body.data).to.have.all.keys("title", "description", "buttons", "type");
+                expect(response.body.data.buttons).to.be.instanceof(Array);
+                response.body.data.buttons.forEach(button => {
+                  expect(button).to.be.instanceof(Object);
+                  expect(button).to.have.all.keys("label", "method");
+                });
                 done();
               })
           });
 
         });
 
-        describe('remover', () => { // verificar novamente aqui
+        describe('remover', () => {
 
           it('OK!', (done) => {
             chai.request(baseURL)
@@ -1364,15 +1373,15 @@ describe('Teste aplicativo', () => {
                 id: pesquisadores[0].id,
               })
               .end((error, response) => {
-                // expect(response.body).to.be.instanceOf(Object);
-                // expect(response.body).to.have.all.keys("success", "data");
-                // expect(response.body.success).to.be.true;
-                // expect(response.body.data).to.be.instanceOf(Array);
-                // response.body.data.forEach(researcher => {
-                //   expect(researcher).to.be.instanceOf(Object);
-                //   expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "type", "logged");
-                // });
-                // pesquisadores[0] = null;
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
+                response.body.data.forEach(researcher => {
+                  expect(researcher).to.be.instanceOf(Object);
+                  expect(researcher).to.have.all.keys("name", "surname", "email", "phoneNumber", "id", "type", "logged");
+                });
+                pesquisadores[0] = null;
                 done();
               })
           });
@@ -1452,7 +1461,7 @@ describe('Teste aplicativo', () => {
 
       });
 
-      describe('PESQUISA', () => { // error aqui // PAREI VERIFICAR DOC AQUI
+      describe('PESQUISA', () => { // error aqui
 
         describe('ABRIR NOVO MES DESCARTANDO ANTERIOR', () => {
 
