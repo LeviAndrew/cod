@@ -3269,6 +3269,33 @@ export class AdminHandler extends CommonHandler {
       return ret;
   }
 
+  async especChangeSearches(data: especChange ) {
+    let required = this.attributeValidator([
+      "auth", "data", [
+        "id"
+      ]
+    ], data);
+    if (!required.success) return await this.getErrorAttributeRequired(required.error);
+    try {
+      let ret = await this.emit_to_server('db.search.update', new UpdateObject(
+        data.data.id,
+        {
+          especOne: data.data.especOne,
+          especTwo: data.data.especTwo
+        }
+      ));
+      return await this.returnHandler({
+        model: 'search',
+        data: ret.data,
+      });
+    } catch (e) {
+      return await this.returnHandler({
+        model: 'search',
+        data: {error: e.message || e},
+      });
+    }    
+  }
+
 }
 
 export default new AdminHandler();
@@ -3305,5 +3332,13 @@ interface researcherSource {
   data: {
     researcherId: string,
     fontId: string,
+  }
+}
+
+interface especChange {
+  data: {
+    id: string,
+    especOne: string,
+    especTwo: string,
   }
 }
