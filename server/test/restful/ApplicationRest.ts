@@ -14,6 +14,7 @@ let expect = chai.expect;
 let testManager = null;
 
 describe('Teste aplicativo', () => {
+  
   before(function (done) {
     testManager = new TestManager(done);
   });
@@ -1651,6 +1652,24 @@ describe('Teste aplicativo', () => {
                 });
                 searches[0].search = response.body.data.searches;
                 // cliente.removeListener("retorno", retorno);
+                done();
+              })
+          });
+
+          it('Espec Change Searches', (done) => {
+            chai.request(baseURL)
+              .post(`/api/common/especChangeSearches`)
+              .set("authentication-key", loggedUser.id)
+              .send({
+                id: searches[0].search[0].id,
+                especOne: "change especOne",
+                especTwo: "change especTwo",
+              })
+              .end((error, response) => {
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body).to.have.all.keys("success", "data");
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
                 done();
               })
           });
