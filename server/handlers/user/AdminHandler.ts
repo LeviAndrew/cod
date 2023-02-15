@@ -438,6 +438,56 @@ export class AdminHandler extends CommonHandler {
   }
 
   /**
+   * Recebe um array de ids de produtos e desassocia da fonte.
+   * Se faltar algum dado, ele retorna um erro.
+   *
+   * @param data
+   * @returns {Promise<null>}
+   */
+  async disconnectProductSource(data) {
+    if (!data.data.data.sourceId) return await this.returnHandler({
+      model: 'source',
+      data: {error: 'disconnectProduct.sourceIdRequired'}
+    });
+    if (!data.data.data.productId) return await this.returnHandler({
+      model: 'source',
+      data: {error: 'disconnectProduct.productsIdRequired'}
+    });
+    // let produtctsToConnect = await this.unconnectedProduct(data.data.data);
+    let ret = await this.emit_to_server('db.source.update', new UpdateObject(
+      data.data.data.sourceId,
+      {
+        $pull: {
+          products:  data.data.data.productId,
+        }
+      },
+      {
+        new: true,
+        runValidators: true,
+        fields: {
+          id: 1,
+        }
+      }
+    ));
+    if (ret.data.error) return await this.returnHandler({
+      model: 'source',
+      data: ret.data,
+    });
+    let source = await this.emit_to_server('db.source.read', new QueryObject(
+      data.data.data.sourceId,
+      'name products',
+      {
+        path: 'products',
+        select: 'name code',
+      }
+    ));
+    return await this.returnHandler({
+      model: 'source',
+      data: source.data,
+    });
+  }
+
+  /**
    * Pega o estado do banco de dados pela sigla, caso esse estado ainda não
    * tenha um cadastro, será criado.
    *

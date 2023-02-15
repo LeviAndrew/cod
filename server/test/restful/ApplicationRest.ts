@@ -744,6 +744,8 @@ describe('Teste aplicativo', () => {
 
       describe('ASSOCIAR PRODUTOS A FONTE', () => {
 
+        let productTest;
+
         it('ler product basket', (done) => {
           chai.request(baseURL)
             .post(`/api/admin/readProductBasket`)
@@ -841,7 +843,7 @@ describe('Teste aplicativo', () => {
                 expect(product).to.be.instanceof(Object);
                 expect(product).to.have.all.keys("_id", "name", "code", "id");
               });
-              // cliente.removeListener("retorno", retorno);
+              productTest = response.body.data.products[0].id;
               done();
             })
         });
@@ -869,7 +871,30 @@ describe('Teste aplicativo', () => {
                 expect(product).to.be.instanceof(Object);
                 expect(product).to.have.all.keys("_id", "name", "code", "id");
               });
-              // cliente.removeListener("retorno", retorno);
+              done();
+            })
+        });
+
+        it('Disconnect one product!', (done) => {
+          let data = {
+            sourceId: sources[0].id,
+            productId: productTest,
+          };
+          chai.request(baseURL)
+            .post(`/api/admin/disconnectProductSource`)
+            .set("authentication-key", loggedUser.id)
+            .send({data})
+            .end((error, response) => {
+              expect(response.body).to.be.instanceOf(Object);
+              expect(response.body).to.have.all.keys("success", "data");
+              expect(response.body.success).to.be.true;
+              expect(response.body.data).to.be.instanceOf(Object);
+              expect(response.body.data).to.have.all.keys("_id", "name", "id", "products");
+              expect(response.body.data.products).to.be.instanceof(Array);
+              response.body.data.products.forEach(product => {
+                expect(product).to.be.instanceof(Object);
+                expect(product).to.have.all.keys("_id", "name", "code", "id");
+              });
               done();
             })
         });

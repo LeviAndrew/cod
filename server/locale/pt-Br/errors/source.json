@@ -208,5 +208,29 @@
       ],
       "type": "connectProduct.productsIdRequired"
     }
+  },
+  "disconnectProduct": {
+    "sourceIdRequired": {
+      "title": "Fonte",
+      "description": "Então pessoa querida, eu preciso saber qual a fonte, pra remover o produto dela.",
+      "buttons": [
+        {
+          "label": "Verdade hehe",
+          "method": null
+        }
+      ],
+      "type": "diconnectProduct.sourceIdRequired"
+    },
+    "productsIdRequired": {
+      "title": "Produtos",
+      "description": "E ai, tudo na paz? Eu preciso de pelo menos 1 produto para remover da fonte.",
+      "buttons": [
+        {
+          "label": "Eeeeeroooouuu",
+          "method": null
+        }
+      ],
+      "type": "disconnectProduct.productsIdRequired"
+    }
   }
 }
