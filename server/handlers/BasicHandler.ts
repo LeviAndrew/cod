@@ -123,7 +123,7 @@ export class BasicHandler extends Source {
    * @returns {Promise<any>}
    */
   protected async getSearch(query) {
-    return this.emit_to_server('db.search.aggregate', [
+    const ret = this.emit_to_server('db.search.aggregate', [
       {
         $match: query,
       },
@@ -170,6 +170,7 @@ export class BasicHandler extends Source {
           "id": 1,
           "previousSearch": 1,
           "status": 1,
+          "position": 1,
           "searchChecked": 1,
           "promotion": 1,
           "barCode": 1,
@@ -187,11 +188,11 @@ export class BasicHandler extends Source {
           _id: "$source",
           search: {
             $push: "$$ROOT"
-
           }
         }
       }
     ]);
+    return ret
   }
 
   protected async getSearchesByProductCode(userId, data) {
