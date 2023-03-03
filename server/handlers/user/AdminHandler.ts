@@ -3340,6 +3340,7 @@ interface sourceCreate {
       code: string,
       urlImage?: string,
       researchers: [string],
+      position?: string,
       address: {
         state: string,
         city: string,

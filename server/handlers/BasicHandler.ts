@@ -162,6 +162,7 @@ export class BasicHandler extends Source {
           "source.code": 1,
           "source.id": 1,
           "source.name": 1,
+          "source.position": 1,
           "name": 1,
           "code": 1,
           "especOne": 1,

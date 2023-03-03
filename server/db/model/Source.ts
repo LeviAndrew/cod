@@ -55,6 +55,10 @@ let schema = new Schema(Object.assign({
     }],
     // required: [true, "researchersRequired"], // deve ser obrigatório - foi tirado p/ validação de teste
   },
+  position: {
+    type: Schema.Types.String,
+    trim: true,
+  },
   address: {
     type: Address,
   }
