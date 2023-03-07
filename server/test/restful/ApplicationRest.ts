@@ -1542,7 +1542,6 @@ describe('Teste aplicativo', () => {
                   expect(sourceSearch._id).to.have.all.keys("name", "code", "id");
                 });
                 searches = response.body.data;
-                // cliente.removeListener("retorno", retorno);
                 done();
               })
           });

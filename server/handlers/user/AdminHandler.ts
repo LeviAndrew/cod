@@ -62,6 +62,28 @@ export class AdminHandler extends CommonHandler {
     });
   }
 
+  public async previousSearches(data) {
+    let previousDate = this.getPreviousDate(data);
+    const obj = new QueryObject(
+      {
+        region: data.regionId,
+        year: previousDate.year,
+        month: previousDate.month,
+      },
+      'searches',
+      {
+        path: 'searches',
+        select: 'searches',
+        populate: {
+          path: 'searches',
+          select: 'code especOne especTwo price changed'
+        }
+      }
+    );
+    const ret = await this.emit_to_server('db.review.read', obj);
+    return ret
+  }
+
   /**
    * Cria fonte e coloca na região.
    *
