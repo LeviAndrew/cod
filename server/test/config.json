@@ -1,5 +1,8 @@
 {
   "image": {},
+  "resourcesPaths": [
+    "tmp"
+  ],
   "db": {
     "mongodb": {
       "fixture": "test/fixtures/dev",

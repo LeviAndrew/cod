@@ -1,12 +1,13 @@
-import {BasicRest} from "../BasicRest";
+import {BasicMulterRest} from "../BasicMulterRest";
 import {AdminHandler} from "../../handlers/user/AdminHandler";
 import Handler from "../../handlers/user/AdminHandler";
 import * as HTTPStatus from 'http-status-codes';
 import * as multer from 'multer';
 import * as path from 'path'
 import { OpenRest } from "./OpenRest";
+import {Types} from "mongoose";
 
-export class AdminRest extends BasicRest {
+export class AdminRest extends BasicMulterRest {
   protected _handler: AdminHandler;
 
   constructor(router) {
@@ -67,14 +68,40 @@ export class AdminRest extends BasicRest {
 
   private async getImportReview(request, response) {
     try{
-      let ret = await this.handler.importReview({
-        data: request.query,
-        auth: request.headers["authentication-key"],
-        // document: "document",
+      const dest = path.resolve(`resources/tmp/`), documentName = new Types.ObjectId().toString();
+      this.configureSingleMulter({
+        acceptedTypes: [
+          "application/vnd.ms-excel",
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "application/octet-stream"
+        ],
+        fieldName: 'criticaDocument',
+        dest,
+        documentName,
+      })(request, response, async error => {
+        if(error) {
+          let message = "criticaDocument";
+          if(error.message) message = error.message;
+          return response
+            .status(HTTPStatus.OK)
+            .send({success: false, data: message});
+        }
+        let ret = await this.handler.importReview({
+          auth: request.headers['authentication-key'],
+          aKey: request.headers['access-key'],
+          data: {
+            extname: path.extname(request.file.originalname),
+            documentName,
+            dest,
+            regionId: request.query.regionId,
+            year: request.query.year,
+            month: request.query.month
+          },
+        });
+        response
+          .status(HTTPStatus.OK)
+          .send(ret);
       });
-      return response
-        .status(HTTPStatus.OK)
-        .send(ret);
     } catch (e) {
       response
         .status(HTTPStatus.UNAUTHORIZED)

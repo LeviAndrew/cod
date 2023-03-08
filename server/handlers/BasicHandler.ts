@@ -393,7 +393,7 @@ export class BasicHandler extends Source {
         select: 'searches',
         populate: {
           path: 'searches',
-          select: 'code especOne especTwo price changed'
+          select: 'code especOne especTwo price changed barCode'
         }
       }
     );

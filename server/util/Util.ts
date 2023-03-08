@@ -111,6 +111,15 @@ export class Util {
     return Util.getValueByTypeError(type_error, error_obj, fileName);
   }
 
+
+  /**
+   *
+   * @param doc
+   * @param {string} fileName
+   * @returns {Promise<string>}
+   *
+   * Salva um arquivo base64 em um xls e rotorna o caminho completo onde este foi salvo.
+   */
   public static writeXLS(doc: any, fileName: string):Promise<string>{
     if(!fs.existsSync(path.resolve('resources/temp'))) fs.mkdirSync(path.resolve('resources/temp'));
     return new Promise((resolve, reject)=>{
@@ -122,6 +131,14 @@ export class Util {
     });
   }
 
+  /**
+   *
+   * @param {string} documentSource
+   * @returns {Promise<boolean>}
+   *
+   * Remove um documento salvo no caminho passado por paremetro e retorna true, caso tenha ocorrido sucesso
+   * e false caso não tenha ocorrido.
+   */
   public static removeFile(documentSource: string):Promise<boolean>{
     return new Promise((resolve, reject)=>{
       fs.unlink(documentSource, (error)=>{

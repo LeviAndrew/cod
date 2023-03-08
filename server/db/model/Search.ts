@@ -91,6 +91,7 @@ let schema = new Schema(Object.assign({
   position: {
     type: Schema.Types.String,
     trim: true,
+    default: null
   },
   itemIndex: {
     type: Schema.Types.String,

@@ -3,8 +3,7 @@ import {QueryObject} from '../util/QueryObject';
 import {UpdateObject} from '../util/UpdateObject';
 import {Types} from 'mongoose'
 import {Util} from "../../util/Util";
-
-const xlsx2json = require('xlsx2json');
+import * as xlsx2json from 'xlsx2json';
 
 const buscaCEP = require('busca-cep');
 
@@ -77,7 +76,7 @@ export class AdminHandler extends CommonHandler {
           select: 'searches',
           populate: {
             path: 'searches',
-            select: 'code especOne especTwo price changed'
+            select: 'code especOne especTwo price changed barCode'
           }
         }
       );
@@ -2693,45 +2692,45 @@ export class AdminHandler extends CommonHandler {
   }
 
   public async importReview(data) {
-    if (!await this.verifyRegionHasBasket(data.regionId)) return await this.returnHandler({
+    if (!await this.verifyRegionHasBasket(data.data.regionId)) return await this.returnHandler({
       model: 'review',
       data: {error: 'regionHasNoBasket'},
     });
-    let documentSource = await Util.writeXLS(data.document, `review_${data.year}_${data.month}_${data.regionId}`);
+    let documentSource = await Util.writeXLS(data.data.documentName, `review_${data.data.year}_${data.data.month}_${data.data.regionId}`);
     let jsonDocument = await xlsx2json(documentSource);
     await Util.removeFile(documentSource);
     if (jsonDocument[1] && jsonDocument[1].length > 1) await this.researcherCreateFromTable(jsonDocument[1]);
-    if (jsonDocument[2] && jsonDocument[2].length > 1) await this.sourceCreateFromTable(jsonDocument[0], jsonDocument[2], data.regionId);
-    if (await this.existReportByDate(data)) {
+    if (jsonDocument[2] && jsonDocument[2].length > 1) await this.sourceCreateFromTable(jsonDocument[0], jsonDocument[2], data.data.regionId);
+    if (await this.existReportByDate(data.data)) {
       await this.updateSearchesFromTable({
         searches: jsonDocument[0],
-        year: data.year,
-        month: data.month,
-        regionId: data.regionId
+        year: data.data.year,
+        month: data.data.month,
+        regionId: data.data.regionId
       });
     } else {
       let withPrevious = await this.createMonthFromTable({
-        year: data.year,
-        month: data.month,
-        regionId: data.regionId
+        year: data.data.year,
+        month: data.data.month,
+        regionId: data.data.regionId
       });
       if (!withPrevious) {
         await this.createNewSearchesFromTable({
           searches: jsonDocument[0],
-          year: data.year,
-          month: data.month,
-          regionId: data.regionId
+          year: data.data.year,
+          month: data.data.month,
+          regionId: data.data.regionId
         });
       } else {
         await this.updateSearchesFromTable({
           searches: jsonDocument[0],
-          year: data.year,
-          month: data.month,
-          regionId: data.regionId
+          year: data.data.year,
+          month: data.data.month,
+          regionId: data.data.regionId
         });
       }
     }
-    await this.calculateReport({data: data});
+    await this.calculateReport({data: data.data});
     return await this.returnHandler({
       model: 'review',
       data: {success: true}

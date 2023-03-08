@@ -237,71 +237,47 @@ describe('Teste aplicativo', () => {
 
       });
 
-      // describe('Importa critica', () => {
+      describe('Importa critica', () => {
 
-      //   let doc = fs.readFileSync(path.resolve('test/docsTest/Critica.xlsx')).toString('base64');
-      //   const fileName = "Critica.xlsx";
+        // let doc = fs.readFileSync(path.resolve('test/docsTest/Critica.xlsx')).toString('base64');
+        const fileName = "Critica.xlsx";
         
-      //   it('Ok 1', (done) => {
-      //     chai.request(baseURL)
-      //       .post(`/api/admin/import/importReview`)
-      //       .set("authentication-key", loggedUser.id)
-      //       .query({
-      //         year: 2018,
-      //         month: 3,
-      //         regionId: regions[0].id,
-      //         document: doc, // era assim
-      //       })
-      //       // .attach('document', fs.readFileSync(path.resolve(`test/docsTest/${fileName}`))) // coloquei assim
-      //       .end((error, response) => {
-      //         expect(response.body).to.be.instanceOf(Object);
-      //         expect(response.body).to.have.all.keys("success", "data");
-      //         expect(response.body.success).to.be.true;
-      //         expect(response.body.data).to.be.true;
-      //         done();
-      //       })
-      //   });
+        // it('Ok 1', (done) => {
+        //   chai.request(baseURL)
+        //     .post(`/api/admin/import/importReview`)
+        //     .set("authentication-key", loggedUser.id)
+        //     .query({
+        //       year: 2018,
+        //       month: 3,
+        //       regionId: regions[0].id,
+        //     })
+        //     .attach('criticaDocument', fs.readFileSync(path.resolve(`test/docsTest/${fileName}`)), fileName) // coloquei assim
+        //     .end((error, response) => {
+        //       done();
+        //     })
+        // });
+
+      });
+
+      describe('BAIXA CRITICA', () => {
         
-      //   it('Ok 2', (done) => {
-      //     chai.request(baseURL)
-      //       .post(`/api/admin/importReview`)
-      //       .set("authentication-key", loggedUser.id)
-      //       .send({
-      //         year: 2018,
-      //         month: 4,
-      //         regionId: regions[0].id,
-      //         document: doc,
-      //       })
-      //       .end((error, response) => {
-      //         expect(response.body).to.be.instanceOf(Object);
-      //         expect(response.body).to.have.all.keys("success", "data");
-      //         expect(response.body.success).to.be.true;
-      //         expect(response.body.data).to.be.true;
-      //         done();
-      //       })
-      //   });
+        // it('Ok', (done) => {
+        //   chai.request(baseURL)
+        //     .get(`/api/open/reviewXLSX`)
+        //     .set("authentication-key", loggedUser.id)
+        //     .query({
+        //       userId: loggedUser.id,
+        //       regionId: regions[0].id,
+        //       year: 2018,
+        //       month: 4
+        //     })
+        //     .end((error, response) => {
+        //       expect(response.body).to.be.instanceOf(Object);
+        //       done();
+        //     })
+        // });
 
-      // });
-
-      // describe('BAIXA CRITICA', () => {
-        
-      //   it('Ok', (done) => {
-      //     chai.request(baseURL)
-      //       .get(`/api/open/reviewXLSX`)
-      //       .set("authentication-key", loggedUser.id)
-      //       .query({
-      //         userId: loggedUser.id,
-      //         regionId: regions[0].id,
-      //         year: 2018,
-      //         month: 4
-      //       })
-      //       .end((error, response) => {
-      //         expect(response.body).to.be.instanceOf(Object);
-      //         done();
-      //       })
-      //   });
-
-      // });
+      });
 
     });
 
