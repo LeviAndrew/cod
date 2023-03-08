@@ -63,25 +63,35 @@ export class AdminHandler extends CommonHandler {
   }
 
   public async previousSearches(data) {
-    let previousDate = this.getPreviousDate(data);
-    const obj = new QueryObject(
-      {
-        region: data.regionId,
-        year: previousDate.year,
-        month: previousDate.month,
-      },
-      'searches',
-      {
-        path: 'searches',
-        select: 'searches',
-        populate: {
+    try {
+      let previousDate = this.getPreviousDate(data.data);
+      const obj = new QueryObject(
+        {
+          region: data.data.regionId,
+          year: previousDate.year,
+          month: previousDate.month,
+        },
+        'searches',
+        {
           path: 'searches',
-          select: 'code especOne especTwo price changed'
+          select: 'searches',
+          populate: {
+            path: 'searches',
+            select: 'code especOne especTwo price changed'
+          }
         }
-      }
-    );
-    const ret = await this.emit_to_server('db.review.read', obj);
-    return ret
+      );
+      const ret = await this.emit_to_server('db.review.read', obj);
+      return await this.returnHandler({
+        model: 'review',
+        data: ret.data,
+      });
+    } catch (e) {
+      return await this.returnHandler({
+        model: 'review',
+        data: {error: e.message || e},
+      });      
+    }
   }
 
   /**

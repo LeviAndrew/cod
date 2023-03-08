@@ -1546,6 +1546,28 @@ describe('Teste aplicativo', () => {
               })
           });
 
+          it('previousSearches', (done) => {
+            chai.request(baseURL)
+              .get(`/api/admin/previousSearches`)
+              .set("authentication-key", loggedUser.id)
+              .send({
+                regionId: "5b5609522738180d48c3965d",
+                year: 2018,
+                month: 5
+              })
+              .end((error, response) => {
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
+                response.body.data.forEach(review => {
+                  expect(review).to.be.instanceof(Object);
+                  expect(review).to.have.all.keys("id", "searches");
+                  expect(review.searches).to.be.instanceof(Array);
+                });
+                done();
+              })
+          });
+
         });
 
         describe('EXCEL', ()=>{
