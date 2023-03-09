@@ -93,6 +93,31 @@ export class AdminHandler extends CommonHandler {
     }
   }
 
+  public async searchesByProduct(data) {
+    try {
+      const obj = new QueryObject(
+        {
+          product: data.data.productId,
+        },
+        'searches',
+        {
+          path: 'searches',
+          select: 'code especOne especTwo price changed barCode position product'
+        }
+      );
+      const ret = await this.emit_to_server('db.productsearch.read', obj);
+      return await this.returnHandler({
+        model: 'productsearches',
+        data: ret.data,
+      });
+    } catch (e) {
+      return await this.returnHandler({
+        model: 'productsearches',
+        data: {error: e.message || e},
+      });      
+    }
+  }
+
   /**
    * Cria fonte e coloca na região.
    *

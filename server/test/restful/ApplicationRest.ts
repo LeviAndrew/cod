@@ -1544,6 +1544,26 @@ describe('Teste aplicativo', () => {
               })
           });
 
+          it('previousSearches by product', (done) => {
+            chai.request(baseURL)
+              .get(`/api/admin/searchesByProduct`)
+              .set("authentication-key", loggedUser.id)
+              .send({
+                productId: "5b5609532738180d48c3965e",
+              })
+              .end((error, response) => {
+                expect(response.body).to.be.instanceOf(Object);
+                expect(response.body.success).to.be.true;
+                expect(response.body.data).to.be.instanceOf(Array);
+                response.body.data.forEach(review => {
+                  expect(review).to.be.instanceof(Object);
+                  expect(review).to.have.all.keys("id", "searches");
+                  expect(review.searches).to.be.instanceof(Array);
+                });
+                done();
+              })
+          });
+
         });
 
         describe('EXCEL', ()=>{
