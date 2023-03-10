@@ -1544,13 +1544,12 @@ describe('Teste aplicativo', () => {
               })
           });
 
+          const productId = "5b5609532738180d48c3965e";
+
           it('previousSearches by product', (done) => {
             chai.request(baseURL)
-              .get(`/api/admin/searchesByProduct`)
+              .get(`/api/admin/searchesByProduct/${productId}`)
               .set("authentication-key", loggedUser.id)
-              .send({
-                productId: "5b5609532738180d48c3965e",
-              })
               .end((error, response) => {
                 expect(response.body).to.be.instanceOf(Object);
                 expect(response.body.success).to.be.true;

@@ -18,6 +18,7 @@ export class AdminRest extends BasicMulterRest {
         // '/research/searches/:userId': this.getSearches.bind(this),
         '/admin/addressByZipCode/:zipCode': this.addressByZipCode.bind(this),
         '/admin/:metodo': this.callAdminAction.bind(this),
+        '/admin/searchesByProduct/:productId': this.callSearchesByProduct.bind(this),
       },
       post: {
         // '/research/uploadProfileImage/:userId': this.uploadProfileImage.bind(this),
@@ -136,6 +137,22 @@ export class AdminRest extends BasicMulterRest {
         .status(HTTPStatus.UNAUTHORIZED)
         .send(e);
     } 
+  }
+
+  private async callSearchesByProduct(request, response) {
+    try {
+      let ret = await this.handler.searchesByProduct({
+        data: request.params,
+        auth: request.headers["authentication-key"],
+      });
+      return response
+        .status(HTTPStatus.OK)
+        .send(ret);
+    } catch (e) {
+      response
+        .status(HTTPStatus.UNAUTHORIZED)
+        .send(e);
+    }    
   }
 
   // private async getSearches(req, res) {  // remover

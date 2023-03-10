@@ -62,6 +62,12 @@ export class AdminHandler extends CommonHandler {
   }
 
   public async previousSearches(data) {
+    let required = this.attributeValidator([
+      "auth", "data", [
+        "regionId", "year", "month"
+      ]
+    ], data);
+    if (!required.success) return await this.getErrorAttributeRequired(required.error);
     try {
       let previousDate = this.getPreviousDate(data.data);
       const obj = new QueryObject(
@@ -94,6 +100,12 @@ export class AdminHandler extends CommonHandler {
   }
 
   public async searchesByProduct(data) {
+    let required = this.attributeValidator([
+      "auth", "data", [
+        "productId"
+      ]
+    ], data);
+    if (!required.success) return await this.getErrorAttributeRequired(required.error);
     try {
       const obj = new QueryObject(
         {
@@ -107,12 +119,12 @@ export class AdminHandler extends CommonHandler {
       );
       const ret = await this.emit_to_server('db.productsearch.read', obj);
       return await this.returnHandler({
-        model: 'productsearches',
+        model: 'productsearch',
         data: ret.data,
       });
     } catch (e) {
       return await this.returnHandler({
-        model: 'productsearches',
+        model: 'productsearch',
         data: {error: e.message || e},
       });      
     }
