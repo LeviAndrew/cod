@@ -1565,9 +1565,9 @@ describe('Teste aplicativo', () => {
 
         });
 
-        describe('EXCEL', ()=>{
+        describe('EXCEL', () => {
 
-          describe('Baixar', ()=>{
+          describe('Baixar', () => {
 
             it('Sem dados', (done) => {
               chai.request(baseURL)

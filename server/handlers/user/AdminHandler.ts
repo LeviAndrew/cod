@@ -1426,23 +1426,23 @@ export class AdminHandler extends CommonHandler {
       }
     ]);
     if (lastReviewProductsSearchId.data.error) return await this.returnHandler({
-      model: 'searches',
+      model: 'search',
       data: lastReviewProductsSearchId.data,
     });
     let newSearches: any = this.cloneSearches(lastReviewProductsSearchId.data.success[0].searchesRepeat);
     if (!newSearches.length) return await this.returnHandler({
-      model: 'searche',
+      model: 'search',
       data: {error: 'hasNoSearchToNextWeek'}
     });
     newSearches = await this.emit_to_server('db.search.create', newSearches);
     if (newSearches.data.error) return await this.returnHandler({
-      model: 'searche',
+      model: 'search',
       data: newSearches.data,
     });
     let updatedSearches = await this.updateProductSearches(newSearches.data.success, lastReviewProductsSearchId.data.success[0].searches);
     if (!updatedSearches) return console.error('isso não podia ter acontecido');
     return await this.returnHandler({
-      model: 'searche',
+      model: 'search',
       data: {success: updatedSearches},
     });
   }
